@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+        body
+        {
+            font-size: 12px;
+            line-height: 1.5;
+            background: #eee;
+        }
+        h1
+        {
+            font-size: 14px;
+        }
+        h2
+        {
+            font-size: 12px;
+            color: #556688;
+        }
+        p
+        {
+            text-indent: 2em;
+			padding:0 10px;
+        }
+        .code
+        {
+            background: #a9a9a9;
+			padding:10px;
+			border:1px dashed #000;
+        }
+		a{text-decoration:none;}
+		a:hover{text-decoration:underline;}
+		a:visited{text-decoration:line-through;}
+		li{list-style:none; line-height:2;}
+		h2,h3{margin:0;padding:0; }
+		.demo{height:500px;border:1px solid #565656;margin:50px; background:#989898;}
+		

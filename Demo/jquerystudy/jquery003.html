@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> 我是如何去了解jquery的(三),事件之点击事件，光棍节特献 </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="田想兵" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="blogs:http://www.cnblogs.com/tianxiangbing" />
+   <script src="/scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+  <style>
+  *{font-size:12px;}
+  .list{width:600px;border-collapse:collapse;}
+  .list th{background-color:gray;}
+  .list td, .list th{border:1px solid red; text-align:center;}
+  .odd{background-color:gray;height:20px;}
+  .even{background-color:#EDEDED;}
+  </style>
+  <script>
+  $(function(){	
+	/*
+	$("#mybtn").click(function(e){
+		console.log("this is button");
+		e.preventDefault();
+	});
+	$("body").click(function(){
+		console.log("this is body");
+	});	
+	*/
+	$("#mybtn").click(function(e){
+		//console.log("this is button");
+		//console.log(e);
+		var nameValue=$("[name='name']").val();
+		var sexValue=$("[name='sex']:checked").val();
+		var moneyValue=$("[name='money']").val();
+		//console.log(sexValue)
+		if(nameValue.length<6){
+			alert('姓名长度不能少于六个字符!');
+			$("[name='name']").select();
+			return false;
+		}
+		if (!sexValue) //null、undefined、“” 、false
+		{
+			alert("请选择性别！")
+			$("[name='sex']").focus();
+			return false;
+		}
+		if (moneyValue==-1)
+		{
+			alert('请选择收入');
+			$("[name='money']").focus();
+			return false;
+		}
+		console.log($("[name='money']").val())
+		return true;
+		//e.stopPropagation();//阻止冒泡事件
+		//e.preventDefault();//阻止系统事件,如表单提交
+	});
+
+
+/*****************全选功能******************/
+$(".list [name='chkAll']").click(function(){
+	$(this).closest("table").find(":checkbox").not($(this)).attr("checked", $(this).attr("checked"));
+});
+$(".list :checkbox").click(function(){
+	if($(this).attr("checked"))
+	$(this).closest("table").find("[name='chkAll']").attr("checked",true);
+});
+  });
+  </script>
+ </head>
+
+ <body>
+ <form id="myform">
+ <p>
+  *姓名：<input type="text" name="name"/>
+</p>
+<p>
+*性别:<input type="radio" value="1" name="sex"/>男<input type="radio" value="0" name="sex"/>女
+</p>
+<p>
+*收入:<select name="money">
+<option value="-1">请选择</option>
+<option value="1">低收入</option>
+<option value="2">中等收入</option>
+<option value="3">高收入</option>
+</select>
+</p>
+  <input type="submit" id="mybtn" value="提 交"/>
+  </form>
+<p>
+选中列表中任意一条记录，全选自动勾上，如果单独操作全选，就是全选和全不选的功能。
+</p>
+  <table class="list">
+  <thead>
+  <tr><th>全选<input type="checkbox" name="chkAll"/></th><th>姓名</th><th>性别</th><th>收入</th></tr></thead>
+	<tbody>
+		<tr><td><input type="checkbox"/></td><td>张三</td><td>男</td><td>低</td></tr>
+		<tr><td><input type="checkbox"/></td><td>李四</td><td>男</td><td>中</td></tr>
+		<tr><td><input type="checkbox"/></td><td>王五</td><td>男</td><td>低</td></tr>
+		<tr><td><input type="checkbox"/></td><td>范冰冰</td><td>女</td><td>高</td></tr>
+		<tr><td><input type="checkbox"/></td><td>李冰冰</td><td>女</td><td>高</td></tr>
+	</tbody>
+  </table>
+  
+  <table class="list">
+  <thead>
+  <tr><th>全选<input type="checkbox" name="chkAll"/></th><th>姓名</th><th>性别</th><th>收入</th></tr></thead>
+	<tbody>
+		<tr><td><input type="checkbox"/></td><td>张三</td><td>男</td><td>低</td></tr>
+		<tr><td><input type="checkbox"/></td><td>李四</td><td>男</td><td>中</td></tr>
+		<tr><td><input type="checkbox"/></td><td>王五</td><td>男</td><td>低</td></tr>
+		<tr><td><input type="checkbox"/></td><td>范冰冰</td><td>女</td><td>高</td></tr>
+		<tr><td><input type="checkbox"/></td><td>李冰冰</td><td>女</td><td>高</td></tr>
+	</tbody>
+  </table>
+<br/>
+    <p>本案例对应的博客地址是：<a href="http://www.cnblogs.com/tianxiangbing/archive/2011/11/11/jquery_study003.html" target="_blank">我是如何去了解jquery的(三),事件之点击事件，光棍节特献  </a>欢迎大家加入QQ群一起讨论：70210212</p>
+ </body>
+</html>

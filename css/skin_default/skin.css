@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.bg-header { background:#3B5998;}
+.header .logo a { background:url(../img/logo.png) no-repeat;}
+.header .nav { background:#627AAD; border:solid #1D4088; border-width:1px 1px 0;}
+.header .menu a { color:#FFF; font-weight:bold;}
+.header .menu a:hover,
+.header .menu .current a { background:#6D86B7; text-decoration:none;}
+.header .search { background:#FFF; border:1px solid #3B5998;}
+.header .search span { border-top:1px solid #EDEDED;}
+.header .search .s-txt { background:none; border:none; color:#777;}
+.header .search .s-button { background:url(../img/icon_01.png) no-repeat; border-left:1px solid #E5E5E5;}
+
+.main { border:solid #B3B3B3; border-width:0 1px 1px;}
+.main h1{ color: #555555;  font-size: 14px; font-weight: bold;  padding: 10px;}
+.footer .nav { color:#8095C0;}
+.footer .copyright { color:#808080;}
+
+/*边栏菜单*/
+.tree-menu ul { border-bottom:1px solid #EEE;}
+.tree-menu a:hover { background:#EFF2F7;}
+.tree-menu .current a,
+.tree-menu .current a:hover { background:#D8DFEA;}

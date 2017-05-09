@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+  <title> 美丽约-男生编辑个人主页</title>
+  <meta name="Author" content="前端:田想兵2013/3/27">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,男生主页">
+  <meta name="Description" content="美丽约男生主页">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../front/css/boxy.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../front/css/lightbox.css"/>
+  <link href="../front/css/uploadify.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../front/css/imgareaselect-default.css"/>
+
+ </head>
+ <body class="boybody">
+<!--#include virtual="top.html"-->
+ <div class="middleContainer clearfix">
+	<div class="hotelInfo personal editpersonal">
+		<div class="hotelInfoBorderTop"></div>
+		<div class="clearfix">
+			<div class="leftInfo">
+				<a class="img"><img src="../uploads/Koala.jpg"/></a>
+				<div class="desc">
+					<h3 class="edit"><span>香格里拉大饭店</span><input type="text" maxlength="20" class="inputText hide editContent" value="香格里拉大饭店" id="txt_name" name="name"/><a class="editBtn editact" ajaxurl="validate.txt" id="edit1"  href="javascript:void(0);"><em>编辑</em><i></i></a></h3>
+					<ul class="data edit">
+						<li class="icon Icon1"><i></i>年龄：28</li>
+						<li class="icon Icon2"><i></i>星座：狮子座</li>
+						<li class="icon Icon6"><i></i>职业：公司白领</li>
+						<li class="icon Icon3"><i></i>身高：162cm</li>
+						<li class="icon Icon4"><i></i>体重：52kg</li>
+						<li class="icon Icon5"><i></i>所在地：四川</li>
+						<li class="icon Icon9"><i></i>年收入：4000/月</li>
+						<li class="icon Icon10"><i></i>购车情况：有车</li>
+						<a class="editBtn" id="edit2" href="javascript:void(0);">编辑</a>
+					</ul>
+					<div class="moreInfo">
+						<div class="autograph box clearfix edit"><b>签名</b><span>天长地久有没有人，喀什大地回春中在不，喀什大地回春中在不。</span><input type="text" maxlength="70" class="inputText hide editContent" value="天长地久有没有人，喀什大地回春中在不，喀什大地回春中在不。" id="txt_name" name="name"/><a class="editBtn editact" ajaxurl="validate.txt" id="edit3"  href="javascript:void(0);"><em>编辑</em><i></i></a></div>
+					</div>
+				</div>				
+			</div>
+		</div>
+		<div class="interest clearfix edit">
+			<h4>她的爱好</h4>
+			<div class="interestlist" id="hasInterest">
+				<li ref="1"><span><i class="icon0"></i><s></s>哈士奇1</span></li>
+				<li ref="2"><span><i class="icon1"></i><s></s>哈士奇2</span></li>
+				<li ref="3"><span><i class="icon2"></i><s></s>哈士奇3</span></li>
+				<li ref="4"><span><i class="icon3"></i><s></s>哈士奇4</span></li>
+				<li ref="5"><span><i class="icon4"></i><s></s>哈士奇5</span></li>
+				<li ref="6"><span><i class="icon5"></i><s></s>哈士奇6</span></li>
+			</div>
+			<div class="addinterest clearfix"><input type="hidden" class="inputText hide editContent" value="1,2,3,4" id="listid" name="name"/><a class="editBtn editact" ajaxurl="validate.txt" id="edit5" href="javascript:void(0);"><em>编辑</em><i></i></a></div>
+			<div class="editContent hide">
+				<div class="title clearfix"><div class="item current">音乐</div><div class="item">艺术</div><div class="item">娱乐</div><div class="item">运动</div><div class="item">影视</div><div class="item">旅行</div><div class="item">美食</div><div class="item">游戏</div><div class="item">阅读</div><div class="item">其他</div></div>
+				<div class="content clearfix interestedit">
+					<div class="item interestlist">
+						<li ref="1"><span><i class="icon0"></i><s></s>哈士奇1</span></li>
+						<li ref="2"><span><i class="icon1"></i><s></s>哈士奇2</span></li>
+						<li ref="3"><span><i class="icon2"></i><s></s>哈士奇3</span></li>
+						<li ref="4"><span><i class="icon3"></i><s></s>哈士奇4</span></li>
+						<li ref="5"><span><i class="icon4"></i><s></s>哈士奇5</span></li>
+						<li ref="6"><span><i class="icon5"></i><s></s>哈士奇6</span></li>
+						<li ref="7" class="normal"><span><i class="icon0"></i><s></s>哈士奇7</span></li>
+						<li ref="8" class="normal"><span><i class="icon1"></i><s></s>哈士奇8</span></li>
+						<li ref="9" class="normal"><span><i class="icon0"></i><s></s>哈士奇9</span></li>
+						<li ref="10" class="normal"><span><i class="icon1"></i><s></s>哈士奇10</span></li>
+						<li ref="11"><span><i class="icon0"></i><s></s>哈士奇11</span></li>
+						<li ref="12"><span><i class="icon1"></i><s></s>哈士奇12</span></li>
+						<li ref="1"><span><i class="icon0"></i><s></s>哈士奇</span></li>
+						<li ref="1"><span><i class="icon1"></i><s></s>哈士奇</span></li>
+						<li ref="1"><span><i class="icon0"></i><s></s>哈士奇</span></li>
+						<li ref="1"><span><i class="icon1"></i><s></s>哈士奇</span></li>
+						<li ref="1"><span><i class="icon0"></i><s></s>哈士奇</span></li>
+						<li ref="1"><span><i class="icon1"></i><s></s>哈士奇</span></li>
+						<li ref="1"><span><i class="icon0"></i><s></s>哈士奇</span></li>
+						<li ref="1"><span><i class="icon1"></i><s></s>哈士奇</span></li>
+						<li ref="1"><span><i class="icon0"></i><s></s>哈士奇</span></li>
+					</div>
+					<div class="sortpager">
+					<div class="tp">点击添加</div>
+					<i>7</i><em>/9</em><a class="prev enable"><</a><a class="next">></a></div>
+				</div>
+				<div class="content clearfix interestedit hide">
+					<div class="item interestlist">
+						<li ref="11"><span><i class="icon0"></i><s></s>哈士奇11</span></li>
+						<li ref="12"><span><i class="icon1"></i><s></s>哈士奇12</span></li>
+						<li ref="13"><span><i class="icon2"></i><s></s>哈士奇13</span></li>
+						<li ref="14"><span><i class="icon3"></i><s></s>哈士奇14</span></li>
+						<li ref="15"><span><i class="icon4"></i><s></s>哈士奇15</span></li>
+						<li ref="16" ><span><i class="icon5"></i><s></s>哈士奇16</span></li>
+						<li ref="7"  class="normal"><span><i class="icon0"></i><s></s>哈士奇7</span></li>
+						<li ref="8" class="normal"><span><i class="icon1"></i><s></s>哈士奇8</span></li>
+						<li ref="9"><span><i class="icon0"></i><s></s>哈士奇9</span></li>
+						<li ref="10"><span><i class="icon1"></i><s></s>哈士奇10</span></li>
+						<li ref="11"><span><i class="icon0"></i><s></s>哈士奇11</span></li>
+						<li ref="12"><span><i class="icon1"></i><s></s>哈士奇12</span></li>
+						<li ref="1"><span><i class="icon0"></i><s></s>哈士奇</span></li>
+					</div>
+					<div class="sortpager">
+					<div class="tp">点击添加</div>
+					<i>7</i><em>/9</em><a class="prev enable"><</a><a class="next">></a></div>
+				</div>
+			</div>
+		</div>
+		<div class="hotelInfoBorderBottom"></div>
+	</div>
+	<div class="rightInfo">
+		<a class="right-ad personal-ad" href="#">
+		</a>
+	</div>
+	<div class="leftInfo personal-left">
+		<div class="hotelPeopleList">
+			<div class="hotelContainerBorderTop"><h3><i></i>她的相册<span>照片数量（6）</span></h3></div>
+			<div class="hotellist clearfix lightboxlist">
+				<div class="item" cid="1231231" istop="1">
+					<a rel="lightbox[plants]" href="../uploads/examples/thumb-1.jpg" class="img">
+						<span class="topimg"></span>
+						<img src="../uploads/examples/thumb-1.jpg"/>
+						<span class="act"><span class="del" ajaxurl="validate.txt" name="cid">删除</span><span class="setTop" ajaxurl="validate.txt" name="cid">设置为封面</span><b></b></span>
+					</a>
+				</div>
+				<div class="item" cid="1231231">
+					<a rel="lightbox[plants]" href="../uploads/examples/thumb-1.jpg" class="img">
+						<img src="../uploads/examples/thumb-1.jpg"/>
+						<span class="act"><span class="del" ajaxurl="validate.txt" name="cid">删除</span><span class="setTop" ajaxurl="validate.txt" name="cid">设置为封面</span><b></b></span>
+					</a>
+				</div>
+				<div class="item">
+					<div class="img"><div class="bg"><div></div></div></div>
+				</div>
+				<div class="item">
+					<div class="img"><div class="bg"><a href="javascript:void(0);" id="btn_uploadPhoto"><i></i>添加照片</a></div></div>
+				</div>
+			</div>
+			<div class="mapContainerBorderBottom"></div>
+		</div>
+	</div>
+ </div>
+ <div class="uploadImgBox" id="uploadImgBox">
+	<div class="login clearfix registForm3">
+		<div class="findPwdBox">
+		
+			<form id="myFrom" action="regist3.php" method="post">
+				<input type="hidden" id="hd_swf" value="../front/js/plugin/uploadify.swf"/>
+				<input type="hidden" id="hd_uploader" value="../web/uploadify-v3.1/uploadify.php"/>
+				<input type="hidden" id="hd_img"/>
+				<input type="hidden" id="hd_positionX"/>
+				<input type="hidden" id="hd_positionY"/>
+				<input type="hidden" id="hd_width"/>
+				<input type="hidden" id="hd_token" value="123123edidkdkdk"/>
+				<div class="defaultImg">
+					
+				</div>
+				<div class="cutImg" style="display:none;">
+					<div class="border">
+						<div class="imgsrc">
+						</div>
+						<div class="tip">HD 高清图像</div>
+					</div>
+				</div>
+				<div class="uploadContent">
+					<div class="sourseImg" id="sourseImg"><span class="pic-wrap"></span></div>
+					<div id="queueID"></div>
+					<div class="upload"><input type="button" id="uploadify" class="loginButton" value="上 传"/><p>支持jpg,gif,png格式,单张10K-8M之间</p></div>
+					<div class="upload2">
+						<input type="submit" id="btn_successUpload" value="确认完成"/>
+						<input type="button" id="btn_uploadifyAgain" value="重新上传"/>
+						<ul>
+							<li><i class="icon xs"></i>显示区域选择</li>
+							<li><i class="icon xz"></i>移动选择区域</li>
+							<li><i class="icon bh"></i>变换选择区域</li>
+						</ul>
+					</div>
+				</div>
+				
+			</form>
+		</div>
+	</div>
+</div>
+ <div class="publishBox" id="editData">
+		<form action="女生编辑个人主页.html" method="post" id="registForm2">
+			<h3>编辑个人基本资料</h3>
+			<div class="findPwdBox">
+				<div class="list clearfix">
+					<div class="row" style="z-index:11;">
+						<div class="left icon Icon1"><i></i>年龄：</div>
+						<div class="right"><select id="sel_age"><option value="22">22岁</option><option value="18">18岁</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择年龄</div></div>
+					</div>
+					<div class="row">
+						<div class="left icon Icon2"><i></i>星座：</div><div class="right"><select id="sel_constellation"><option value="-1">请选择</option><option value="7">狮子座</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择星座</div></div>
+					</div>
+					<div class="row">
+						<div class="left icon Icon3"><i></i>身高：</div><div class="right"><select id="sel_bodyHeight"><option value="-1">请选择</option><option value="170">170cm</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择身高</div></div>
+					</div>
+					<div class="row">
+						<div class="left icon Icon4"><i></i>体重：</div><div class="right"><select id="sel_bodyWeight"><option value="-1">请选择</option><option value="60">60KG</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择体重</div></div>
+					</div>
+					<div class="row">
+						<div class="left icon Icon5"><i></i>所在地：</div><div class="right area"><select id="sel_area" ajaxurl="getCity.txt">
+						<option value="-1">请选择</option><option value="1">杭州</option></select><select id="sel_city">
+						<option value="-1">请选择</option>
+						<option value="1">杭州</option>
+						</select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择所在地</div></div>
+					</div>
+					<div class="row">
+						<div class="left icon Icon6"><i></i>职业：</div><div class="right"><select id="sel_job"><option value="-1">请选择</option><option value="公务员">公务员</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择职业</div></div>
+					</div>
+					<!--女生显示身材和气质
+					<div class="row">
+						<div class="left icon Icon7"><i></i>身材：</div><div class="right"><select id="sel_stature"><option value="-1">请选择</option><option value="曲条">曲条</option></select><div class="tip wrong"  style="display:none;"><i></i><s></s>请选择身材</div></div>
+					</div>
+					<div class="row">
+						<div class="left icon Icon8"><i></i>气质：</div><div class="right"><select id="sel_qualities"><option value="-1">请选择</option><option value="很好">很好</option><option value="很好">很好</option><option value="很好">很好</option></select><div class="tip wrong"  style="display:none;"><i></i><s></s>请选择气质</div></div>
+					</div>-->
+					<!--男生显示年收入和购车情况-->
+					<div class="row">
+						<div class="left icon Icon9"><i></i>年收入：</div><div class="right"><select id="sel_income"><option value="-1">请选择</option><option value="3">3000-5000</option></select><div class="tip wrong"  style="display:none;"><i></i><s></s>请选择年收入</div></div>
+					</div>
+					<div class="row">
+						<div class="left icon Icon10"><i></i>购车情况：</div><div class="right"><select id="sel_buybus"><option value="-1">请选择</option><option value="有车">有车</option></select><div class="tip wrong"  style="display:none;"><i></i><s></s>请选择购车情况</div></div>
+					</div>
+				</div>
+			</div>
+			<div class="actionBtn"><input type="submit" id="btn_submit" class="btnCreate" value='确定'/><a class="btnCancel close">取消</a></div>
+		</form>
+ </div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.boxy.js"></script>
+<script type="text/javascript" src="../front/js/plugin/computeNumber.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.uploadify-3.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.imgareaselect.pack.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.smooth-scroll.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/lightbox.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.select.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.staticpager.js"></script>
+<script type="text/javascript" src="../front/js/boy.js"></script>
+<script type="text/javascript" src="../front/js/updatePerson.js"></script>
+</body>
+</html>

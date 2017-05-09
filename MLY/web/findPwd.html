@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <title> 美丽约-找回密码</title>
+  <meta name="Author" content="前端:田想兵2013/3/11">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,用户登录">
+  <meta name="Description" content="美丽约用户登录页面">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+ <div class="mainbody">
+	 <div class="minMain clearfix">
+		<div class="loginLogo"><h1><a href="index.php"><img src="../front/imgs/logo-top.jpg" title="美丽约"/></a></h1></div>
+		<div class="login clearfix">
+			<form action="login.php" method="post" id="findPwdForm">
+				<div class="findPwdBox">
+					<h2>找回密码</h2>
+					<div class="list clearfix">
+						<div class="row" msg="请输入11位手机号码." errmsg ="您输入的手机号不正确!" >
+							<div class="left">手机号：</div><div class="right"><input type="text" class="inputText tipMsg2" id="txt_Phone" name="txt_Phone" ajaxurl="validate.txt" msg="手机号"/><div class="tip"></div></div>
+						</div>
+						<div class="validate row imgValidateRow" style="display:none;" msg="请输入验证码." errmsg ="您输入的验证码不正确!" >
+							<div class="left">验证码：</div>
+							<div class="right nzm">
+								<input type="text" class="inputText tipMsg2" id="txt_validate" name="txt_validate" msg="验证码" ajaxurl="validate.txt"/>
+								<div  class="validate" style="display:block;"><img src="../front/imgs/validate.png" width="107px" height="39px" title="验证码,点击更换"/><a href="javascript:void(0)"></a></div>
+								<div class="tip"></div>
+							</div>
+						</div>
+						<div style="display:block;" class="validate row" msg="请输入短信验证码." errmsg ="您输入的短信验证码不正确!">
+							<div class="left">短信验证码：</div><div class="right relative"><input type="text" name="txt_validate" class="inputText tipMsg2" id="txt_DxValidate" msg="短信验证码" ajaxurl="validate.txt"/><span class="btn graybtn sp_getCode" ajaxurl="getCode.txt"><input type="button" id="btn_getCode" class="getCode" value="点击免费获取" /></span><div class="tip dxts"></div></div>
+						</div>
+						<div class="row" msg="请输入新密码." errmsg ="您输入的新密码不正确!" >
+							<div class="left">新密码：</div><div class="right"><input type="password" class="inputText tipMsg2"  id="txt_pwd" msg="输入新密码"/><div class="tip"></div></div>
+						</div>
+						<div class="row" msg="请重复输入新密码." errmsg ="两次输入不一致!" >
+							<div class="left">确认密码：</div><div class="right"><input type="password" class="inputText tipMsg2"  id="txt_pwd2" msg="重新输入密码"/><div class="tip"></div></div>
+						</div>
+						<div class="row findpwd">
+							<div class="left"></div><div class="right"><input type="submit" class="bigButton btn_findPwd" id="btn_success" value="完 成"/><div class="tip"></div></div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>		
+	 </div>
+ </div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/msgTip.js"></script>
+<script type="text/javascript" src="../front/js/findpwd.js"></script>
+ </body>
+</html>

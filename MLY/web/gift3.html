@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> 美丽约-礼物详细</title>
+  <meta name="Author" content="前端:罗利民2013/5/16">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,礼物详细">
+  <meta name="Description" content="美丽约礼物详细">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">  
+  <link href="../front/css/boxy.css" rel="stylesheet" type="text/css">
+ </head>
+ <body class="boybody">
+<!--#include virtual="top.html"-->
+<div class="giftTitle header"><h2>礼物商城</h2><ul class="model mc0"><li class="lt"><i></i><a>礼物商城</a></li><li class="rt current"><i></i><a class="current">赠送的礼物</a></li></ul></div>
+<div class="firendBox mylikeboy gift giftInfo clearfix">
+	<div class="upborder"></div>
+	<div class="content present clearfix">
+	<form target="_blank" action="/" method="post">
+		<div class="presenttitle">赠送礼物</div>
+        <div class="presenttop">
+        	<div class="presenttopleft"><img src="../uploads/productspic2.jpg" width="150" height="150" alt="人物图片" title="人物图片" /></div>
+        	<div class="presenttopright">
+            	<ul>
+                	<li><p><a href="#" class="fontname">IM左边</a></p></li>
+                	<li><i class="icon1">23</i><p class="txt">护士</p></li>
+                	<li>
+                    	<dl>
+                        	<dt><img src="../uploads/productspic3.jpg" width="60" height="60" alt="产品图片" title="产品图片" /></dt>
+                            <dd>烂漫红水晶戒指<p class="fontprice2">654￥</p></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentcenter">
+        	<div class="presentcentertitle clearfix"><span class="left2"><strong>赠送留言：</strong></span><span class="right2 counter">你还可以输入<em>140</em>字</span></div>
+            <textarea class="textarea tipMsg" msg="你可以写一些留言给她" maxLength="140" id="txt_paymsg" ></textarea>
+        </div>
+        <div class="presentbottom">
+        	<dl>
+            	<dt><img src="../front/imgs/icon2.jpg" width="123" height="47" /></dt>
+                <dd>支付宝安全支付</dd>
+            </dl>
+            <p>支付额：<span class="fontprice3">654￥</span></p>
+            <div class="kuang"> 礼品商城内的所有礼品均为实物礼物，付款后，你选的礼物将会发送到你的心动女生。</div>
+        </div>
+        <a class="button2 btnpayit" id="btnSubmit">确定支付</a><input type="submit" class="hide"/>
+	</form>
+	</div>
+	<div class="bottomborder"></div>
+</div>
+    <div class="publishBox" id="payit">
+    <h3>支付确认</h3>
+    <div class="reportCause"><i></i>请在新打开的支付宝页面上完成支付</div>
+    <p class="desc">付款完成前请不要关闭此窗口<br />完成付款后请根据您的实际情况点击下面的按钮</p>
+    <div class="actionBtn"><a class="btnCancel close">支付遇到问题</a><a class="btnCreate" href="赠送的礼物.html">完成支付</a></div>
+    </div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.select.js"></script>
+<script type="text/javascript" src="../front/js/plugin/msgTip.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.staticupdown.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.boxy.js"></script>
+<script type="text/javascript" src="../front/js/plugin/computeNumber.js"></script>
+<script type="text/javascript" src="../front/js/gift.js"></script>
+
+</body>
+</html>

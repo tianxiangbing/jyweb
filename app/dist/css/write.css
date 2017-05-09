@@ -1,0 +1,1 @@
+body:before{white-space:pre;font-family:monospace;content:"Error: Undefined variable: \"$toolbarPadding\".\A         on line 2 of site/src/scss/write.scss\A \A 1: .write-content {\A 2:     padding-top: $toolbarPadding;\A 3: \A 4:     .counter {\A 5:         position: relative;\A 6: \A 7:         em {"}

@@ -1,0 +1,16 @@
+callback({
+	"content": [{
+		"id": 1,
+		"com_id":1,
+		"nickname":"veralkjsf",
+		"comment": "very good."
+	}, {
+		"id": 2,
+		"com_id":2,
+		"nickname":"veralkjsf",
+		"comment": "very like."
+	}],
+	"msg": "",
+	"state": true,
+	"code": 200
+})

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<TITLE> 人员结构 </TITLE>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="demo.css" type="text/css">
+	<link rel="stylesheet" href="zTreeStyle.css" type="text/css">
+	<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="jquery.ztree.core-3.5.js"></script>
+	<SCRIPT type="text/javascript">
+		<!--
+		var setting = {
+			view: {
+				showIcon: false,
+				fontCss: setFontCss,
+				showLine :false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			}	};
+		function setFontCss(treeId, treeNode) {
+			return treeNode.isParent ? {"background-Color": "#FFE6B0",border:" 1px #FFB951 solid"} : {};
+		};
+		var zNodes =[
+			{ name:"置业部：王建勋（负责人）", open:true,isParent:true,children:[
+			{ name:"平台中心：汪涛（分管总监）", open:true,
+				children: [
+					{name:"投资部：刘晓川（经理）",children:[
+						{name:"朱雪（项目投资经理）"}
+					]},
+					{name:"前期部：陈刚（经理）",children:[
+						{name:"蒋丹丹（前期主管）"},
+						{name:"前期主管：朱雪"}
+					]},
+					{name:"设计部经理：王蕾",children:[
+						{name:"总工：张蘶"},
+						{name:"智能化设计主管：何乐"},
+						{name:"设计助理：夏莹"},
+						{name:"结构设计主管：袁静"},
+						{name:"设计PM：吕程"},
+						{name:"强电设计主管：王春燕"},
+						{name:"设计PM：顾德勤"}
+					]},
+					{name:"运营部经理：刘学锋",children:[
+						{name:"体系管理主管：程驰宇"},
+						{name:"计划运营主管：吴祥"},
+						{name:"运营专员：孙明"}
+					]},
+					{name:"采购合约部经理：王小平",children:[
+						{name:"合约工程师：潘燕华"},
+						{name:"采购工程师：麻品勇"},
+						{name:"采购工程师：朱天红"},
+						{name:"采购工程师：吴丽君"},
+						{name:"采购工程师：胡海燕"},
+						{name:"甑选工程师：徐岸瞟"}
+					]}
+				]},
+			{ name:"财务成本中心分管总监：李国军",open:true,
+				children: [
+					{ name:"财务部经理：孙薇",
+						children: [
+							{ name:"出纳：毛黎亮"},
+							{ name:"财务复审：顾莺莺"},
+							{ name:"财务复审：孙群英"},
+							{ name:"财务初审：庙诗娟"},
+							{ name:"财务初审：龚玲"},
+							{ name:"财务助理：阮檑"}
+						]},
+					{ name:"成本部经理：林丽兰",
+						children: [
+							{ name:"造价工程师：刘雪琴"},
+							{ name:"造价工程师：李元桐"},
+							{ name:"造价工程师：骆军花"},
+							{ name:"造价工程师：叶爽"},
+							{ name:"造价工程师：徐文武"},
+							{ name:"造价工程师：周玲"},
+							{ name:"造价工程师：陈绳辉"},
+							{ name:"造价工程师：邱丽婷"},
+							{ name:"造价工程师：徐钏"},
+							{ name:"造价工程师：张文欣"},
+							{ name:"造价工程师：张小莲"},
+							{ name:"造价工程师：刘日锐"},
+							{ name:"造价工程师：王伟君"},
+							{ name:"造价工程师：郭峰"}
+						]}
+				]},
+			{ name:"工程中心分管总监：邹澜", isParent:true,open:true,children: [
+					{ name:"工程管理部",
+						children: [
+							{ name:"总工：吴震邦"},
+							{ name:"专业工程技术主管：杨大军"},
+							{ name:"资料管理员：杨柳"}
+						]}
+				]}
+				]}
+		];
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		});
+		//-->
+	</SCRIPT>
+</HEAD>
+
+<BODY>
+
+<div class="content_wrap">
+	<div class="zTreeDemoBackground left">
+		<ul id="treeDemo" class="ztree"></ul>
+	</div>
+</div>
+</BODY>
+</HTML>

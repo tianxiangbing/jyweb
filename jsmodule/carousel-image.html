@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link href='stylesheets/css.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+  <title>js组件-js插件-jquery插件-轮播图片-支持手机滑动</title> </head>
+  <meta name="keywords" content="js组件,js插件,jquery插件,前端组件,require插件,ui插件"/>
+  <meta name="description" content="这里是一些开源的js插件，其中支持jquery、zepto、requirejs的插件，有日历、弹窗、上传等。轮播图片-支持手机滑动" />
+  <body>
+    <div id="header">
+      <div class="inner">
+        <h1>carousel-image</h1>
+        <h2>JS组件-轮播图片-支持手机滑动</h2>
+        <a href="https://github.com/tianxiangbing/carousel-image" target="_blank" class="button"><small>代码在这里</small> GitHub</a>
+        <div style="position:absolute;right:180px;top:0px;">
+          <iframe src="http://ghbtns.com/github-btn.html?user=tianxiangbing&repo=carousel-image&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" id="gh-watchers" height="20"></iframe>
+        </div>
+      </div>
+    </div>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+<ul class="menu"><li><a href="index.html">js组件首页</a></li><li><a href="/index.html" target="_blank">JY库</a></li><li><a href="/dev.htm" target="_blank" >分享区</a></li><li><a href="/demo.html" target="_blank">技术博文</a></li><li><a href="/games.html" target="_blank">JY游戏</a></li></ul>
+﻿<aside id="sidebar">
+	<a href="https://github.com/tianxiangbing/carousel-image/archive/master.zip" target="_blank" class="button">
+		<small>Download</small>
+		.zip file
+	</a>
+	<a href="https://github.com/tianxiangbing/carousel-image" target="_blank" class="button">
+		<small>Code</small>
+		源码
+	</a>
+	<p class="repo-owner"><a href="https://github.com/tianxiangbing/carousel-image" target="_blank">carousel-image</a> is maintained by <a href="https://github.com/tianxiangbing" target="_blank">tianxiangbing</a>.</p>
+	<p>本站点所有的资源均在github上可以查看源代码 <a href="https://www.github.com/tianxiangbing" target="_blank"> GitHub</a></p>
+</aside>
+
+
+<link rel="stylesheet" type="text/css" href="example/carousel-image/carousel-image.css">
+          <h1>
+<a id="carousel-image" class="anchor" href="#carousel-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>carousel-image</h1>
+<h2>自定义宽高</h2>
+<div class="carousel-image carousel-image1" style="width:320px;">
+	<div>
+		<a href="mobile-upload.html"><img  src="images/ui/mobile-upload.png"/></a>
+		<a href="mobile-select-area.html"><img  src="images/ui/mobile-select-area.png" alt="js手机选择地区联动仿ios" title="js手机选择地区联动仿ios"/></a>
+		<a href="mobile-photo-preview.html"><img  src="images/ui/mobile-photo-preview.png"/></a>
+	</div>
+	<span class="carousel-num">
+	</span>
+</div>
+<h2>不定宽高自适应，循环</h2>
+      <!--scroll-->
+<div class="carousel-image carousel-image2" style="width:340px">
+	<div>
+		<a>
+			<img src="images/example/a4.png"/>
+		</a>
+		<a>
+			<img src="images/example/a1.png"/>
+		</a>
+		<a>
+			<img src="images/example/a2.png"/>
+		</a>
+		<a>
+			<img src="images/example/a3.png"/>
+		</a>
+		<a>
+			<img src="images/example/a5.png"/>
+		</a>
+	</div>
+	<span class="carousel-num">
+	</span>
+</div>
+
+<h2>不定宽高自适应，不循环</h2>
+<div class="carousel-image carousel-image3">
+	<div>
+		<a target="_blank" href="http://tt.ewanse.com/search/index?more=0&keywords=Apple%20Watch">
+			<img src="http://ott.wansecheng.com/weidian/advertise/1429860297667.jpg" />
+		</a>
+		<a target="_blank" href="javascript:;">
+			<img src="http://ott.wansecheng.com/weidian/advertise/1430102654706.jpg"/>
+		</a>
+	</div>
+	<span class="carousel-num">
+	</span>
+</div>
+
+<script type="text/javascript" src="example/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="example/require.js"></script>
+<script type="text/javascript">
+requirejs.config({
+	//By default load any module IDs from js/lib
+	baseUrl: 'example/carousel-image/',
+	paths: {
+		"$": '../jquery-1.11.2'
+	}
+});
+require(['carousel-image',"$"], function(CarouselImage,$) {
+	$('.carousel-image1').CarouselImage({
+		num :$('.carousel-image1 .carousel-num'),
+		width:320,
+		height:240
+	});
+	$('.carousel-image2').CarouselImage({
+		num :$('.carousel-image2 .carousel-num'),
+		repeat:true
+	});
+	$('.carousel-image3').CarouselImage({
+		num :$('.carousel-image3 .carousel-num'),
+		timer:5000
+	});
+});
+</script>
+<p>轮播图片，支持触摸滑动。</p>
+<h1>
+<a id="使用方法案例" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%A1%88%E4%BE%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用方法案例:</h1>
+<pre><code>&lt;script type="text/javascript" src="../src/zepto.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="../src/carousel-image.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+	$('.carousel-image1').CarouselImage({
+		num :$('.carousel-image1 .carousel-num'),
+		width:320,
+		height:240
+	});
+	$('.carousel-image2').CarouselImage({
+		num :$('.carousel-image2 .carousel-num'),
+		repeat:true
+	});
+	$('.carousel-image3').CarouselImage({
+		num :$('.carousel-image3 .carousel-num')
+	});
+	&lt;/script&gt;
+</code></pre>
+<h2>
+<a id="或者requirejs" class="anchor" href="#%E6%88%96%E8%80%85requirejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>或者requirejs：</h2>
+<pre><code>&lt;div class="carousel-image"&gt;
+	    &lt;div&gt;
+	        &lt;a&gt;
+	            &lt;img src="http://ott.wansecheng.com/weidian/wdgoods/1430073193462.jpg"/&gt;
+	        &lt;/a&gt;
+	        &lt;a&gt;
+	            &lt;img src="http://ott.wansecheng.com/weidian/wdgoods/1430073252953.png"/&gt;
+	        &lt;/a&gt;
+	        &lt;a&gt;
+	            &lt;img src="http://ott.wansecheng.com/weidian/wdgoods/1430073111420.jpg"/&gt;
+	        &lt;/a&gt;
+	    &lt;/div&gt;
+	    &lt;div class="carousel-num"&gt;
+	    &lt;/div&gt;
+	&lt;/div&gt;
+	&lt;script type="text/javascript" src="../src/zepto.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="../src/require.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+	requirejs.config({
+	    //By default load any module IDs from js/lib
+	    baseUrl: '../src',
+	    paths: {
+	        $: 'zepto'
+	    }
+	});
+	require(['carousel-image',"$"], function(CarouselImage,$) {
+	    var cs = new CarouselImage();
+	    cs.init({
+	        target:$('.carousel-image'),
+	        num:$('.carousel-num')
+	    });
+	});
+	&lt;/script&gt;
+</code></pre>
+<h1>
+<a id="api-属性方法及回调" class="anchor" href="#api-%E5%B1%9E%E6%80%A7%E6%96%B9%E6%B3%95%E5%8F%8A%E5%9B%9E%E8%B0%83" aria-hidden="true"><span class="octicon octicon-link"></span></a>API 属性、方法及回调：</h1>
+<h2>
+<a id="target" class="anchor" href="#target" aria-hidden="true"><span class="octicon octicon-link"></span></a>target:</h2>
+<pre><code>    表示是在这个容器内的元素会触发事件,它应该有个子级的容器，方便动画的优化
+</code></pre>
+<h2>
+<a id="num" class="anchor" href="#num" aria-hidden="true"><span class="octicon octicon-link"></span></a>num:</h2>
+<pre><code>    本意是以显示当前索引的数字表示，但现在用样式把数字隐藏了，如果要显示数字样式，可自行更改样式文件
+</code></pre>
+<h2>
+<a id="width" class="anchor" href="#width" aria-hidden="true"><span class="octicon octicon-link"></span></a>width:</h2>
+<pre><code>    宽度  (如果不设置将按第一张<b>加载完成</b>图片的大小来等比压缩显示)
+</code></pre>
+<h2>
+<a id="height" class="anchor" href="#height" aria-hidden="true"><span class="octicon octicon-link"></span></a>height:</h2>
+<pre><code>    高度 (如果不设置将按第一张<b>加载完成</b>图片的大小来等比压缩显示)
+</code></pre>
+<h2>
+<a id="timer" class="anchor" href="#timer" aria-hidden="true"><span class="octicon octicon-link"></span></a>timer:</h2>
+<pre><code>   动画延时
+</code></pre>
+<h2>
+<a id="animate" class="anchor" href="#animate" aria-hidden="true"><span class="octicon octicon-link"></span></a>animate:</h2>
+<pre><code>  动画时间
+</code></pre>
+
+<h1>其它组件推荐</h1>
+<ul class="uilist" id="modulelist">
+	<li>
+		<a href="calendar.html"><img  src="images/ui/calendar.jpg"/></a>
+		<a href="calendar.html" class="m-title">日历、日期、calendar</a>
+		<a href="https://github.com/tianxiangbing/calendar" target="_blank" class="a_code">Code</a>
+		<a href="calendar.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="dialog.html"><img  src="images/ui/dialog.jpg"/></a>
+		<a href="dialog.html" class="m-title">浮层、弹窗、dialog</a>
+		<a href="https://github.com/tianxiangbing/dialog" target="_blank" class="a_code">Code</a>
+		<a href="dialog.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="mobile-upload.html"><img  src="images/ui/mobile-upload.jpg"/></a>
+		<a href="mobile-upload.html" class="m-title">h5上传图片、upload</a>
+		<a href="https://github.com/tianxiangbing/mobile-upload" target="_blank" class="a_code">Code</a>
+		<a href="mobile-upload.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="scroll-load.html"><img  src="images/ui/scroll-load.jpg"/></a>
+		<a href="scroll-load.html" class="m-title">js的滚动加载内容</a>
+		<a href="https://github.com/tianxiangbing/scroll-load" target="_blank" class="a_code">Code</a>
+		<a href="scroll-load.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="mobile-select-area.html"><img  src="images/ui/mobile-select-area.jpg" alt="js手机选择地区联动仿ios" title="js手机选择地区联动仿ios"/></a>
+		<a href="mobile-select-area.html" class="m-title">js手机选择地区联动仿ios</a>
+		<a href="https://github.com/tianxiangbing/mobile-select-area" title="js手机选择地区联动仿ios"/ target="_blank" class="a_code">Code</a>
+		<a href="mobile-select-area.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="mobile-photo-preview.html"><img  src="images/ui/mobile-photo-preview.jpg"/></a>
+		<a href="mobile-photo-preview.html" class="m-title">js实现手机端图片预览</a>
+		<a href="https://github.com/tianxiangbing/mobile-photo-preview" target="_blank" class="a_code">Code</a>
+		<a href="mobile-photo-preview.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="mobile-select-date.html"><img  src="images/ui/mobile-select-date.jpg"/></a>
+		<a href="mobile-select-date.html" class="m-title">js实现手机端选择日期</a>
+		<a href="https://github.com/tianxiangbing/mobile-select-date" target="_blank" class="a_code">Code</a>
+		<a href="mobile-select-date.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="carousel-image.html"><img  src="images/ui/carousel-image.jpg"/></a>
+		<a href="carousel-image.html" class="m-title">轮播图片、支持手机滑动</a>
+		<a href="https://github.com/tianxiangbing/carousel-image" target="_blank" class="a_code">Code</a>
+		<a href="carousel-image.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="upload.html"><img  src="images/ui/upload.jpg"/></a>
+		<a href="upload.html" class="m-title">iframe上传文件upload</a>
+		<a href="https://github.com/tianxiangbing/upload" target="_blank" class="a_code">Code</a>
+		<a href="upload.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="click-progress.html"><img  src="images/ui/click-progress.jpg"/></a>
+		<a href="click-progress.html" class="m-title">点击的进度条</a>
+		<a href="https://github.com/tianxiangbing/click-progress" target="_blank" class="a_code">Code</a>
+		<a href="click-progress.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="word-count.html"><img  src="images/ui/word-count.jpg"/></a>
+		<a href="word-count.html" class="m-title">文本框计数统计</a>
+		<a href="https://github.com/tianxiangbing/word-count" target="_blank" class="a_code">Code</a>
+		<a href="word-count.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="lazy-load.html"><img  src="images/ui/lazy-load.gif"/></a>
+		<a href="lazy-load.html" class="m-title">图片的懒加载</a>
+		<a href="https://github.com/tianxiangbing/lazy-load" target="_blank" class="a_code">Code</a>
+		<a href="lazy-load.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="image-zooming.html"><img  src="images/ui/image-zooming.jpg"/></a>
+		<a href="image-zooming.html" class="m-title">图片放大镜</a>
+		<a href="https://github.com/tianxiangbing/image-zooming" target="_blank" class="a_code">Code</a>
+		<a href="image-zooming.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="paging.html"><img  src="images/ui/paging.jpg"/></a>
+		<a href="paging.html" class="m-title">ajax分页插件paging</a>
+		<a href="https://github.com/tianxiangbing/paging" target="_blank" class="a_code">Code</a>
+		<a href="paging.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="query.html"><img  src="images/ui/query.jpg"/></a>
+		<a href="query.html" class="m-title">url参数和表单json参数</a>
+		<a href="https://github.com/tianxiangbing/query" target="_blank" class="a_code">Code</a>
+		<a href="query.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="table.html"><img  src="images/ui/table.jpg"/></a>
+		<a href="table.html" class="m-title">table表格组件</a>
+		<a href="https://github.com/tianxiangbing/table" target="_blank" class="a_code">Code</a>
+		<a href="table.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="autosearch.html"><img  src="images/ui/autosearch.jpg"/></a>
+		<a href="autosearch.html" class="m-title">自动搜索提示autosearch</a>
+		<a href="https://github.com/tianxiangbing/autosearch" target="_blank" class="a_code">Code</a>
+		<a href="autosearch.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="format-number.html"><img  src="images/ui/format-number.jpg"/></a>
+		<a href="format-number.html" class="m-title">数字格式化千分位</a>
+		<a href="https://github.com/tianxiangbing/format-number" target="_blank" class="a_code">Code</a>
+		<a href="format-number.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="network.html"><img  src="images/ui/network.jpg"/></a>
+		<a href="network.html" class="m-title">ajax的扩展network</a>
+		<a href="https://github.com/tianxiangbing/network" target="_blank" class="a_code">Code</a>
+		<a href="network.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="loading.html"><img  src="images/ui/loading.jpg"/></a>
+		<a href="loading.html" class="m-title">loading加载效果</a>
+		<a href="https://github.com/tianxiangbing/loading" target="_blank" class="a_code">Code</a>
+		<a href="loading.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="tip.html"><img  src="images/ui/tip.jpg"/></a>
+		<a href="tip.html" class="m-title">js提示组件tip</a>
+		<a href="https://github.com/tianxiangbing/tip" target="_blank" class="a_code">Code</a>
+		<a href="tip.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="select.html"><img  src="images/ui/select.jpg"/></a>
+		<a href="select.html" class="m-title">模拟select下拉选择框</a>
+		<a href="https://github.com/tianxiangbing/select" target="_blank" class="a_code">Code</a>
+		<a href="select.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="localStorage-cache.html"><img src="images/ui/localStorage-cache.jpg" alt="localStorage-cache本地缓存管理"/></a>
+		<a href="localStorage-cache.html" class="m-title">localStorage-cache本地缓存管理</a>
+		<a href="https://github.com/tianxiangbing/localStorage-cache" target="_blank" class="a_code">Code</a>
+		<a href="localStorage-cache.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="area.html"><img src="images/ui/area.jpg" alt="地区联动选择pc版"/></a>
+		<a href="area.html" class="m-title">地区联动选择pc版</a>
+		<a href="https://github.com/tianxiangbing/area" target="_blank" class="a_code">Code</a>
+		<a href="area.html"  class="a_code">Demo & API</a>
+	</li>
+	<li>
+		<a href="audio.html"><img src="images/ui/audio.jpg" alt="音频播放器样式"/></a>
+		<a href="audio.html" class="m-title">音频播放器样式</a>
+		<a href="https://github.com/tianxiangbing/audio" target="_blank" class="a_code">Code</a>
+		<a href="audio.html"  class="a_code">Demo & API</a>
+	</li>
+</ul>
+
+        </section>
+      </div>
+    </div>
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255182337'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1255182337' type='text/javascript'%3E%3C/script%3E"));</script>
+    <div style="height:24px;line-height:24px;border:1px solid #ccc;background-color:#f2f2f2;position:fixed;top:0;width:100%;z-index:1;font-size:12px;">源码在github上托管，请尽量到github上下载最新代码！也可以提交Issues. <strong>如果您发现demo无法使用时，请多刷新几次,可能是js文件没有加载成功。</strong></div>
+<script src="javascripts/main.js"></script>
+  </body>
+</html>

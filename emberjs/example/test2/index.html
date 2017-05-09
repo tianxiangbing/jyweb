@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ember-data</title>
+	<script src="http://localhost:9090/livereload.js"></script>
+</head>
+<body>
+	<script type="text/x-handlebars" id="index">
+	{{input value=title}}
+	<button {{action "add"}}>添加</button>
+	<ol>
+	{{#each model}}
+	<li>{{title}} <button {{action "del" this}}>删除</button>{{#link-to "info" this}}查看{{/link-to}}</li>
+	{{/each}}
+	</ol>
+	{{outlet}}
+      <div style="position:fixed;bottom:20px;">
+        <a href="http://www.lovewebgames.com/">JY官网</a>
+        <a href="http://www.lovewebgames.com/jsmodule/">js组件</a>
+      </div>
+	</script>
+	<script type="text/x-handlebars" id="info">
+		<h1>{{title}}</h1>
+		<p>{{desc}}</p>
+		<div><button {{action "edit"}}>编辑</button></div>
+		{{#if isediting}}
+			{{partial 'info/edit'}}
+		{{/if}}
+	</script>
+	<script type="text/x-handlebars" id="info/edit">
+		<div>{{input value=title}}</div>
+		<div>{{textarea value=desc}}</div>
+		<div><button {{action "update"}}>保存</button></div>
+	</script>
+  <script type="text/javascript" src="../../bower_components/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/handlebars/handlebars.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/ember/ember-template-compiler.js"></script>
+  <script type="text/javascript" src="../../bower_components/ember/ember.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/ember-data/ember-data.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/ember-localstorage-adapter/localstorage_adapter.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

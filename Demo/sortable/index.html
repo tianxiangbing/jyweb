@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>关于jquery中的sortable排序之后的保存状态的办法-QQ群5678537群主田想兵敬上</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="Content-Language" content="zh-cn" />    
+    <meta name="robots" content="all" />    
+    <meta name="author" content="田想兵" />
+    <meta name="Copyright" content="Copyright lovewebgames.com All Rights Reserved." />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta http-equiv="imagetoolbar" content="false" />
+
+	<link type="text/css" rel="stylesheet" href="../style/css.css" media="all" />
+    <script src="../js/com.js" type="text/javascript" charset="gb2312"></script>
+
+</head>
+<body>
+<div><a href="../">返回至列表页</a>请记住本站地址：<a href="http://www.lovewebgames.com/demo">http://www.lovewebgames.com/demo</a>[<a href="javascript:addfavorite()">收藏</a>][<a href="javascript:copy()">分享</a>]</div>
+    <h1>
+        关于jquery中的sortable排序之后的保存状态的办法</h1>
+    <h2>
+        标签:jquery,sortable,保存状态,排序 作者:田想兵</h2>
+    <div id='content'>
+    <p>点击<a href="sortable.html" target="_blank">本文实例演示</a></p>
+        <p>
+            作为群主，很久都没有在群里发表过技术文章了，有点过意不去了。所以今天呢，老话从谈一回，讲讲jquery组件里的sortable(排序)。还是希望大家多发表下自己的学习经验，也可当作以后的一种财富。如果你还没有加入asp.net技术交流群，欢迎你加入群号：5678537或70210212.
+        </p>
+        <p>
+            重申下，本人能力有限，所以如果有地方说错了，请包涵，也希望与之交流，共同进步。
+        </p>
+        <p>
+            其实在前年的这个时候，我就有用过这个sortable组件，那时候搞了个个人网站（可惜后来关了），首页就用到了这种拖拽的效果。当时也就从<a href='http://www.jqueryui.com'>jquery的官方网站</a>上抄了几句搞上去，后来发现用处不大，还挺慢。汗～～～以至于到今天早上也没搞清楚怎么样才能把排序后的结果保存起来，正好现在公司要做一个这样的功能，就又从新学习了下。
+        </p>
+        <p>
+            首先，在<a href='http://jqueryui.com/demos/sortable/'>jquery的官方demo</a>(http://jqueryui.com/demos/)上找到了相似的代码。我所要的叫就是portlets（http://jqueryui.com/demos/sortable/portlets.html）这种效果。就像igoogle首页那样的。冒似很简单，把要引用的js都加入后，然后几行代码就完事了。
+        </p>
+        <div class="code">
+            <p>
+                <br>
+                &lt;script type=&quot;text/javascript&quot;&gt;<br>
+                $(function() {<br>
+                $(&quot;.column&quot;).sortable({<br>
+                connectWith: '.column'<br>
+                });<br>
+                });<br>
+                &lt;/script&gt;</p>
+            <p>
+                html代码省略...详情请查看http://www.lovewebgames.com/demo/sortable 或 http://jqueryui.com/demos/sortable/portlets.html</p>
+        </div>
+        <p>
+            写完这些之后，你就可以试着拖拽了。有没有觉得很有成就感？不错，小伙子，有前途。sortable 有许多的参数，详细的自己去官网上看吧！只说下这里的connectWith:'.column'是什么意思，它就是说，凡是class为column的，它都可以把一个column的portlet拖到另一个column里去。试试你就知道了。当然今天的重点并不是怎么样去拖拽它，而是拖拽之后刷新还保存着当时的顺序。</p>
+        <p>
+            遇到点小困难了，不过那也得上啊，不然以后都被女孩子肯嫁给你！^_^ 于是乎我就开始google百度了。有人说用sortable的serialize方法可以得到一个ID数组，可惜，我确实没有得到。如果你做到了也请你tell
+            me 一下;还有人说用toArray方法也可以得到ID数组.这次也确实得到了。不过非常令人讨厌的事发生了。
+            <div class="code">
+                $('.column').sortable('toArray');</div>
+        </p>
+        <p>
+            这样也只能得到第一个class是column里的ID数组.用each()? I tried, but not work;可能你能做到，也请你告诉我吧！所以只能转走其他方法了。或许你会说，这还不简单么，直接把整个网页的布局存起来不就OK了？哈哈，I
+            also think so！通过iedeveloper调试工具发现，它们拖动之后发现了改变，变的不是样式，而是div的先后顺序。如果我把整个内容保存起来的话，似乎也行得通，不过量就有点大了，也不适于动态的内容。怎么办呢，于是我就想着只存它们的ID顺序不就O了吗?于是我又给它们每人一个ID了。
+        </p>
+        <p>
+            万事开头难，有了这个思路了之后，你是否已经厕所打开了呢？我先去下便下，谢谢开门，马上回来！</p>
+        <p>
+            接下来就一步步按照这个思路来吧。首先是获取到所有的column.
+            <div class="code">
+                $.each($(".column"), function(m) {}</div>
+        </p>
+        <p>
+            再找每个column下的portlet;
+            <div class="code">
+                $.each($(".column"), function(m) {<br />
+                $.each($(this).children(".portlet"), function(d) {<br />
+                }</div>
+        </p>
+        <p>
+            接着就是把它们按自己的方式存起来。
+            <div class="code">
+                function saveLayout(){
+                <br>
+                var list = &quot;&quot;;<br>
+                $.each($(&quot;.column&quot;), function(m) {<br>
+                list += $(this).attr('id') + &quot;:&quot;;<br>
+                $.each($(this).children(&quot;.portlet&quot;), function(d) {<br>
+                list += $(this).attr('id') + &quot;@&quot;;<br>
+                })<br>
+                list += &quot;|&quot;;<br>
+                })<br>
+                $.cookie(&quot;list&quot;, list)}</div>
+            这里还用到了另一组件jquery.cookie</p>
+        <p>
+            改下开始的
+            <div class="code">
+                $(&quot;.column&quot;).sortable({<br>
+                connectWith: '.column',<br>
+                stop: saveLayout<br>
+                });
+            </div>
+            stop是指拖拽结束后触发的事件.
+        </p>
+        <p>
+            最后就是按顺序读到容器里去，这里我就不多说了，只可意会，不能言传哈。贴代码吧:
+            <div class="code">
+                var list = $.cookie(&quot;list&quot;); //获取cookie里的list值<br>
+                //alert(list)<br>
+                var arrColumn = list.split('|');<br>
+                $.each(arrColumn, function(m, n) {<br>
+                var elemId = n.split(':')[0]; //容器ID<br>
+                var arrRow = n.split(':')[1] ? n.split(':')[1].split('@') : &quot;&quot;; //单个序列ID<br>
+                $.each(arrRow, function(m, n) {<br>
+                if (n) {//排除空值<br>
+                $(&quot;#&quot; + elemId).append($(&quot;#sb&quot; + n).attr('id', n))//把序列填加进容器<br>
+                }<br>
+                });<br>
+                })</div>
+        </p>
+        <p>
+            好了，今天就这样吧，打字排版花了我一个小时了，公司给我的是一小时16块RMB。所以BYE！
+            <br />
+            如果你有任何的问题，都不要来问我，我很忙。到QQ群5678537里找其他人探讨吧！
+        </p>
+        <p>本文demo:http://www.lovewebgames.com/demo/sortable </p>
+    </div>
+    <div class="correlation">
+    	<div>相关文章</div>
+            <ul>
+            <li><a href="../openDiv/" target="_blank" title="用javascript面向对象的方式制作弹出层">用javascript面向对象的方式制作弹出层</a></li>
+            <li><a href="../sortable/" target="_blank" title="关于jquery中的sortable排序之后的保存状态的办法">关于jquery中的sortable排序之后的保存状态的办法</a></li>
+            <li><a href="../jstip/" target="_blank" title="封装自己的js提示信息jtip">封装自己的js提示信息jtip</a></li>
+            <li><a href="../roll/" target="_blank" title="js或css实现滚动广告的几种方案">js或css实现滚动广告的几种方案</a></li>
+            </ul>
+    </div>
+     <p>浙ICP备09082150号</p>
+<script src="http://s79.cnzz.com/stat.php?id=1776009&web_id=1776009&show=pic" language="JavaScript"></script>
+</body>
+</html>

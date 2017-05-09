@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>emberjs 初学记要</title>
+</head>
+<body>
+  <script type="text/x-handlebars">
+  {{#link-to "index"}}首页{{/link-to}}
+  {{#link-to "add"}}新增{{/link-to}}
+  {{outlet}}
+  </script>
+  <script type="text/x-handlebars" id="index">
+      <ol>
+      {{#each model}}
+      <li>{{title}}{{#link-to "info" this}}查看{{/link-to}} <a href="javascript:void(0)" {{action "del" index}}>删除</a></li>
+      {{/each}}
+      </ol>
+      {{outlet}}
+      <div style="position:fixed;bottom:20px;">
+        <a href="http://www.lovewebgames.com/">JY官网</a>
+        <a href="http://www.lovewebgames.com/jsmodule/">js组件</a>
+      </div>
+  </script>
+  <script type="text/x-handlebars" id="info">
+   <div style="float:left;">
+    <h1>{{model.title}}</h1>
+    <p>
+    {{model.content}}
+    </p>
+    {{#if isEditing}}
+      {{partial 'post/edit'}}
+    {{else}}
+      <button {{action "edit"}}>编辑</button>
+    {{/if}}
+    </div>
+  </script>
+  <script type="text/x-handlebars" id="add">
+  <table>
+    <tr>
+      <td>标题</td>
+      <td><input type="text" id="title"/></td>
+    </tr>
+    <tr>
+      <td>内容</td>
+      <td><textarea id="content"></textarea></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="button" value="确认" {{action "new"}}></td>
+    </tr>
+  </table>
+  </script>
+ <script type="text/x-handlebars" id="post/edit">
+  <table>
+    <tr>
+      <td>标题</td>
+      <td>{{input type="text" value=title}}</td>
+    </tr>
+    <tr>
+      <td>内容</td>
+      <td>{{textarea value=model.content}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="button" value="确认" {{action "save"}}></td>
+    </tr>
+  </table>
+  </script>
+  <script type="text/javascript" src="../../bower_components/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/handlebars/handlebars.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/ember/ember-template-compiler.js"></script>
+  <script type="text/javascript" src="../../bower_components/ember/ember.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> 美丽约-(男生)主页</title>
+  <meta name="Author" content="前端:田想兵2013/3/27">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,男生主页">
+  <meta name="Description" content="美丽约男生主页">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../front/css/boxy.css" rel="stylesheet" type="text/css">
+  <link href="../front/css/uploadify.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../front/css/imgareaselect-default.css"/>
+  <style type="text/css">
+#cam{float:left; width:320px; height:300px; margin:50px}
+.btn{height:28px; line-height:28px; border:1px solid #d3d3d3; margin-top:10px; background:url(btn_bg.gif) repeat-x; cursor:pointer}
+#results{margin-top:50px}
+</style>
+ </head>
+ <body class="boybody">
+<!--#include virtual="top.html"-->
+<input type="button" value="上传相片" id="btn_uploadPhoto"/>
+<div class="uploadImgBox" id="uploadImgBox">
+	<div class="login clearfix registForm3">
+		<div class="findPwdBox">
+		
+			<form id="myFrom" action="regist3.php" method="post">
+				<input type="hidden" id="hd_swf" value="../front/js/plugin/uploadify.swf"/>
+				<input type="hidden" id="hd_uploader" value="../web/uploadify-v3.1/uploadify.php"/>
+				<input type="hidden" id="hd_img"/>
+				<input type="hidden" id="hd_positionX"/>
+				<input type="hidden" id="hd_positionY"/>
+				<input type="hidden" id="hd_width"/>
+				<input type="hidden" id="hd_token" value="123123edidkdkdk"/>
+				<div class="defaultImg">
+					
+				</div>
+				<div class="cutImg" style="display:none;">
+					<div class="border">
+						<div class="imgsrc">
+						</div>
+						<div class="tip">HD 高清图像</div>
+					</div>
+				</div>
+				<div class="uploadContent">
+					<div class="sourseImg" id="sourseImg"><span class="pic-wrap"></span></div>
+					<div id="queueID"></div>
+					<div class="upload"><input type="button" id="uploadify" class="loginButton" value="上 传"/><p>支持jpg,gif,png格式,单张10K-8M之间</p></div>
+					<div class="upload2">
+						<input type="submit" id="btn_successUpload" value="确认完成"/>
+						<input type="button" id="btn_uploadifyAgain" value="重新上传"/>
+						<ul>
+							<li><i class="icon xs"></i>显示区域选择</li>
+							<li><i class="icon xz"></i>移动选择区域</li>
+							<li><i class="icon bh"></i>变换选择区域</li>
+						</ul>
+					</div>
+				</div>
+				
+			</form>
+		</div>
+	</div>
+</div>
+
+<input type="button" value="举报" id="btn_report" ajaxUrl = "xxx.txt" />
+<input type="button" value="拉黑" id="btn_pullBlack" ajaxUrl = "xxx.txt"/>
+<input type="button" value="支付" id="btn_payit" ajaxUrl = "xxx.txt"/>
+ <div class="publishBox" id="reportBox">
+	<h3>举报对方</h3>
+	<div class="reportCause"><i></i>选择举报原因</div>
+	<div class="reportList clearfix">
+		<div class="item">
+			<input type="radio" value="1" name="chk_report" id="ck_1"/><label for="ck_1">骚扰信息</label>
+		</div>
+		<div class="item">
+			<input type="radio" value="1" name="chk_report" id="ck_2"/><label for="ck_2">色情消息</label>
+		</div>
+		<div class="item">
+			<input type="radio" value="1" name="chk_report" id="ck_3"/><label for="ck_3">个人资料不当</label>
+		</div>
+		<div class="item">
+			<input type="radio" value="1" name="chk_report" id="ck_4"/><label for="ck_4">盗用他人资料</label>
+		</div>
+	</div>
+	<div class="actionBtn"><a class="btnCreate" >发布举报信息</a><a class="btnCancel close">取消</a></div>
+ </div>
+  <div class="publishBox" id="pullBlackBox">
+	<h3>提示</h3>
+	<div class="reportCause"><i></i>您确定要将该用户加入黑名单吗？</div>
+	<p class="desc">加入黑名单后，将会阻止该用户和您的一切联系。</p>
+	<div class="actionBtn"><a class="btnCreate" >确定</a><a class="btnCancel close">取消</a></div>
+  </div>
+    <div class="publishBox" id="payit">
+    <h3>支付确认</h3>
+        <div class="reportCause"><i></i>请在新打开的支付宝页面上完成支付</div>
+        <p class="desc">付款完成前请不要关闭此窗口<br />完成付款后请根据您的实际情况点击下面的按钮</p>
+        <div class="actionBtn"><a class="btnCreate" >完成支付</a><a class="btnCancel close">支付遇到问题</a></div>
+    </div>
+    <div class="publishBox" id="payit2">
+    	<dl>
+        	<dt><img src="/uploads/1.jpg" width="60" height="60" alt="人物头像" title="人物头像" /></dt>
+            <dd>
+            	<h2>邀请她约会</h2>
+                <p><div class="icon13"></div>绿茶主题餐厅</p>
+            </dd>
+        </dl>
+        <p class="desc"><strong>单独邀请女生需要你建立一个公共约会</strong></p>
+        <div class="actionBtn padding238"><a class="btnCreate" >建立公共约会</a></div>
+    </div>
+     <div class="publishBox" id="payit3">
+    	<dl>
+        	<dt><img src="/uploads/1.jpg" width="60" height="60" alt="人物头像" title="人物头像" /></dt>
+            <dd>
+            	<h2>邀请她约会</h2>
+                <p><div class="icon13"></div>绿茶主题餐厅</p>
+            </dd>
+        </dl>
+        <p class="desc"><strong>单独邀请女生仅向会员开放，普通用户可以发布公共约会邀请</strong><br />普通用户只能靠发布公共约会吸引女生</p>
+        <div class="actionBtn"><a class="btnCreate2" >立即开通会员</a><a class="btnCancel close">去发布公共约会</a></div>
+    </div>
+    <a id="a_dialog1" href="#">赴约意向发送成功</a>
+    <a id="a_dialog2" href="#">允许对方聊天发送成功</a>
+    <a id="a_dialog3" href="#">加好友成功，你们可以聊天啦</a>
+    <div id="dialog1" class="hide">
+    	<P class="desc0"><span class="icon001"></span>赴约意向发送成功！</P>
+    </div>
+    <div id="dialog2" class="hide">
+    	<P class="desc0"><span class="icon002"></span>允许对方聊天发送成功！</P>
+    </div>
+    <div id="dialog3" class="hide">
+    	<P class="desc0"><span class="icon001"></span>加好友成功，你们可以聊天啦！</P>
+    </div>
+    <div class="publishBox receiveBox" id="videoAuthentication">
+	<form>
+	  <input type="hidden" id="hd_giftId" name="hd_giftId" value=""/>
+	  <div class="addNewAddress">
+		  <div class="clearfix">
+			<h3>领取礼物-视频认证</h3>
+			<div class="lft">
+				<div class="img"><img src="../uploads/examples/image-3.jpg"/></div>
+				<div class="name">阿罗波戒指</div>
+				<div>伤感少年</div>
+				<h5>赠言</h5>
+				<p>希望这是一个美好的开始，天生我才必有用，留取丹心照汗青。</p>
+			</div>
+			<div class="rght">
+				<div class="videocam"></div>
+				<h4>认证说明：</h4>
+				<p>美丽约是提供真实约会体验的平台，为了防止部分用户进行诈骗活动，领取礼物需要通过视频认证。您的视频照片若跟提供的头像照片差过大，将不能通过审核认证，不通过将会影响您能否领取礼物。</p>
+			</div>
+		</div>
+		<div class="actionBtn"><a class="btnCreate next" type="1">下一步</a><!--<input type="submit" class="hide"/>--></div>
+	  </div>
+	</form>
+</div>
+    
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/scrollLoad.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.boxy.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.uploadify-3.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.imgareaselect.pack.js"></script>
+<script type="text/javascript" src="../front/js/boy.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+<script type="text/javascript">
+$("#a_dialog1").click(function(){
+	//var payid = new Boxy($("#dialog1"),{modal:true});	
+	$.alert("赴约意向发送成功！",1);
+});
+$("#a_dialog2").click(function(){
+	//var payid = new Boxy($("#dialog2"),{modal:true});	
+	$.alert("允许对方聊天发送成功！",2);
+});
+$("#a_dialog3").click(function(){
+	//var payid = new Boxy($("#dialog3"),{modal:true});	
+	$.alert("加好友成功，你们可以聊天啦！",1);
+});
+</script>
+</body>
+</html>

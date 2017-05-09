@@ -1,0 +1,329 @@
+﻿
+<!DOCTYPE html> 
+<html> 
+	<HEAD> 
+  <TITLE> js插件实例 </TITLE> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <META name="Generator" content="EditPlus"> 
+  <META name="Author" content="田想兵"> 
+  <META name="Keywords" content="JY,javascript库,nodejs"> 
+  <META name="Description" content="JY是一个新的JavaScript库。 JY是一个快速和简洁的JavaScript库，它简化了HTML文档遍历，事件处理，动画，和快速Web开发的Ajax的设计，用来改变你编写JavaScript的方式。帮助你提升编写面向对象的javascript能力。"> 
+<!--<base href="http://www.lovewebgames.com"/>--> 
+   <link rel="stylesheet" type="text/css" href ="/css/css.css"/>  
+   <style> 
+	.ps{ 
+		position:absolute;border:0 none;box-shadow:none; 
+	} 
+  </style> 
+<script type="text/javascript" src="http://www.lovewebgames.com/scripts/jy.min.js"></script> 
+ </HEAD> 
+ 
+	  <link href="/css/boxy.css" rel="stylesheet" type="text/css"> 
+	  <link href="/css/uploadify.css" rel="stylesheet" type="text/css"> 
+	  <link href="/css/lightbox.css" rel="stylesheet" type="text/css"> 
+	  <link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css"/> 
+	 <link rel="stylesheet" type="text/css" href ="/css/plugin.css"/>  
+  <body> 
+ 
+    <!-- HEADER --> 
+        <div id="header_wrap" class="outer">
+        <div class="inner">
+          <a id="forkme_banner" href="https://github.com/tianxiangbing/JY">View on GitHub</a>
+
+          <h1 id="project_title"><a href="http://www.lovewebgames.com" title="JY首页"><img src="css/logo.png" width="178px" height="62px" alt="JY logo" title="JY logo"/></a></h1>
+			<ul class="menu"><li><a href="/">首页</a></li><li><a href="/plugin.html">插件</a></li><li><a href="http://www.lovewebgames.com/flash/" target="_blank">Flash Games</a></li><li><a href="http://www.lovewebgames.com/api.html">API</a></li><li><a href="https://github.com/tianxiangbing/JY" target="_blank">下载</a></li><li><a href="/demo.html">Demo</a></li><li><a href="/games.html">JY游戏</a></li></ul>
+			
+          <h2 id="project_tagline">javascript JY nodejs版</h2>
+            <div id="downloads">
+              <a class="zip_download_link" href="https://github.com/tianxiangbing/JY/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/tianxiangbing/JY/tarball/master">Download this project as a tar.gz file</a>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- MAIN CONTENT --> 
+    <div id="main_content_wrap" class="outer"> 
+      <div id="main_content" class="inner"> 
+	    <h1>js插件</h1> 
+	    <a name="1"></a> 
+	    <h2>文本提示插件</h2> 
+	    <div class="pluginbox">		 
+		<div class="row clearfix"> 
+			<div class="left">用户名：</div> 
+			<div class="right"><input type="text" class="inputText tipMsg2"  id="txt_name" msg="请输入用户名"/><div class="tip"></div></div> 
+		</div>				 
+		<div class="row clearfix"> 
+			<div class="left">详细描述：</div><div class="right"><textarea type="text" class="inputText tipMsg"  id="txt_desc" msg="请输入详细描述"></textarea><div class="tip"></div></div> 
+		</div> 
+	    </div> 
+	    <a name="2"></a> 
+	    <h2>判断提示插件</h2> 
+	    <div class="pluginbox content"> 
+		<div class="row clearfix" msg="请输入11位手机号码." errmsg ="您输入的手机号不正确!" > 
+			<div class="left">手机号：</div><div class="right"><input type="text" class="inputText tipMsg2" id="txt_Phone" name="txt_Phone" ajaxurl="validate.txt" msg="手机号"/><div class="tip"></div></div> 
+		</div> 
+		<div class="row clearfix" msg="请输入昵称." errmsg ="您输入的昵称格式不正确!" > 
+			<div class="left">昵称：</div><div class="right"><input type="text" class="inputText tipMsg2"  id="txt_nick" msg="输入昵称"/><div class="tip"></div></div> 
+		</div> 
+		<div class="row clearfix"> 
+			<input type="submit" class="bigButton btn_findPwd" id="btn_success" value="完 成"/> 
+		</div> 
+	    </div> 
+	    <a name="3"></a> 
+	    <h2>滚动加载插件</h2> 
+	    <div class="pluginbox"> 
+		<div class="scrollLoad"> 
+			<div class="listLoad"> 
+				<div class="item"><img src="/imgs/box.png"/>我是苍老湿，我为自己代言。</div> 
+				<div class="item"><img src="/imgs/box.png"/>我是苍老湿，我为自己代言。</div> 
+				<div class="item"><img src="/imgs/box.png"/>我是苍老湿，我为自己代言。</div> 
+				<div class="item"><img src="/imgs/box.png"/>我是苍老湿，我为自己代言。</div> 
+			</div> 
+			<div class="pager"><a href="#">加载中……</a></div> 
+		</div> 
+	    </div> 
+	    <a name="4"></a> 
+	    <h2>百度地图提示插件</h2>	 
+	   <div class="pluginbox">	   
+		 <div class="mapContainer" id="mapContainer"></div> 
+		 <textarea id="mapDataList" style="display:none;"> 
+			[{"x":120.188482, "y": 30.249866,"title":"香格拉大饭店", "desc":"这是一家神奇的饭店，特色菜是酸辣土豆丝","money":200,"url":"/index.html","img":"/imgs/box.png","type":1},{"x":120.194385, "y":30.246152, "title":"重庆酸菜馆", "desc":"这家店相当有档次，它的特色菜是水煮鱼片","money":100,"url":"/index.html","img":"/imgs/box.png","type":4},{"x":120.17866, "y":30.183695, "title":"沙县小吃", "desc":"这里的拌面堪称一绝","money":15,"url":"/index.html","img":"/imgs/box.png","type":2}] 
+		 </textarea> 
+		<input type="hidden" value="/imgs/webmap.png" id='icon_url' /> 
+	   </div> 
+	    <a name="5"></a> 
+	    <h2>静态分页插件</h2> 
+	    <div class="pluginbox clearfix">		 
+		<div class="sort"> 
+			<h3>来自的约会</h3> 
+			<ul> 
+				<li><a href="#" ref="0"><i></i>全部约会</a></li> 
+				<li><a href="#" ref="123"><i></i>茶餐厅1</a></li> 
+				<li><a href="#" ref="2"><i></i>咖啡厅2</a></li> 
+				<li><a href="#" ref="3"><i></i>农家小店3</a></li> 
+				<li><a href="#" ref="3"><i></i>农家小店7</a></li> 
+				<li><a href="#" ref="4"><i></i>8号酒店4</a></li> 
+				<li><a href="#" ref="123"><i></i>茶餐厅5</a></li> 
+				<li><a href="#" class="current" ref="2"><i></i>咖啡厅6</a></li> 
+				<li><a href="#" ref="4"><i></i>8号酒店8</a></li> 
+				<li><a href="#" ref="123"><i></i>茶餐厅9</a></li> 
+				<li><a href="#" ref="2"><i></i>咖啡厅10</a></li> 
+				<li><a href="#" ref="3"><i></i>农家小店11</a></li> 
+				<li><a href="#" ref="4"><i></i>8号酒店12</a></li> 
+			</ul> 
+			<div class="sortpager"><i>7</i><em>/9</em><a class="prev enable"><</a><a class="next">></a></div> 
+		</div> 
+	    </div> 
+	    <a name="6"></a> 
+	    <h2>输入内容字数计算插件</h2> 
+	    <div class="pluginbox"> 
+		<h5><i></i>本次内容</h5><div class="counter">还可以输入<em>60</em>字</div> 
+		<div class="desc"> 
+			<textarea id="txt_publishContent" name="declaration"></textarea> 
+			<input type="submit" class="btnCreate" value="发布"> 
+		</div> 
+	    </div> 
+	    <a name="7"></a> 
+	    <h2>弹窗插件根据boxy改装</h2> 
+	    <div class="pluginbox"> 
+		<a href="#7" class="boxy">点我弹窗</a> 
+		  <div class="publishBox" id="publishBox"> 
+			<h3>提示</h3> 
+			<div class="reportCause"><i></i>您确定要将该用户加入黑名单吗？</div> 
+			<p class="desc">加入黑名单后，将会阻止该用户和您的一切联系。</p> 
+			<div class="actionBtn"><a class="btnCreate" >确定</a><a class="btnCancel close">取消</a></div> 
+		 </div> 
+	    </div> 
+	    <a name="8"></a> 
+	    <h2>上传图片并截图插件</h2> 
+	    <div> 
+	    <iframe src="/uploadify.html" width="960px" height="600px" frameborder="0"></iframe> 
+	    </div> 
+	</div> 
+    </div> 
+	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script> 
+	<script type="text/javascript" src="/js/plugin/msgTip.js"></script> 
+	<script type="text/javascript" src="/js/plugin/scrollLoad.js"></script> 
+	<script type="text/javascript"> 
+		$(".tipMsg2").tipMsg({top:5,left:5});		 
+		$(".tipMsg").tipMsg({top:10,left:5});		 
+	</script> 
+	<script type="text/javascript"> 
+		var validateObj ={phone:false,nick:false}; 
+		$(".content .row[msg] input").focus(function(){ 
+			var content = $(this).closest(".row"); 
+			showTip(2,content.find(".tip"),content.attr("msg")); 
+			checkButton(); 
+		}); 
+		function checkButton(){		 
+			var isvalidate= true; 
+			//console.log(validateObj) 
+			for (var o in validateObj ){ 
+				if (validateObj [o] ==false){ 
+					isvalidate=false; 
+				} 
+			} 
+			if (isvalidate){ 
+				$("#btn_success").addClass("actived"); 
+				return true; 
+			}else{ 
+				$("#btn_success").removeClass("actived"); 
+				return false; 
+			} 
+		} 
+		function showTip(type,tip,msg){ 
+			tip.removeClass("ok").removeClass("wrong").removeClass("ts"); 
+			if (type===1){ 
+				tip.addClass("ok").html(''); 
+			}else if (type == 0){ 
+				tip.addClass("wrong").html("<i></i><s></s>"+ msg); 
+			}else{ 
+				tip.addClass("ts").html("<i></i>"+ msg); 
+			} 
+		} 
+		 
+		$("#txt_Phone").blur(function(){ 
+			var content = $(this).closest(".row"); 
+			if (!/^1\d{10}$/.test($(this).val())){ 
+				showTip(0,content.find(".tip"),"手机号码格式错误，请重新输入。"); 
+				validateObj.phone=false; 
+				return false; 
+			}else{ 
+				showTip(1,content.find(".tip")); 
+				validateObj.phone=true;				 
+			} 
+		}); 
+		$("#txt_nick").blur(function(){ 
+			var content = $(this).closest(".row"); 
+			var len =$(this).val().replace(/[^\x00-\xff]/g,"**").length 
+			if (len <4 ||len >20){ 
+				showTip(0,content.find(".tip"),"请输入2到10个字符长度的昵称。"); 
+				validateObj.nick=false; 
+				return false; 
+			}else{ 
+				showTip(1,content.find(".tip")); 
+				validateObj.nick=true; 
+			} 
+		}); 
+		$(".content .row[msg] input").keyup(function(){ 
+			checkButton(); 
+		}).blur(checkButton); 
+	</script> 
+	<script type="text/javascript"> 
+		$(".listLoad").scrollLoad({scrollObj:$(".scrollLoad"),totalPage:5, loading:$(".pager"),ajaxUrl:"ajaxtest.html",ajaxData:{lastReqTime:new Date()},pageIndex:1}); 
+	</script> 
+ 
+	<script  type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script> 
+	<script type="text/javascript" src="/js/plugin/InfoBox.js"></script> 
+	<script type="text/javascript" src="/scripts/map.js"></script> 
+ 
+	<script type="text/javascript" src="/js/plugin/jquery.staticpager.js"></script> 
+	<script type="text/javascript">		 
+		$(".sort").StaticPager($(".sortpager")); 
+	</script> 
+	<script type="text/javascript" src="/js/plugin/computeNumber.js"></script> 
+	<script type="text/javascript"> 
+		var isNum=false; 
+		if($().ComputeNumber){ 
+			var obj = $("#txt_publishContent").ComputeNumber({ 
+				changeCallBack:function(num){ 
+					var n = 60-num; 
+					if (n<0){ 
+						$(".counter em").css({color:"#E44443"}); 
+						isNum = false; 
+					}else if(num==0){ 
+						isNum = false; 
+					}else{ 
+						$("#txt_publishContent").css({borderColor:"#E0E0E0"}); 
+						$(".counter em").css({color:"#808080"}); 
+						isNum = true; 
+					} 
+					$(" .counter em").html(60-num); 
+				},isByte:true 
+			}); 
+		} 
+		 
+		$(".btnCreate").click(function(){ 
+			if (isNum){ 
+				return true; 
+			}else 
+			{ 
+				$("#txt_publishContent").css({borderColor:"#E44443",backgroundColor:"#FFbbbb"}).next().css({color:"#000"}); 
+				setTimeout(function(){ 
+					$(" #txt_publishContent").css({borderColor:"#E0E0E0",backgroundColor:"#FFF"}).next().css({color:"#aaa"}); 
+					setTimeout(function(){ 
+					$(" #txt_publishContent").css({borderColor:"#E44443",backgroundColor:"#FFbbbb"}).next().css({color:"#000"}); 
+					setTimeout(function(){ 
+						$(" #txt_publishContent").css({borderColor:"#E0E0E0",backgroundColor:"#FFF"}).next().css({color:"#aaa"}); 
+					},100); 
+					},100); 
+				},100); 
+				return false;		 
+			} 
+		}); 
+	</script> 
+	<script type="text/javascript" src="/js/plugin/jquery.boxy.js"></script> 
+	<script type="text/javascript"> 
+		$(".boxy").click(function(){ 
+			var dialog = new Boxy($("#publishBox"),{modal:true}); 
+		}); 
+	</script> 
+    <!-- FOOTER  --> 
+    <div style="position:absolute;top:0px;right:200px;width:470px;height:65px;">
+			<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-5582667370460391";
+				/* 小横条 */
+				google_ad_slot = "7072747020";
+				google_ad_width = 468;
+				google_ad_height = 60;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+</div>
+<div style="position:absolute;top:220px;right:0;width:125px;height:605px;">
+	<script type="text/javascript"><!--
+	google_ad_client = "ca-pub-5582667370460391";
+	/* 大坚幅 */
+	google_ad_slot = "2463395546";
+	google_ad_width = 120;
+	google_ad_height = 600;
+	//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+</div>
+ <div id="footer_wrap" class="outer">
+      <div class="inner"><ul class="menu"><li><a href="/">首页</a></li><li><a href="/plugin.html">插件</a></li><li><a href="http://www.lovewebgames.com/flash/" target="_blank">Flash Games</a></li><li><a href="http://www.lovewebgames.com/api.html">API</a></li><li><a href="https://github.com/tianxiangbing/JY" target="_blank">下载</a></li><li><a href="demo.html">Demo</a></li><li><a href="games.html">JY游戏</a></li></ul>
+        <p class="copyright">JY by <a href="http://www.lovewebgames.com/job.html">田想兵</a></p>
+        <p>Published with <a href="http://www.lovewebgames.com">http://www.lovewebgames.com</a></p>
+		<p>官方网址<a href="http://www.lovewebgames.com" target="_blank">JY</a></p>         
+      </div>
+    </div>
+    
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffec05701c503620eb8d8875272000db9' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div style="width:740px;margin:0 auto;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5582667370460391";
+/* 大模幅 */
+google_ad_slot = "8649571359";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?uid=1353547017418424&type=left" charset="utf-8"></script>
+<!-- JiaThis Button END --> 
+  </body> 
+</HTML> 

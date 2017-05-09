@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <title> 美丽约-用户注册</title>
+  <meta name="Author" content="前端:田想兵2013/3/13">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,用户注册">
+  <meta name="Description" content="美丽约用户注册页面">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../front/css/uploadify.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../front/css/imgareaselect-default.css"/>
+ </head>
+ <body>
+ <div class="mainbody">
+	 <div class="minMain clearfix">
+		<div class="loginLogo"><h1><a href="index.php"><img src="../front/imgs/logo-top.jpg" title="美丽约"/></a><a href="login.html" class="toplogin">已经是美丽约会员？直接登录 >></a></h1></div>
+		<div class="login clearfix registForm3">
+			<h2></h2>
+			<div class="findPwdBox">
+			
+				<form id="myFrom" action="regist3.php" method="post">
+					<input type="hidden" id="hd_swf" value="/front/js/plugin/uploadify.swf"/>
+					<input type="hidden" id="hd_uploader" value="/web/uploadify-v3.1/uploadify.php"/>
+					<input type="hidden" id="hd_img"/>
+					<input type="hidden" id="hd_positionX"/>
+					<input type="hidden" id="hd_positionY"/>
+					<input type="hidden" id="hd_width"/>
+					<input type="hidden" id="hd_token" value="123123edidkdkdk"/>
+					<div class="defaultImg">
+						
+					</div>
+					<div class="cutImg" style="display:none;"><div class="border"><div class="imgsrc"></div><div class="tip">HD 高清图像</div></div><div class="smallCut"><div class="imgsrc"></div><div class="tip">180*180 头像</div></div></div>
+					<div class="uploadContent">
+						<div class="sourseImg" id="sourseImg"><span class="pic-wrap"></span></div>
+						<div id="queueID"></div>
+						<div class="upload"><input type="button" id="uploadify" class="loginButton" value="上 传"/><p>支持jpg,gif,png格式,单张10K-8M之间</p></div>
+						<div class="upload2">
+							<input type="submit" id="btn_successUpload" value="确认完成"/>
+							<input type="button" id="btn_uploadifyAgain" value="重新上传"/>
+							<ul>
+								<li><i class="icon xs"></i>显示区域选择</li>
+								<li><i class="icon xz"></i>移动选择区域</li>
+								<li><i class="icon bh"></i>变换选择区域</li>
+							</ul>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>		
+	 </div>
+ </div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.uploadify-3.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.imgareaselect.pack.js"></script>
+<script type="text/javascript" src="../front/js/plugin/msgTip.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.select.js"></script>
+<script type="text/javascript" src="../front/js/regist.js"></script>
+ </body>
+</html>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>我是如何去了解jquery的(二),复杂选择符  QQ群：70210212,77813547</title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="田想兵" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+   <script src="/scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+  <style>
+  .p3{color:yellow;}
+  p.p3{color:blue;}
+  .odd{background-color:gray;height:20px;}
+  .even{background-color:#EDEDED;}
+  .info{display:none;}
+  </style>
+  <script>
+/*  $(document).ready(function(){
+	
+  });
+  */
+$(function(){
+$(":button").css({"background-color":"gray","color":"white"}).css("font-size","24px").addClass("even");
+
+$("[ref='xxx']").attr("title","这是TITLE")
+	//console.log($("#mytxt").val())
+	$("[name='checkAll']").click(checkAll)
+	/*
+	function checkAll(){
+		$("[type='checkbox']:not([name='checkAll'])").each(function(){
+			$(this).attr("checked", !$(this).attr("checked"));
+		});
+		return true;
+	}
+	*/
+
+	function checkAll(){
+		$(":checkbox").attr("checked", $("[name='checkAll']").attr("checked"));
+		return true;
+	}
+});
+function showArrValue(obj){
+	var msg="";
+	obj.each(function (){msg+=$(this).val()+",";});
+	alert(msg);
+}
+  </script>
+ </head>
+
+ <body>
+  <div id="mydiv">
+  <input ref='xxx' type="checkbox" name="newsletter" value="Hot Fuzz" />
+  <input type="checkbox" name="newsletter" id="newsletter" value="Cold Fusion" />
+  <input type="checkbox" name="accept" value="Evil Plans" />
+  <input type="text" id="mytxt" value="xxxx"/>
+<input type="checkbox" value="全选/反选" name="checkAll"/>全选/反选
+<input type="button" id="btn_first" value="第1个checkbox的值" onclick="alert($(':checkbox:eq(0)').val());console.log($(':checkbox').first().val())"/>
+<input type="button" id="btn_select" value="选中checkbox的值" onclick="showArrValue($(':checkbox:checked'))"/>
+  </div>
+  <p>本案例对应的博客地址是：<a href="http://www.cnblogs.com/tianxiangbing/archive/2011/11/10/jquery_study002.html" target="_blank">我是如何去了解jquery的(一),从查询开始 </a>欢迎大家加入QQ群一起讨论：70210212</p>
+ </body>
+</html>

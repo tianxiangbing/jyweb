@@ -1,0 +1,182 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> 父子级操作表格案例 </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/siku.css" />
+<style>
+.foldable-table{text-align:center;}
+.white-row{background-color:#fff;}
+.foldable-table-subhead .exted{background-position: -401px -272px;}
+</style>
+  <script src="ui_lib/jquery/jquery-1.9.1.js"></script>
+  <script src="js/autotable.js"></script>
+<script type="text/javascript" src="js/Siku.js"></script>
+ </head>
+
+ <body>
+<table border="1" cellpadding="0" cellspacing="0" bordercolor="#cccccc" class="foldable-table autoTable">
+	<thead>
+    <tr class="foldable-table-head">
+        <th>&nbsp;</th>
+        <th>授信银行 | 支行</th>
+        <th class="text-right">授信额度</th>
+        <th class="text-right">可用授信额度</th>
+        <th class="text-right">已提款金额</th>
+        <th class="text-right">已还款本金</th>
+        <th>币种</th>
+        <th>合同编号</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+	  </thead>
+
+	  <tbody></tbody>
+  </table>
+<a id="search">search</a>
+  <script>
+ $(function(){
+  
+  $(".autoTable").delegate(".gnslect","click",function(){
+		$(".gnmenu").show().css({"left":$(this).position().left,"top":$(this).position().top+25});
+		return false;
+  });
+  $(".autoTable").delegate(".edit","click",function(){
+		var id = $(this).closest('tr').attr('ref');
+		alert(id)
+		return false;
+  });
+  $(".autoTable").delegate(".gnslect","click",function(){
+		var id = $(this).closest('tr').attr('ref');
+		var arr =[];
+		$(".autoTable").find("tr[pid='"+id+"']").each(function(){
+			if ($(this).find(":checked").size()){
+				arr.push($(this).attr('ref'));
+			}
+		});
+		alert("当前id="+id+",他的子级id ="+arr.join(","));
+  });
+  $(".autoTable").delegate(".childMoney","click",function(){
+		alert("当前DOM:"+$(this).html());
+		return false;
+  });
+  $(".gnmenu").click(function(){return false;});
+  $(document).click(function(){
+	$(".gnmenu").hide();
+  });
+
+  
+  /*开始调用*/
+  $(function(){
+var args = {a:1};
+  var auto = $(".autoTable").autoTable({
+	column:[
+		{
+			action:true,child:[
+				{
+					type:'checkbox'
+				},{
+					type:'extend'
+				}
+			]
+		},{
+			name:"name",type:"link",url:"asdfasd.html",args:["id"]
+		},{
+			name:"money",type:"money",align:'right'
+		},{
+			name:"rate",type:"rate",align:'right'
+		},{
+			name:"money",type:"money",align:'right'
+		},{
+			name:"money2",type:"money",align:'right'
+		},{
+			name:"type",type:"text"
+		},{
+			name:"NO",type:"text"
+		},{
+			name:"status",type:"text"
+		},{
+			action:true,child:[
+				{
+					isp:true,
+					type:'html',click:function(){
+
+					},
+					html:'<span class="action-drop-btn gnslect">功能选项<a class="action-btn-icon"></a></span>'
+				},
+					{
+					isc:true,
+					type:'html',click:function(){
+
+					},
+					html:'<a class="action-btn edit" >编辑</a>&nbsp;&nbsp;<a class="action-btn">追溯</a>'
+				}
+			]
+		}
+	],
+	childColumn:[
+		{
+			action:true,child:[
+				{
+					type:'checkbox'
+				},{
+					type:'extend'
+				}
+			]
+		},{
+			name:"name",type:"link",url:"asdfasd.html",args:["id"]
+		},{
+			name:"money",type:"moneylink",url:"asdfasd.html",args:["id"],align:'right',className:'childMoney'
+		},{
+			name:"money",type:"money",align:'right'
+		},{
+			name:"money",type:"money",align:'right'
+		},{
+			name:"money2",type:"money",align:'right'
+		},{
+			name:"type",type:"text"
+		},{
+			name:"NO",type:"text"
+		},{
+			name:"status",type:"text"
+		},{
+			action:true,child:[
+				{
+					isp:true,
+					type:'html',click:function(){
+
+					},
+					html:'<span class="action-drop-btn gnslect">功能选项<a class="action-btn-icon"></a></span>'
+				},
+					{
+					isc:true,
+					type:'html',click:function(){
+
+					},
+					html:'<a class="action-btn edit" >编辑</a>&nbsp;&nbsp;<a class="action-btn">追溯</a>'
+				}
+			]
+		}
+	],
+	className:'foldable-table-subhead',
+	ref:'id',
+	pid:"pid",
+	datasource:"data.txt",
+	args:args,
+	childsource:'data2.txt',
+	ispager:true
+  });
+$("#search").click(function(){
+	auto.changeSource({a:2,b:3,time:+new Date()});
+});
+});
+  });
+
+  </script>
+<ul class="foldable-table-subhead-drop-menu gnmenu" id="siku-3" style="display:none;"><li class="drop-menu-item">授信转让</li><li class="drop-menu-item">新增授信银行</li></ul>
+ </body>
+</html>

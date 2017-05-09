@@ -1,0 +1,231 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>我是如何去了解jquery的(五),案例之切换选项卡Tab</title>
+    <meta name="Generator" content="EditPlus">
+  <meta name="author" content="田想兵 http://tianxiangbing.cnblogs.com" />
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <style>
+        body
+        {
+            text-align: center;
+            font-family: 宋体,serif;
+            background: #ffffff;
+            font-size: 12px;
+            text-align: left;
+        }
+        img
+        {
+            border: 0px;
+        }
+        h3, p
+        {
+            font-size: 12px;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+        }
+        ul
+        {
+            list-style: none;
+            margin: 0;
+        }
+        a
+        {
+            text-decoration: none;
+        }
+        /***** TABLIST **************/
+        .TabList
+        {
+            width: 300px;
+            float: left;
+        }
+        .TabList .tab_content ul
+        {
+            display: none;
+            border: 1px solid #DCDDDD;
+            padding: 0;
+        }
+        .TabList .tab_content ul.on
+        {
+            display: block;
+        }
+        .TabList img
+        {
+            float: left;
+        }
+        .TabList .titleBar .on
+        {
+            background-color: #86B8F5;
+        }
+        .titleBar
+        {
+            height: 25px;
+            line-height: 25px;
+        }
+        .titleBar li
+        {
+            height: 25px;
+            border: 1px solid #DCDDDD;
+            float: right;
+            width: 68px;
+            text-align: center;
+            border-bottom: none;
+        }
+        .tab_content li
+        {
+            line-height: 24px;
+            text-indent: 12px;
+			zoom:1;
+			overflow:hidden;
+        }
+        /*********** end **************/</style>
+
+</head>
+   <script src="/scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+   <script>
+   $(function(){
+		function clickTab(e){
+			$(".titleBar li.on").removeClass("on");
+			$(this).addClass("on");
+			var i=$(this).index();
+			$(".tab_content > ul.on").removeClass("on");
+			$(".tab_content > ul").eq(i).addClass("on");
+		}
+		function clickTab2(e){
+			$(".titleBar li.on").removeClass("on");
+			$(this).addClass("on");
+			var i=$(this).index();
+			$(".tab_content > ul.on").removeClass("on");
+			$(".tab_content ul").filter("[index='"+i+"']").addClass("on")
+		}
+		function clickTab3(e){
+			var currentContent=$(this).closest(".TabList");
+			//$(".titleBar li.on",currentContent).removeClass("on");
+			currentContent.find(".titleBar li.on").removeClass("on");
+			$(this).addClass("on");
+			var i=$(this).index();
+			$(".tab_content > ul.on",currentContent).removeClass("on");
+			//currentContent.find(".tab_content > ul.on").removeClass("on");
+			currentContent.find(".tab_content ul").filter("[index='"+i+"']").addClass("on")
+		}
+	//$(".TabList .titleBar li").click(clickTab3);
+	$("#btntoggle").click(function(){		
+		$(".TabList .titleBar li").bind($(this).val(),clickTab3);
+		$(".TabList .titleBar li").unbind($(this).attr("toggleEvent"));
+		var temp=$(this).val();//临时变量存储即将要变化的值value;
+		$(this).val($(this).attr("toggleEvent"));
+		$(this).attr("toggleEvent",temp);
+	})
+   });
+   </script>
+<body>
+<input type="button" value="click" toggleEvent="mouseover" id="btntoggle">
+    <div class="TabList">
+        <div class="titleBar">
+            <ul>
+                <li class="on">电影</li>
+                <li>电视</li>
+                <li>音乐</li>
+            </ul>
+        </div>
+        <div class="tab_content">
+            <ul class="on" index="0">
+                <li>
+                    <img height="90" width="120" src="http://img4.cache.netease.com/ent/2011/11/15/20111115091743a885a.jpg">
+
+                    <h3>
+                        《丁丁历险记》公映</h3>
+                    <p>
+                        沉寂三年的斯皮尔伯格带着《丁丁历险记》卷土重来。<span class="cDRed"><a href="http://ent.163.com/special/tintin/">[详细]</a></span></p>
+                </li>
+                <li><a href="http://ent.163.com/11/1114/22/7IRST9OU000300B1.html">《鸿门宴》曝刘邦登基剧照 黎明尽显王者风范</a></li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISPCA0U00032DGD.html">5天票房破1.6亿元 《失恋33天》击败好莱坞大片</a></li>
+
+                <li><a href="http://ent.163.com/11/1114/21/7IRQAI0J000300B1.html">钟丽缇拍《亲密敌人》逢婚变 徐静蕾助其疗情伤</a></li>
+            </ul>
+            <ul index="1">
+                <li class="firstNd clearfix"><a href="http://ent.163.com/11/1115/03/7ISCMV9700032DGD.html">
+                    <img height="90" width="120" alt="《后宫》造型受诟病" title="《后宫》造型受诟病" src="http://img2.cache.netease.com/ent/2011/11/15/2011111508215815f41.jpg"></a>
+                    <h3>
+                        <a href="http://ent.163.com/11/1115/03/7ISCMV9700032DGD.html">《后宫》造型受诟病</a></h3>
+                    <p>
+
+                        剧中造型被网友称为“油炸麻花、冰糖葫芦、米老鼠”。<span class="cDRed"><a href="http://ent.163.com/11/1115/03/7ISCMV9700032DGD.html">[详细]</a></span></p>
+                </li>
+                <li><a href="http://ent.163.com/11/1115/09/7IT1HI3A00031GVS.html">《美人天下》将播 李小璐出演"女版福尔摩斯"</a></li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISSGBI100031GVS.html">《金陵秘事》15日登陆央八 秦海璐演绎一代名伶</a></li>
+                <li><a href="http://ent.163.com/11/1115/04/7ISF5QBE00032DGD.html">TVB《万凰之王》热播 胡杏儿对皇后角色有信心</a></li>
+            </ul>
+            <ul  index="2">
+                <li><a href="http://ent.163.com/11/1115/07/7ISQTM9B00031H0O.html">
+                    <img height="90" width="120" alt="许茹芸将在北京开唱" title="许茹芸将在北京开唱" src="http://img1.cache.netease.com/ent/2011/11/15/20111115075456519a5.jpg"></a>
+                    <h3>
+                        <a href="http://ent.163.com/11/1115/07/7ISQTM9B00031H0O.html">许茹芸将在北京开唱</a></h3>
+                    <p>
+                        14日，许茹芸为即将在北京首体举办的个唱宣传造势。<span class="cDRed"><a href="http://ent.163.com/11/1115/07/7ISQTM9B00031H0O.html">[详细]</a></span></p>
+
+                </li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISS287D00031H0O.html">凯莉·克拉克森宣布北美巡演日程 将演唱新歌</a></li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISRSUTP00031H0O.html">陈楚生拍摄新歌《瘾》MV 与麋鹿“心灵交流”</a></li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISQO57G00031H0O.html">张信哲平安夜广州开唱 无惧与陈奕迅同日开个唱</a></li>
+            </ul>
+        </div>
+    </div>
+
+<div class="TabList">
+        <div class="titleBar">
+            <ul>
+                <li class="on">电影</li>
+                <li>电视</li>
+                <li>音乐</li>
+            </ul>
+        </div>
+        <div class="tab_content">
+            <ul class="on" index="0">
+                <li>
+                    <img height="90" width="120" src="http://img4.cache.netease.com/ent/2011/11/15/20111115091743a885a.jpg">
+
+                    <h3>
+                        《丁丁历险记》公映</h3>
+                    <p>
+                        沉寂三年的斯皮尔伯格带着《丁丁历险记》卷土重来。<span class="cDRed"><a href="http://ent.163.com/special/tintin/">[详细]</a></span></p>
+                </li>
+                <li><a href="http://ent.163.com/11/1114/22/7IRST9OU000300B1.html">《鸿门宴》曝刘邦登基剧照 黎明尽显王者风范</a></li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISPCA0U00032DGD.html">5天票房破1.6亿元 《失恋33天》击败好莱坞大片</a></li>
+
+                <li><a href="http://ent.163.com/11/1114/21/7IRQAI0J000300B1.html">钟丽缇拍《亲密敌人》逢婚变 徐静蕾助其疗情伤</a></li>
+            </ul>
+            <ul index="1">
+                <li class="firstNd clearfix"><a href="http://ent.163.com/11/1115/03/7ISCMV9700032DGD.html">
+                    <img height="90" width="120" alt="《后宫》造型受诟病" title="《后宫》造型受诟病" src="http://img2.cache.netease.com/ent/2011/11/15/2011111508215815f41.jpg"></a>
+                    <h3>
+                        <a href="http://ent.163.com/11/1115/03/7ISCMV9700032DGD.html">《后宫》造型受诟病</a></h3>
+                    <p>
+
+                        剧中造型被网友称为“油炸麻花、冰糖葫芦、米老鼠”。<span class="cDRed"><a href="http://ent.163.com/11/1115/03/7ISCMV9700032DGD.html">[详细]</a></span></p>
+                </li>
+                <li><a href="http://ent.163.com/11/1115/09/7IT1HI3A00031GVS.html">《美人天下》将播 李小璐出演"女版福尔摩斯"</a></li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISSGBI100031GVS.html">《金陵秘事》15日登陆央八 秦海璐演绎一代名伶</a></li>
+                <li><a href="http://ent.163.com/11/1115/04/7ISF5QBE00032DGD.html">TVB《万凰之王》热播 胡杏儿对皇后角色有信心</a></li>
+            </ul>
+            <ul  index="2">
+                <li><a href="http://ent.163.com/11/1115/07/7ISQTM9B00031H0O.html">
+                    <img height="90" width="120" alt="许茹芸将在北京开唱" title="许茹芸将在北京开唱" src="http://img1.cache.netease.com/ent/2011/11/15/20111115075456519a5.jpg"></a>
+                    <h3>
+                        <a href="http://ent.163.com/11/1115/07/7ISQTM9B00031H0O.html">许茹芸将在北京开唱</a></h3>
+                    <p>
+                        14日，许茹芸为即将在北京首体举办的个唱宣传造势。<span class="cDRed"><a href="http://ent.163.com/11/1115/07/7ISQTM9B00031H0O.html">[详细]</a></span></p>
+
+                </li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISS287D00031H0O.html">凯莉·克拉克森宣布北美巡演日程 将演唱新歌</a></li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISRSUTP00031H0O.html">陈楚生拍摄新歌《瘾》MV 与麋鹿“心灵交流”</a></li>
+                <li><a href="http://ent.163.com/11/1115/07/7ISQO57G00031H0O.html">张信哲平安夜广州开唱 无惧与陈奕迅同日开个唱</a></li>
+            </ul>
+        </div>
+    </div>
+
+ <p style="clear:both;">本案例对应的博客地址是：<a href="www.cnblogs.com/tianxiangbing/archive/2011/11/14/jquery_study004.html" target="_blank">我是如何去了解jquery的(四),切换事件hover&toggle   </a>欢迎大家加入QQ群一起讨论：70210212</p>
+</body>
+</html>

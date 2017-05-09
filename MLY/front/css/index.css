@@ -1,0 +1,18 @@
+﻿/*公共样式文件*/
+html,body,ul,li,h1,h2,h3,h4,h5,img,dl,dt,dd,p{font-size:1em;margin:0;padding:0;list-style:none;border:none;}
+a:link,a{text-decoration:none;}
+input,textarea{outline:none;resize: none;}
+img{vertical-align:middle;}
+.clearfix{zoom:1;}
+.clearfix:after{content:".";clear:both;display:block;height:0;overflow:hidden;}
+
+
+/*罗利民手机首页*/
+html{height:100%;overflow:hidden;}
+body{height:100%;width:100%;background:url(../imgs/sjbg.jpg) no-repeat center center;}
+.mainsj{width:640px;position:relative;margin:0 auto;height:100%;overflow:hidden;}
+.sjpic{height:403px;margin:1.5625em 0 2.8125em 10.9375em;}
+.mainsj p{text-align:center;font:1.625em/30px "微软雅黑";color:#ffffff;text-shadow:0.125em 0.125em 0.25em #000000;}
+.sjbtn{height:5.0625em;margin:1.875em 0 2.1875em 0;padding:0 0 0 1.875em;}
+.sjbtn a{margin:0 1.25em 0 0;}
+.sjbtfont{position:absolute;bottom:1.5625em;left:5em;}

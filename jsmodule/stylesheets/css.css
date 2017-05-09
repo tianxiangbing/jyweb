@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Architects Daughter';
+  font-style: normal;
+  font-weight: 400;
+}
+.uilist{list-style:none;padding:none;position: relative;}
+.uilist li{display:block;width: 166px;height: 224px;margin-bottom:20px; float:left;padding:10px 20px;background-color:#fff;border:1px solid #ddd;margin-right: 20px;}
+.uilist li:hover{border-color:#ddd;box-shadow:5px 5px 20px #666;}
+.uilist li a{display:block;}
+.uilist li img{width:166px;height: 166px;}
+.uilist li .a_code{display: inline-block;padding:3px 5px;background-color: #f2f2f2;border:1px solid #ccc;border-radius: 2px;}
+.uilist li .a_code:hover{background-color:#fff;}
+.menu{position:absolute;right:0;top:-100px;overflow:hidden;height:38px;background-color:#0F67A1;border-bottom-left-radius: 2px;border-bottom-right-radius: 2px;  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+.menu li{list-style:none;float:left;height:38px;line-height:38px;}
+.menu li a{font-size:14px;color:white;font-weight:bold;padding:0 10px;}
+.JYapi_menu{float:left;list-style:none;width:200px;background-color:#0F67A1;border-radius: 2px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+.JYapi_menu li{list-style:none;}
+.JYapi_menu li a{color:#eee;}
+#main_content .JYapi_menu a:hover {color: #ccc;text-shadow: 0 0 2px yellow;}
+#search{height:40px;line-height:40px;border:1px solid #ddd;padding:0 20px;border-radius: 20px;width:500px;margin:0 auto;outline: none;font-size: 16px;color:#999;display: block;}
+.m-title{width:166px;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;}
+.inner input[type=text]{height:30px;line-height: 30px;color:#666;border-radius: 4px;margin:10px;border:1px solid #ccc;}
+.inner input[type=button]{height:30px;line-height: 30px;color:#666;border-radius: 4px;margin:10px;border:1px solid #ccc;background-color: #fff;}

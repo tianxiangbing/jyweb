@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>News</title>
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+  </head>
+  <body>
+    <!--header start-->
+    <div class="header">
+      <div class="header_box clearfix">
+        <img class="logo" src="images/logo.png" />
+        <ul class="menu_list clearfix">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="index.html" class="active">结婚咨询</a></li>
+          <li><a href="index.html">新娘日记</a></li>
+          <li><a href="index.html">新娘评价</a></li>
+          <li><a href="index.html">活动体验会</a></li>
+        </ul>
+        <div class="herader_right">
+          <a href="" target="_blank" class="sina"><img src="images/sina.png"/></a>
+          <a href="" target="_blank" class="tunxun"><img src="images/tun.png" /></a>
+          <a href="" id="login" class="login">登陆</a>
+          <a href="" id="regist" class="register">注册</a>
+          <a href="index.html" class="back_index"><span></span>锐摄影官方网站</a>
+        </div>
+      </div>
+    </div>
+    <div class="news_ban"><img src="images/test/news_ban.png" /></div>
+    <!--header end-->
+    <!--news_main start-->
+    <div class="news_main">
+      <div class="news_title_list">
+        <ul>
+          <li><a href="">锐摄影最新资讯</a></li>
+          <li class="active"><a href="">锐摄影荣誉墙</a></li>
+          <li><a href="">结婚相关咨询</a></li>
+          <li><a href="">婚纱摄影新闻</a></li>
+          <li><a href="">婚纱摄影优惠活动</a></li>
+          <li><a href="">明星婚纱照欣赏</a></li>
+        </ul>
+      </div>
+      <script type="text/javascript">
+      $(function(){
+         $('.news_title_list li a').click(function(e){ e.preventDefault(); });
+      $('.news_title_list li').click(function(){
+      var index = $(this).index();
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+      $('.tablist').children().hide()
+      $('.tablist').children().eq(index).show();
+      return false;
+      });
+      });
+      </script>
+      <div class="tablist">
+        <div class="item hide">
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖1</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.1</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖2</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.2</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.3</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.4</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.5</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.6</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.7</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖2</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.1</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.2</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.3</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.4</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.5</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.6</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.7</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+        </div>
+        <div class="item hide">
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖3</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.1</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.2</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.3</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.4</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.5</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.6</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.7</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+        </div>
+        <div class="item hide">
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖4</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.1</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.2</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.3</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.4</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.5</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.6</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.7</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+        </div>
+        <div class="item hide">
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖5</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.1</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.2</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.3</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.4</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.5</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.6</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.7</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+        </div>
+        <div class="item hide">
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖6</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.1</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.2</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.3</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.4</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news2.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.5</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news3.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.6</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+          <div class="news_list clearfix clearall">
+            <img src="images/test/news.png" width="460" height="229" class="news_img"/>
+            <div class="news_right">
+              <p class="news_name">锐摄影携手新浪浙江 庆祝银泰西湖</p>
+              <p class="news_com">三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负客户对我们的认可和选择！2014一路温暖三天的婚博圆满收官，累并快乐着，最好的那才刚刚开始并肩作战的锐家兄弟姐妹们，接下来我们更要拿出12分的努力，不辜负</p>
+              <p class="news_num">N.7</p>
+              <p class="news_time">2014/08</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--page-->
+      <div class="activi_page clearall">
+        <a href="" class="prev_page">上一页</a>
+        <ul>
+          <li><a href="" class="active_page active">1</a></li>
+          <li><a href="" class="active_page">2</a></li>
+          <li><a href="" class="active_page">3</a></li>
+          <li><a href="" class="active_page">4</a></li>
+        </ul>
+        <a href="" class="next_page">下一页</a>
+      </div>
+      
+    </div>
+    <!--news_main end-->
+    <!--footer start-->
+    <div class="footer clearall">
+      <div class="footer_box clearfix">
+        <img src="images/foot_logo.jpg" class="foot_logo" />
+        <dl class="foot_list">
+          <dt>SHOWCASE</dt>
+          <dd><span></span><a href="">Love Show</a></dd>
+          <dd><span></span><a href="">Locations</a></dd>
+          <dd><span></span><a href="">Themes</a></dd>
+        </dl>
+        <dl class="foot_list">
+          <dt>SHOWCASE</dt>
+          <dd><span></span><a href="">Love Show</a></dd>
+          <dd><span></span><a href="">Locations</a></dd>
+          <dd><span></span><a href="">Themes</a></dd>
+        </dl>
+        <dl class="foot_list">
+          <dt>SHOWCASE</dt>
+          <dd><span></span><a href="">Love Show</a></dd>
+          <dd><span></span><a href="">Locations</a></dd>
+          <dd><span></span><a href="">Themes</a></dd>
+        </dl>
+        <dl class="foot_list last">
+          <dt>SHOWCASE</dt>
+          <dd><span></span><a href="">Love Show</a></dd>
+          <dd><span></span><a href="">Locations</a></dd>
+          <dd><span></span><a href="">Themes</a></dd>
+        </dl>
+      </div>
+      <div class="foot_bottom clearfix clearall">
+        <p class="img"></p>
+        <div class="text">
+          <p>版权所有 © 2012-2014 杭州彬锐文化创意有限公司 鄂ICP备12008691号</p>
+          <p>CREATIVE & IDEAS DESIGN BY BIKS POWERED BY C&I SYSTEM</p>
+        </div>
+      </div>
+    </div>
+    <!--footer end-->
+  </body>
+</html>

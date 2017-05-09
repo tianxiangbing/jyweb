@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>森绿摄影机构</title>
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+<!--[if IE]>
+<!--<link rel="stylesheet" type="text/css" href="css/IE.css"/>-->
+<!--<![endif]-->
+</head>
+<body class="welcome-bg">
+<div class="layout-content layout-body welcome" id="content">
+    <div class="welcome-body">
+        <div class="welcome-top"></div>
+        <div class="layout-center wel-centerbg welcome-center" >
+            <!--wel-pic-->
+            <div class="wel-pic"  >
+                <!--<img src="images/ex/wel-img.png" alt=""/>-->
+            </div>
+        </div>
+        <div class="welcome-bottom"></div>
+    </div>
+</div>
+<div class="ask-alert alertinfo " style="width: 50%;background-size: 100% 100%;">
+    <div class="ask">是否展示欢迎页</div>
+    <div class="btn"  >
+        <a href="index.html"><div class="btn-ok">是</div></a>
+        <div class="btn-cancel notshow" onclick="MM_showHideLayers('notice','','show')">否</div>
+    </div>
+</div>
+<div class="notice" style="position:absolute; left:38%; top:40%; visibility:hidden;" id="notice">
+    请输入您的建议！
+    <a href="index.html" class="ok" onclick="MM_showHideLayers('notice','','hide')"></a>
+</div>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/index2.js"></script>
+<script type="text/javascript">
+    function MM_showHideLayers() { //v9.0
+        var i,p,v,obj,args=MM_showHideLayers.arguments;
+        for (i=0; i<(args.length-2); i+=3)
+            with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+                if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+                obj.visibility=v; }
+    }
+
+    //判断是否为ipad
+    function is_iPad(){
+        var sUserAgent = navigator .userAgent.toLowerCase();
+        var bIsIpad = sUserAgent .match(/ipad/i) == "ipad";
+        if(bIsIpad){
+            window.location.href="index.html";
+        }
+    }
+    //判断是否为手机
+    function isMobile() {
+        var userAgents = window.navigator.userAgent;
+        var mobileUserAgents = new Array("240x320","acer","acoon","acs-","abacho","ahong","airness","alcatel","amoi","android","anywhereyougo.com","applewebkit/525","applewebkit/532","asus","audio","au-mic","avantogo","becker","benq","bilbo","bird","blackberry","blazer","bleu","cdm-","compal","coolpad","danger","dbtel","dopod","elaine","eric","etouch","fly ","fly_","fly-","go.web","goodaccess","gradiente","grundig","haier","hedy","hitachi","htc","huawei","hutchison","inno","ipad","ipaq","ipod","jbrowser","kddi","kgt","kwc","lenovo","lg ","lg2","lg3","lg4","lg5","lg7","lg8","lg9","lg-","lge-","lge9","longcos","maemo","mercator","meridian","micromax","midp","mini","mitsu","mmm","mmp","mobi","mot-","moto","nec-","netfront","newgen","nexian","nf-browser","nintendo","nitro","nokia","nook","novarra","obigo","palm","panasonic","pantech","philips","phone","pg-","playstation","pocket","pt-","qc-","qtek","rover","sagem","sama","samu","sanyo","samsung","sch-","scooter","sec-","sendo","sgh-","sharp","siemens","sie-","softbank","sony","spice","sprint","spv","symbian","tablet","talkabout","tcl-","teleca","telit","tianyu","tim-","toshiba","tsm","up.browser","utec","utstar","verykool","virgin","vk-","voda","voxtel","vx","wap","wellco","wig browser","wii","windows ce","wireless","xda","xde","zte");
+        var ismobile = false;
+        for(var i=0;i<mobileUserAgents.length;i++) {
+            var patten = new RegExp(mobileUserAgents[i], 'i');
+            if (patten.test(userAgents)) {
+                ismobile = true;
+                break;
+            }
+        }
+        return ismobile;
+    }
+    (function(){
+        if(isMobile()){
+            window.location.href="index.html";
+        }
+    })();
+</script>
+</body>
+</html>

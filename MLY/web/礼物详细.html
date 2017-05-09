@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+  <title> 美丽约-礼物详细</title>
+  <meta name="Author" content="前端:田想兵2013/5/15">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,礼物详细">
+  <meta name="Description" content="美丽约礼物详细">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">  
+  <link href="../front/css/boxy.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../front/css/lightbox.css"/>
+ </head>
+ <body class="boybody">
+<!--#include virtual="top.html"-->
+<div class="giftTitle header"><h2>礼物详细</h2><ul class="model mc0"><li class="lt"><i></i><a>礼物商城</a></li><li class="rt current"><i></i><a class="current">赠送的礼物</a></li></ul></div>
+<div class="firendBox mylikeboy gift giftInfo clearfix">
+	<div class="upborder"></div>
+	<div class="content present clearfix">
+		<div class="staticupdown">
+			<a class="up" onselectstart="return false">向上</a>
+			<div class="updowncon">
+				<div class="con">
+					<div class="item">
+						<a  rel="lightbox[plants]" href="../uploads/examples/image-2.jpg">
+							<img src="../uploads/examples/image-2.jpg" bigimg="../uploads/examples/image-2.jpg" />
+						</a>
+					</div>
+					<div class="item">
+						<a  rel="lightbox[plants]" href="../uploads/examples/image-1.jpg">
+							<img src="../uploads/examples/image-1.jpg" bigimg="../uploads/examples/image-1.jpg" />
+						</a>
+					</div>
+					<div class="item">
+						<a  rel="lightbox[plants]" href="../uploads/examples/image-3.jpg">
+							<img src="../uploads/examples/image-3.jpg" bigimg="../uploads/examples/image-3.jpg" />
+						</a>
+					</div>
+					<div class="item">
+						<a  rel="lightbox[plants]" href="../uploads/examples/image-4.jpg">
+							<img src="../uploads/examples/image-4.jpg" bigimg="../uploads/examples/image-4.jpg" />
+						</a>
+					</div>
+					<div class="item">
+						<a  rel="lightbox[plants]" href="../uploads/examples/image-5.jpg">
+							<img src="../uploads/examples/image-5.jpg" bigimg="../uploads/examples/image-5.jpg" />
+						</a>
+					</div>
+					<div class="item">
+						<a  rel="lightbox[plants]" href="../uploads/examples/image-6.jpg">
+							<img src="../uploads/examples/image-6.jpg" bigimg="../uploads/examples/image-6.jpg" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<a class="down" onselectstart="return false">向下</a>
+		</div>
+		<div class="bigImg">
+			<a rel="lightbox[plants]" href="../uploads/examples/thumb-1.jpg" >
+				<img src="../uploads/examples/image-6.jpg" />		
+				<i><s></s><em></em></i>
+			</a>
+		</div>
+		<div class="giftdesc">
+			<div class="title">
+				<h3>阿波罗之泪</h2>
+				<div class="price clearfix"><span>价格：</span><em>467￥</em></div>
+				<div class="giveobj">
+					<a><img src="../uploads/examples/image-2.jpg"/></a>
+					<h4>赠送对象</h4>
+					<p>美丽女人</p>
+				</div>
+			</div>
+			<div class="gifthrbg"></div>
+			<h5>详细介绍</h3>
+			<div class="giftcontent italbg">
+				    <p>上东南亚美食节的最后一天来的。本来满心期待能有很多热带芒事
+				实证明我想多了，唯一有热带气息的水果大概只有菠萝和大椰子，唯一
+				有芒果的地方就是沙拉等一些调理处的芒果酱。</p><p>
+					 甜品有几款还是很好吃的，提拉米苏最喜欢了，口感特别细腻柔混
+				着朗姆酒咖啡香的那层奶油很轻盈，可可层也很丰富。还有一款焦糖杏
+				仁蛋糕很不错，焦香甜美口感扎实。芝士我觉得有点一般不过小榴莲糕
+				有点腻，榴莲蛋糕却很好吃，有榴莲味且较湿润。</p>
+			</div>
+		</div>
+		
+	<!--男生版-->
+		<div class="act"><a href="javascript:void(0)" class="selectGirl">选择女生</a></div>
+		
+	<!--女生版 无操作按钮-->
+
+	</div>
+	<div class="hrsolid"></div>
+		<div class="giftad"></div>
+	<h6>美丽约礼物规则：</h6>
+	<div>
+		<ol>
+			<li>	1.客户免费注册成为会员，即可享受会员价格；购物满2000元自动升级为VIP会员，享受VIP会员价格。</li>
+			<li>	2.全国2000家配送门店，由花店专人送货。</li>
+			<li>
+				3.如遇季节或地域限制而产生花材短缺或断货，我们将与订货人确认后，采用同等价值或相同寓意的花材代替。</li>
+		</ol>
+	</div>
+	<div class="bottomborder"></div>
+</div>
+ <div class="publishBox" id="selectGirlBox">
+ <h2>选择赠送的女生</h2>
+ <iframe src="about:blank" href="女生列表.html" height="400px" width="600px" frameborder="0"></iframe>
+ <form id="selectGirlForm">
+	<input type="hidden" id="hd_giftid" value="123"/>
+	<input type="hidden" value="" id="hd_girlid" name="girlid"/>
+	<div class="actionBtn"><a class="btnCreate">确定女生</a><input type="submit" class="hide"/></div>
+ </form>
+ </div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.select.js"></script>
+<script type="text/javascript" src="../front/js/plugin/msgTip.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.staticupdown.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.boxy.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.smooth-scroll.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/lightbox.js"></script>
+<script type="text/javascript" src="../front/js/gift.js"></script>
+</body>
+</html>

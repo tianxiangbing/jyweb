@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>妃兰皮肤测试</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style>
+		html,body{padding:0;margin:0;}
+		img{margin:0;padding:0;}
+		.step{margin:0 auto;position: relative;overflow: hidden;display: none;}
+		.show{display: block;}
+		a{border:none;outline: none;}
+		.step img{float: left;border:none;outline: none;width:100%;}
+		.link{position:absolute;display: block;}
+		/*.link{background-color: #ccc;opacity: .4;}*/
+		.link1{height:34%;width:30%;left:18%;bottom:5%;display: none;}
+		.link2{height:34%;width:30%;left:55%;bottom:5%;display: none;}
+		.link3{height:36%;width:40%;left:30%;bottom:8%;display: none;}
+		.link4{height:34%;width:30%;left:55%;bottom:5%;display: none;}
+		.prev{width:25%;bottom:2%;height:5%;right:35%;z-index: 3}
+		.back{width: 40%;bottom: 5%;height: 6%;right: 32%;z-index: 3}
+		.submit{width:50%;bottom:13%;height:12%;right:28%;z-index: 3}
+		.next{width:25%;bottom:2%;height:5%;right:5%;z-index: 3}
+		ul,li{list-style: none;padding:0;margin:0;}
+		.select{display: block;overflow: hidden;width:80%;position:absolute;}
+		.s1{top:19%;height: 29%;left:10%;}
+		.s2{top:65.3%;height: 29%;left:10%;}
+		.select li{height:25%;}
+		.select li.double{height:50%;}
+		.select li.selected{background: url(imgs/selected.png) no-repeat 23% 50%; background-size: 3%;}
+		.s3{top: 62.6%;height: 29%; left: 10%;}
+		.s4{top: 21%;height: 29%; left: 10%;}
+		.s5{top: 17.6%;height: 29%; left: 10%;}
+		.s6{top: 57%;height: 29%; left: 10%;}
+		.select  div{height: 25%;}
+		.a{position: absolute;width:82%;top:25%;left:8%;}
+		.b{position: absolute;width:82%;top:21%;left:10%;}
+	</style>
+	<link rel="stylesheet" href="js/dialog/dialog.min.css">
+</head>
+<body>
+	<div class="step show result" data-step="8">
+		<img src="imgs/8.jpg" id="result">
+		<div class="b">
+			<img src="imgs/q1.jpg"/>
+		</div>
+		<div class="a">
+			<img src="imgs/a1.jpg"/>
+		</div>
+		<a class="link link1" href="#1"></a>
+		<a class="link link2" href="#2"></a>
+		<a class="link link3" href="#3"></a>
+		<a class="link link4" href="#4"></a>
+	</div>
+	<audio src="audio.mp3" autoplay="autoplay" loop="loop">
+	</audio>
+	<script src="js/zepto.js" type="text/javascript"></script>
+	<script src="js/dialog/dialog.js" type="text/javascript"></script>
+	<script src="js/result.js" type="text/javascript"></script>
+</body>
+</html>

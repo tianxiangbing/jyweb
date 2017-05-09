@@ -1,0 +1,591 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>人员管理</title>
+  <link type="text/css" rel="stylesheet" href="css/table.css"/>
+  <link type="text/css" rel="stylesheet" href="css/jbox.css"/>
+  <link type="text/css" rel="stylesheet" href="css/jquery-ui-1.9.2.custom/jquery-ui-1.9.2.custom.css">
+  <script src="js/jquery-1.8.3.js"></script>
+  <script src="js/jquery-ui-1.9.2.custom.js"></script>
+  <style>
+body {
+	font-size:12px;
+}
+h1 {
+	padding: .2em;
+	margin: 0;
+}
+.clearfix {
+	zoom:1;
+}
+.clearfix:after {
+	content:".";
+	clear:both;
+	display:block;
+	height:0;
+	overflow:hidden;
+}
+#products {
+	float:left;
+	margin-left: 2em;
+	clear:both;
+}
+#cart {
+	width: 235px;
+	float: left;
+	margin-top: 1em;
+}
+/* style the list to maximize the droppable hitarea */
+  #cart ol {
+	margin: 0;
+	padding: 1em 0 1em 3em;
+}
+.ui-widget-content {
+}
+.dept {
+	border:1px solid #ccc;
+	border-radius:5px;
+	float:left;
+	width:300px;
+	margin:10px;
+	min-height:150px;
+}
+.dept h2 {
+	font-size:14px;
+	font-weight:400;
+	padding-left:20px;
+}
+li {
+	list-style:none;
+}
+.dept li, .list li {
+	background:url(p.png) no-repeat center top;
+	padding:55px 5px 10px 0px;
+	float:left;
+	width:60px;
+	margin-right:10px;
+	overflow:hidden;
+	text-align:center;
+}
+.accept {
+	min-height:220px;
+}
+.accept .cell, .cell3 {
+	border-bottom:1px solid #ccc;
+	width:65px;
+	float:left;
+	border-right:1px solid #CCC;
+	line-height:25px;
+	text-align:center;
+	height:25px;
+	overflow:hidden;
+}
+.ui-widget-content .ui-state-hover, .ui-widget-content .ui-state-default {
+	border:none;
+}
+.placeholder {
+	min-height:200px;
+	line-height:200px;
+	text-align:center;
+}
+.mgt10 {
+	margin-top:10px;
+}
+.cell3 {
+	width:100px;
+	float:left;
+	border-right:none;
+}
+.bdept {
+	border:1px solid #ccc;
+	border-radius:5px;
+	margin:10px;
+}
+.bdept h2 {
+	font-size:14px;
+	font-weight:400;
+	padding-left:20px;
+}
+.list {
+	padding:0;
+}
+.list li {
+	float:left;
+}
+.plus {
+	display:block;
+	width:51px;
+	height:51px;
+	background:url(plus.jpg) no-repeat;
+	float:left;
+	margin:5px;
+	cursor:pointer;
+	margin-top:10px;
+}
+.list .deptIcon {
+	background-image:url(group.png);display:none;
+}
+.deptList{width:1000px;}
+.recycle{width:150px;height:171px;background:url(recycle.png) no-repeat;float:left;position:fixed;top:120px;right:0;z-index:-1;}
+.list .manage{background-image:url(manage.png);}
+</style>
+  <script>
+  $(function() {
+    //$( "#catalog" ).accordion();
+	var currDept = null;
+	function bindDrag(){
+    $( "#catalog li" ).draggable({
+      helper: "clone",
+	  cursor: "move"
+    });
+	$(".dept,.bdept").droppable({
+		greedy: true,
+      activeClass: "ui-state-hover",
+      hoverClass: "ui-state-active",
+	  accept:".list li",
+      drop: function( event, ui ) {
+		deleteItem( ui.draggable,$( this ) );
+        return false;
+      }
+    });
+	$(".deptlist li").draggable({
+      helper: "clone",
+	  cursor: "move"
+	});
+	$(".recycle").droppable({
+      accept: ".list > li",
+      activeClass: "ui-state-highlight",
+      drop: function( event, ui ) {
+		  $( "#dialog-confirm" ).dialog({
+			  resizable: false,
+			  height:180,
+			  modal: true,
+			  buttons: [{
+				  text:"删除",
+				 click: function() {				 
+				 ui.draggable.fadeOut(function(){
+					ui.draggable.remove();
+				 });
+				  $( this ).dialog( "close" );
+				}},{
+				  text:"取消",
+				  click: function() {
+				  $( this ).dialog( "close" );
+				}}
+				]
+			});
+      }
+    });
+	};
+	bindDrag()
+	function deleteItem($item, $trash){
+		$('.movebox #txt_jobs').val($item.children().first().text());
+		var dname= $item.attr("deptname");
+		var deptName = $trash.children('h2').text();
+		if (dname == deptName){
+			return;
+		}
+		$(".sp_name").html($item.children().eq(1).text());
+		$(".movebox").dialog({
+			title:"人员部门调动",
+			width:400,
+			resizable:false,
+			  modal: true,
+			buttons: [
+				{
+				  text: "确定",
+				  click: function() {
+					  var jobsName = $('.movebox #txt_jobs').val();
+						$item.attr("deptname",deptName);
+						$item.children().first().text(jobsName);
+						if (jobsName =="部门经理" || jobsName =="分管总监"){
+							$item.addClass('manage');
+						}else{
+							$item.removeClass('manage');
+						}
+					  $item.fadeOut(function() {
+						var $list = $( "ul", $trash ).length ?
+						  $( "ul", $trash ) :
+						  $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $trash );
+				 
+						$item.find( "a.ui-icon-trash" ).remove();
+						$item.appendTo( $list ).fadeIn(function() {
+						  $item
+							.animate({ width: "60px" })
+							.find( "img" )
+							  .animate({ height: "90px" });
+						});
+					  });
+					$( this ).dialog( "close" );
+				  }
+				},
+				{
+				  text: "取消",
+				  click: function() {
+					$( this ).dialog( "close" );
+				  }
+				}
+			  ]
+		});
+	};
+	$(".plus").click(function(){
+		currDept = $(this).closest(".deptCon");
+		var _this = this;
+		$('.addbox').dialog({
+			autoOpen: true,
+			  modal: true,
+			//draggable:false,
+			width:400,
+			title:"人员增加",
+			resizable:false,
+			  buttons: [
+				{
+				  text: "确定",
+				  click: function() {
+					  var deptName = currDept.children('h2').text();
+					$(_this).prev().append('<li deptName="'+deptName+'"><div>'+$("#txt_jobs").val()+'</div><div>'+$('#txt_name').val()+'</div></li>');
+					$( this ).dialog( "close" );
+					bindDrag();
+				  }
+				},
+				{
+				  text: "取消",
+				  click: function() {
+					$( this ).dialog( "close" );
+				  }
+				}
+			  ]
+		});
+	});
+  });
+  </script>
+  </head>
+  <body>
+<div class="bdept clearfix deptCon deptList fl">
+    <h2>平台中心</h2>
+    <ul class="deptlist list clearfix fl">
+    <li class="manage">
+        <div>分管总监</div>
+        <div>汪涛</div>
+      </li>
+    <li class="deptIcon">
+        <div>投资部</div>
+      </li>
+    <li class="deptIcon">
+        <div>前期部</div>
+      </li>
+    <li class="deptIcon">
+        <div>设计部</div>
+      </li>
+    <li class="deptIcon">
+        <div>运营部</div>
+      </li>
+    <li class="deptIcon">
+        <div>采购合约部</div>
+      </li>
+  </ul>
+    <a class="plus"></a>
+    <div id="products">
+    <div id="catalog">
+        <div class="dept deptCon">
+        <h2>投资部</h2>
+        <div>
+            <ul class="list">
+              <li deptName="投资部" class="manage">
+                <div>部门经理</div>
+                <div>刘晓川</div>
+              </li>
+            <li deptName="投资部">
+                <div>投资经理</div>
+                <div>朱雪</div>
+              </li>
+          </ul>
+            <a class="plus"></a> </div>
+      </div>
+        <div class="dept deptCon">
+        <h2>前期部</h2>
+        <div>
+            <ul class="list">
+            <li deptName="前期部" class="manage">
+                <div>部门经理</div>
+                <div>陈刚</div>
+              </li>
+            <li deptName="前期部">
+                <div>前期主管</div>
+                <div>蒋丹丹</div>
+              </li>
+            <li deptName="前期部">
+                <div>前期主管</div>
+                <div>朱雪</div>
+              </li>
+          </ul>
+            <a class="plus"></a> </div>
+      </div>
+        <div class="dept deptCon">
+        <h2>设计部</h2>
+        <div>
+            <ul class="list">
+            <li deptName="设计部">
+                <div>总工</div>
+                <div>张巍</div>
+              </li>
+            <li deptName="设计部" class="manage">
+                <div>部门经理</div>
+                <div>王蕾</div>
+              </li>
+            <li deptName="设计部">
+                <div>设计助理</div>
+                <div>夏莹</div>
+              </li>
+          </ul>
+            <a class="plus"></a> </div>
+      </div>
+	  <div class="clr"></div>
+        <div class="dept deptCon">
+        <h2>运营部</h2>
+        <div>
+            <ul class="list">
+            <li deptName="运营部" class="manage">
+                <div>部门经理</div>
+                <div>刘学锋</div>
+              </li>
+            <li deptName="运营部">
+                <div>体系主管</div>
+                <div>程驰宇</div>
+              </li>
+            <li deptName="运营部">
+                <div>计划主管</div>
+                <div>吴祥</div>
+              </li>
+          </ul>
+            <a class="plus"></a> </div>
+      </div>
+        <div class="dept deptCon">
+        <h2>采购合约部</h2>
+        <div>
+            <ul class="list">
+            <li deptName="采购合约部" class="manage">
+                <div>部门经理</div>
+                <div>王小平</div>
+              </li>
+            <li deptName="采购合约部">
+                <div>合约工程师</div>
+                <div>潘燕华</div>
+              </li>
+            <li deptName="采购合约部">
+                <div>采购工程师</div>
+                <div>麻品勇</div>
+              </li>
+          </ul>
+            <a class="plus"></a> </div>
+      </div>
+      </div>
+  </div>
+  </div>
+<div class="bdept clearfix deptCon deptList fl">
+    <h2>财务成本中心</h2>
+    <ul class="deptlist list clearfix fl">
+    <li class="manage">
+        <div>分管总监</div>
+        <div>李国军</div>
+      </li>
+    <li class="deptIcon">
+        <div>财务部</div>
+      </li>
+    <li class="deptIcon">
+        <div>成本部</div>
+      </li>
+  </ul>
+    <a class="plus"></a>
+    <div id="products">
+    <div id="catalog">
+        <div class="dept deptCon">
+        <h2>财务部</h2>
+        <div>
+            <ul class="list">
+            <li deptName="财务部" class="manage">
+                <div>部门经理</div>
+                <div>孙薇</div>
+              </li>
+            <li deptName="财务部">
+                <div>财务初审</div>
+                <div>庙诗娟</div>
+              </li>
+            <li deptName="财务部">
+                <div>出纳</div>
+                <div>毛黎亮</div>
+              </li>
+          </ul>
+            <a class="plus"></a> </div>
+      </div>
+        <div class="dept deptCon">
+        <h2>成本部</h2>
+        <div>
+            <ul class="list">
+            <li deptName="成本部" class="manage">
+                <div>部门经理</div>
+                <div>林丽兰</div>
+              </li>
+            <li deptName="成本部">
+                <div>造价工程师</div>
+                <div>刘雪琴</div>
+              </li>
+            <li deptName="成本部">
+                <div>造价工程师</div>
+                <div>叶爽</div>
+              </li>
+          </ul>
+            <a class="plus"></a> </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<div class="bdept clearfix deptCon deptList fl">
+    <h2>工程中心</h2>
+    <ul class="deptlist list clearfix fl">
+    <li class="manage">
+        <div>分管总监</div>
+        <div>汪涛</div>
+      </li>
+    <li class="deptIcon">
+        <div>工程管理部</div>
+      </li>
+  </ul>
+    <a class="plus"></a>
+    <div id="products">
+    <div id="catalog">
+        <div class="dept deptCon">
+        <h2>工程管理部</h2>
+        <div>
+            <ul class="list">
+            <li deptName="工程管理部">
+                <div>总工</div>
+                <div>吴震邦</div>
+              </li>
+            <li deptName="工程管理部" class="manage">
+                <div>技术主管</div>
+                <div>杨大军</div>
+              </li>
+            <li deptName="工程管理部">
+                <div>资料管理员</div>
+                <div>杨柳</div>
+              </li>
+          </ul>
+            <a class="plus"></a> </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+<div class="recycle"></div>
+
+<div class=" addbox hide">
+    <div class=" h200 bge relative">
+    <div class="table pdt10 noborder pdl10">
+        <div class="row lh30">
+        <div class="cell w120 tright">员工号：</div>
+        <div class="cell">
+            <input type="text" name="txt_NO" value="100022" class="w140 h20 nopadding"/>
+          </div>
+      </div>
+        <div class="row lh30">
+        <div class="cell w120 tright">姓名：</div>
+        <div class="cell">
+            <input type="text" name="txt_name" value="XXXX" id="txt_name" class="w140 h20 nopadding"/>
+          </div>
+      </div>
+        <div class="row lh30">
+        <div class="cell w120 tright">岗位：</div>
+        <div class="cell">
+            <select class="w140 h20 nopadding" name="txt_jobs" id="txt_jobs">
+            <option>项目经理</option>
+            <option>部门经理</option>
+            <option>造价工程师</option>
+            <option>出纳</option>
+            <option>财务复审</option>
+            <option>财务初审</option>
+            <option>财务助理</option>
+            <option>设计助理</option>
+            <option>分管总监</option>
+          </select>
+          </div>
+      </div>
+        <div class="row lh30">
+        <div class="cell w120 tright">工作代理人：</div>
+        <div class="cell">
+            <input type="text" class="w140 h20 nopadding"/>
+          </div>
+      </div>
+        <div class="row lh30">
+        <div class="cell w120 tright">是否可分配项目：</div>
+        <div class="cell">
+            <select class="w140 h20 nopadding">
+            <option>是</option>
+            <option>否</option>
+          </select>
+          </div>
+      </div>
+      </div>
+  </div>
+  </div>
+<div class="movebox hide">
+    <div class=" h200 bge relative">
+    <div class="table pdt10 noborder pdl10">
+        <div class="row lh30">
+        <div class="cell w120 tright">员工号：</div>
+        <div class="cell">100012</div>
+      </div>
+        <div class="row lh30">
+        <div class="cell w120 tright">姓名：</div>
+        <div class="cell"><span class="sp_name">张三</span></div>
+      </div>
+        <div class="row lh30">
+        <div class="cell w120 tright">部门：</div>
+        <div class="cell w80 tleft"><span class="sp_deptold">设计部</span></div>
+        <div class="cell w80 tleft"><span class="sp_deptnew">工程部</span></div>
+      </div>
+        <div class="row lh30">
+        <div class="cell w120 tright">岗位：</div>
+        <div class="cell w80 tleft"> 项目经理 </div>
+        <div class="cell">
+            <select class="w80 h20 nopadding" name="txt_jobs" id="txt_jobs">
+            <option>项目经理</option>
+            <option>部门经理</option>
+            <option>造价工程师</option>
+            <option>出纳</option>
+            <option>财务复审</option>
+            <option>财务初审</option>
+            <option>财务助理</option>
+            <option>设计助理</option>
+            <option>分管总监</option>
+          </select>
+          </div>
+      </div>
+        <div class="row lh30">
+        <div class="cell w120 tright">工作代理人：</div>
+        <div class="cell w80 tleft">XXX</div>
+        <div class="cell w80  tleft">
+            <input type="text" class="w70 h20 nopadding"/>
+          </div>
+      </div>
+        <div class="row lh30">
+        <div class="cell w120 tright">是否可分配项目：</div>
+        <div class="cell w80 tleft"> 是 </div>
+        <div class="cell w80  tleft">
+            <select class="w70 h20 nopadding">
+            <option>是</option>
+            <option>否</option>
+          </select>
+          </div>
+      </div>
+      </div>
+  </div>
+  </div>
+  <div id="dialog-confirm" title="是否删除该成员" class="hide">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>请确认是否要删除这个成员，这个操作将不可撤消?</p>
+</div>
+</body>
+</html>

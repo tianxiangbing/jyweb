@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> 美丽约-好友</title>
+  <meta name="Author" content="前端:田想兵2013/4/23">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,好友">
+  <meta name="Description" content="美丽约好友">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">  
+  <link href="../front/css/boxy.css" rel="stylesheet" type="text/css">
+ </head>
+ <body class="boybody">
+<!--#include virtual="top.html"-->
+
+<div class="firendBox">
+	<div class="upborder"></div>
+	<h2>我的好友</h2>
+	<div class="friendList girls">
+		<div class="row clearfix">
+			<div class="item">
+				<a class="img"><img src="../uploads/examples/thumb-1.jpg"/></a>
+				<div class="desc">
+					<p>
+						<a class="name">林俊杰</a>
+						<a class="chat">聊天</a>
+						<a class="gift">送礼物</a>
+					</p>
+					<p>
+						<span class="num star2">29</span><span class="job">护士</span>
+					</p>
+					<p>
+						<span class="date">13年12月2日</span>  成为好友
+					</p>
+					<p class="act">
+						<a class="cancelFriend" ref="123">取消好友</a> | <a class="report" ref="123">举报</a> | <a class="pullBlack" ref="123">拉黑</a>
+					</p>
+				</div>
+			</div>
+			<div class="item">
+				<a class="img"><img src="../uploads/examples/thumb-1.jpg"/></a>
+				<div class="desc">
+					<p>
+						<a class="name">林俊杰</a>
+						<a class="chat">聊天</a>
+					</p>
+					<p>
+						<span class="num star3">29</span><span class="job">护士</span>
+					</p>
+					<p>
+						<span class="date">13年12月2日</span>  成为好友
+					</p>
+					<p class="act">
+						<a>取消好友</a> | <a>举报</a> | <a>拉黑</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="item">
+				<a class="img"><img src="../uploads/examples/thumb-1.jpg"/></a>
+				<div class="desc">
+					<p>
+						<a class="name">林俊杰</a>
+						<a class="chat">聊天</a>
+					</p>
+					<p>
+						<span class="num star4">29</span><span class="job">护士</span>
+					</p>
+					<p>
+						<span class="date">13年12月2日</span>  成为好友
+					</p>
+					<p class="act">
+						<a>取消好友</a> | <a>举报</a> | <a>拉黑</a>
+					</p>
+				</div>
+			</div>
+			<div class="item">
+				<a class="img"><img src="../uploads/examples/thumb-1.jpg"/></a>
+				<div class="desc">
+					<p>
+						<a class="name">林俊杰</a>
+						<a class="chat">聊天</a>
+					</p>
+					<p>
+						<span class="num star5">29</span><span class="job">护士</span>
+					</p>
+					<p>
+						<span class="date">13年12月2日</span>  成为好友
+					</p>
+					<p class="act">
+						<a>取消好友</a> | <a>举报</a> | <a>拉黑</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottomborder"></div>
+</div>
+ <div class="publishBox" id="reportBox">
+	<h3>举报对方<input type="hidden" id="hd_ruserid" value="123123"/></h3>
+	<div class="reportCause"><i></i>选择举报原因</div>
+	<div class="reportList clearfix">
+		<div class="item">
+			<input type="radio" value="1" name="chk_report" id="ck_1"/><label for="ck_1">骚扰信息</label>
+		</div>
+		<div class="item">
+			<input type="radio" value="1" name="chk_report" id="ck_2"/><label for="ck_2">色情消息</label>
+		</div>
+		<div class="item">
+			<input type="radio" value="1" name="chk_report" id="ck_3"/><label for="ck_3">个人资料不当</label>
+		</div>
+		<div class="item">
+			<input type="radio" value="1" name="chk_report" id="ck_4"/><label for="ck_4">盗用他人资料</label>
+		</div>
+	</div>
+	<div class="actionBtn"><input type="submit" class="btnCreate" value="发布举报信息" /><a class="btnCancel close">取消</a></div>
+ </div>
+  <div class="publishBox" id="pullBlackBox">
+	<h3>提示<input type="hidden" id="hd_buserid" value="123123"/></h3>
+	<div class="reportCause"><i></i>您确定要将该用户加入黑名单吗？</div>
+	<p class="desc">加入黑名单后，将会阻止该用户和您的一切联系。</p>
+	<div class="actionBtn"><input type="submit"  class="btnCreate" value="确定"/><a class="btnCancel close">取消</a></div>
+ </div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.boxy.js"></script>
+<script type="text/javascript" src="../front/js/firend.js"></script>
+
+</body>
+</html>

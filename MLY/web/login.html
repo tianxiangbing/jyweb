@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <title> 美丽约-用户登录</title>
+  <meta name="Author" content="前端:田想兵2013/2/28">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,用户登录">
+  <meta name="Description" content="美丽约用户登录页面">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+ <div class="mainbody">
+	 <div class="minMain clearfix">
+		<div class="loginLogo"><h1><a href="index.php"><img src="../front/imgs/logo-top.jpg" title="美丽约"/></a></h1></div>
+		<div class="login logincontent clearfix">
+			<div class="leftAd"><img src="../front/imgs/login-ad.jpg"/></div>
+			<form action="login.php" method="post" id="loginFrom">
+			<div class="loginBox">
+				<div class="border borderTop"></div>
+				<div class="border borderMiddle">
+					<h2>用户登录</h2>
+					<div class="loginTable clearfix">
+						<div class="errorTip"><i></i><s></s><p>您输入的用户名或密码不正确，请确认后重新输入。</p></div>
+						<div class="iconUsername relative"><input type="text" class="inputText tipMsg" id="txt_userPhone" name="txt_userPhone" msg="手机号"/><i></i></div>
+						<div class="iconPwd relative"><input type="password" class="inputText tipMsg" id="txt_userPwd" name="txt_userPwd" msg="密码"/><i ></i></div>
+						<div class="validateContent clearfix" style="display:block;">
+							<div  class="iconValidate relative">
+								<input type="text" class="inputText tipMsg2" id="txt_userValidate" name="txt_userValidate" msg="验证码"/>
+								<div  class="validate"><img src="../front/imgs/validate.png" width="107px" height="39px" title="验证码,点击更换"/><a href="javascript:void(0)"></a></div>
+							</div>							
+						</div>
+						<div class="remember"><input type="checkbox" class="checkbox" value="1" id="chk_remember" name="chk_remember"/><label for="chk_remember">记住我</label><a href="forget.php" class="right">忘记密码</a></div>
+						<div><input type="submit" class="loginButton" value="登 录"/></div>
+						<div class="forgetPwd clearfix"><a href="reg.php" class="reg">免费注册</a></div>
+					</div>
+				</div>
+				<div class="border borderBottom"></div>
+			</div>
+			</form>
+		</div>
+		<div class="appLink"><a href="#"><img src="../front/imgs/google.jpg"/></a><a href="#"><img src="../front/imgs/apple.jpg"/></a></div>
+	 </div>
+ </div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/msgTip.js"></script>
+<script type="text/javascript" src="../front/js/login.js"></script>
+ </body>
+</html>

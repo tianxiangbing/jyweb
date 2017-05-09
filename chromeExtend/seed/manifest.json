@@ -1,0 +1,19 @@
+{
+	"version": "1.0",
+	"manifest_version":2,
+	"description": "视频下载扩展",
+	"icons": {
+		"16": "seed.png",
+		"48": "seed.png",
+		"128": "seed.png"
+	},
+	"name": "视频下载扩展",
+	"browser_action": {
+		"default_title": "视频下载扩展",
+		"default_icon": "seed.png",
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"tabs","http://*/*"
+	]
+}

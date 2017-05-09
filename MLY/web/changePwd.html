@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> 美丽约-修改密码</title>
+  <meta name="Author" content="前端:田想兵2013/4/24">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,修改密码">
+  <meta name="Description" content="美丽约修改密码">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">  
+  <link href="../front/css/boxy.css" rel="stylesheet" type="text/css">
+ </head>
+ <body class="boybody">
+<!--#include virtual="top.html"-->
+
+<div class="firendBox engagement clearfix">
+	<div class="upborder"></div>
+	<h2>修改密码</h2>
+	<div class="menu">
+		<ul>
+			<li><a href="#">修改密码</a></li>
+			<li><a href="#" class="current">信息认证</a></li>
+			<li><a href="#">黑名单</a></li>
+		</ul>
+	</div>
+	<div class="content">
+		<div class="wrong"><s></s>更改密码请尽量选择便于您记忆并不易被他人猜到的密码。</div>
+		<form>			
+				<div class="list clearfix">
+					<div class="row" msg="请输入当前密码." errmsg ="您输入的当前密码不正确!" >
+						<div class="left">当前密码：</div><div class="right"><input type="password" class="inputText tipMsg2"  id="txt_cpwd" msg="输入当前密码"/><div class="tip"></div></div>
+					</div>
+					<div class="row" msg="请输入新密码." errmsg ="您输入的新密码不正确!" >
+						<div class="left">新密码：</div><div class="right"><input type="password" class="inputText tipMsg2"  id="txt_pwd" msg="输入新密码"/><div class="tip"></div></div>
+					</div>
+					<div class="row" msg="请重复输入新密码." errmsg ="两次输入不一致!" >
+						<div class="left">确认密码：</div><div class="right"><input type="password" class="inputText tipMsg2"  id="txt_pwd2" msg="重新输入密码"/><div class="tip"></div></div>
+					</div>
+					<div class="row act">
+						<div class="left"></div><div class="right"><input type="submit" class="bigButton btn_findPwd" id="btn_success" value="完 成"/><div class="tip"></div></div>
+					</div>
+				</div>
+		</form>
+	</div>
+	<div class="bottomborder"></div>
+</div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.boxy.js"></script>
+<script type="text/javascript" src="../front/js/plugin/msgTip.js"></script>
+<script type="text/javascript" src="../front/js/firend.js"></script>
+
+</body>
+</html>

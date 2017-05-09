@@ -1,0 +1,54 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+<title>www.jb51.net 拖动层效果代码</title> 
+<script> 
+ var obj=0; 
+ var x=0; 
+ var y=0; 
+ var ie = (navigator.appVersion.indexOf("MSIE")!=-1);//IE 
+ var ff = (navigator.userAgent.indexOf("Firefox")!=-1);//Firefox 
+ function find(evt,objDiv){ 
+  obj = objDiv 
+  if (ff){ 
+    x =Math.max(Math.ceil( document.documentElement.scrollLeft + evt.layerX),0); 
+    y = document.documentElement.scrollTop + evt.layerY; 
+     
+    if (document.documentElement.scrollTop > 0){ 
+     y = evt.layerY - document.documentElement.scrollTop; 
+    } 
+     
+    if (document.documentElement.scrollLeft > 0){ 
+     x = evt.layerX - document.documentElement.scrollLeft; 
+    } 
+   } 
+  if (ie){ 
+    x = document.documentElement.scrollLeft + evt.offsetX; 
+    y = document.documentElement.scrollTop + evt.offsetY; 
+     
+    if (document.documentElement.scrollTop > 0){ 
+     y = evt.offsetY - document.documentElement.scrollTop; 
+    } 
+     
+    if (document.documentElement.scrollLeft > 0){ 
+     x = evt.offsetX - document.documentElement.scrollLeft; 
+    } 
+   } 
+ } 
+ function dragit(evt){ 
+  if(obj == 0){ 
+   return false 
+  } 
+  else{ 
+   obj.style.left = Math.max(evt.clientX - x,0) + "px"; 
+   obj.style.top = Math.max(evt.clientY - y,0) + "px"; 
+  } 
+ } 
+</script> 
+</head> 
+<body style="margin:0" onmousemove="dragit(event)" onmouseup="obj = 0"> 
+<div id="aaa" onmousedown="find(event,document.getElementById('aaa'))" style="background-color:red;width:200pt;height:200pt;position:absolute"> 
+<div id="aa" style="width:200pt;height:20pt;background:blue;position:absolute"></div> 
+</div>
+</body> 
+</html> 

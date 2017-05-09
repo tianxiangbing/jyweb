@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <link href="/css/base2.css" rel="stylesheet" type="text/css">
+  <link href="/css/uploadify.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css"/>
+  <body>
+<div class="uploadImgBox" id="uploadImgBox" style="display:block;">
+	<div class="login clearfix registForm3">
+		<div class="findPwdBox">		
+			<form id="myFrom" action="regist3.php" method="get" enctype="multipart/form-data">
+				<input type="hidden" id="hd_swf" value="/js/plugin/uploadify.swf"/>
+				<input type="hidden" id="hd_uploader" value="/upload.html"/>
+				<input type="hidden" id="hd_img"/>
+				<input type="hidden" id="hd_positionX"/>
+				<input type="hidden" id="hd_positionY"/>
+				<input type="hidden" id="hd_width"/>
+				<input type="hidden" id="hd_token" value="123123edidkdkdk"/>
+				<div class="defaultImg">
+					
+				</div>
+				<div class="cutImg" style="display:none;">
+					<div class="border">
+						<div class="imgsrc">
+						</div>
+						<div class="tip">HD 高清图像</div>
+					</div>
+				</div>
+				<div class="uploadContent">
+					<div class="sourseImg" id="sourseImg"><span class="pic-wrap"></span></div>
+					<div id="queueID"></div>
+					<div class="upload"><input type="button" id="uploadify" class="loginButton" value="上 传"/><p>支持jpg,gif,png格式,单张10K-8M之间</p></div>
+					<div class="upload2">
+						<input type="submit" id="btn_successUpload" value="确认完成"/>
+						<input type="button" id="btn_uploadifyAgain" value="重新上传"/>
+						<ul>
+							<li><i class="icon xs"></i>显示区域选择</li>
+							<li><i class="icon xz"></i>移动选择区域</li>
+							<li><i class="icon bh"></i>变换选择区域</li>
+						</ul>
+					</div>
+				</div>
+				
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+
+<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/js/plugin/jquery.uploadify-3.1.min.js"></script>
+<script type="text/javascript" src="/js/plugin/jquery.imgareaselect.pack.js"></script>
+<script type="text/javascript">
+
+	function preview(img, selection,view,w,h) {
+		if (!selection.width || !selection.height)
+			return;
+		
+		var scaleX = w / selection.width;
+		var scaleY = h / selection.height;
+		$('img',view).css({
+			width: Math.round(scaleX * $("#sourseImg img").width()),
+			height: Math.round(scaleY * $("#sourseImg img").height()),
+			marginLeft: -Math.round(scaleX * selection.x1),
+			marginTop: -Math.round(scaleY * selection.y1)
+		});
+		var sx =  imgWidth /$("#sourseImg img").width();
+		var sy = imgHeight /$("#sourseImg img").height();
+		$("#hd_positionX").val(Math.round(sx * selection.x1));
+		$("#hd_positionY").val(Math.round( selection.y1* sy  ));
+		$("#hd_width").val( Math.round( selection.width /$("#sourseImg img").width()*imgWidth));
+	}
+	function imgLoadedCall(img){
+		var width = img.width;
+		var height = img.height;
+		imgWidth = width;
+		imgHeight = height;
+		if (width>height){
+			$(this).width(300);
+			$(this).height(height*300/width);
+		}else{
+			$(this).height(300);
+			$(this).width(width*300/height);
+		}
+	}
+	if ($("#uploadify").size()>0){
+		/*
+		$("#uploadify").uploadify({
+			'method'	:"get",
+			height        : 43,
+			swf              : $("#hd_swf").val(),
+			uploader      : $("#hd_uploader").val()+"?token="+$("#hd_token").val(),
+			width         : 246,
+			fileSizeLimit:"10MB",
+			buttonText  : "上传图片",
+			queueID:"queueID",
+			fileTypeExts:"*.jpg; *.png; *.gif;*,jpeg",
+			fileTypeDesc:"jpg,png,gif图片",
+			multi:false,
+			onUploadStart:function(){
+				//$("#queueID").height(45);
+			},
+			onUploadSuccess:function(file, data, response){
+				data = $.parseJSON(data);
+				if (data.state == 1){	
+					//$("#queueID").height(0);			
+					setTimeout(function(){
+						$(".upload").height(0);
+						$(".upload div.uploadify").height(0).css({"overflow":"hidden"});
+						});
+					$(".upload2").show();
+					var img = new Image();
+					img.src = data.data.url;
+					$("#hd_img").val(data.data.url);
+					if (img.complete){
+						imgLoadedCall.call(img,img);
+					}else{
+						img.onload=function(){
+							imgLoadedCall.call(this,img);						
+							img.onload = null;
+						}
+					}
+					$("#sourseImg").removeClass("sourseImg").find("span").html(img);
+					$(".defaultImg").hide("slow");
+					$(".cutImg").show("slow").find(".border .imgsrc").html($(img).clone());
+					//$(".smallCut .imgsrc").html($(img).clone());
+					//selector?selector.setOptions({remove:true}):null;
+					selector=$("#sourseImg img").imgAreaSelect({ instance: true,aspectRatio: '1:1', handles: true,show:true,autoHide:false,hide:false,persistent:true,x1: 10, y1: 10, x2:110, y2: 110 ,minHeight:10,maxHeight:300,
+						fadeSpeed: 200, onSelectChange:function(img,sel){ 
+							preview(img,sel,$(".cutImg"),512,512);
+							//preview(img,sel,$(".smallCut"),180,180);
+						},onInit:function(img,sel){ 
+							preview(img,sel,$(".cutImg"),512,512);
+							//preview(img,sel,$(".smallCut"),180,180);
+						}
+					});
+				}else{
+					alert(data.msg);
+				}
+			},onUploadError:function(){
+				alert("上传失败，请尝试重新上传!")
+			}
+		});
+		*/
+		$("#uploadify").click(function(){
+			var data ={"state":1,"data":{"url":"/images/av.png"},"msg":"上传成功"};
+				if (data.state == 1){	
+					//$("#queueID").height(0);			
+					setTimeout(function(){
+						$(".upload").height(0);
+						$(".upload div.uploadify").height(0).css({"overflow":"hidden"});
+						});
+					$(".upload2").show();
+					var img = new Image();
+					img.src = data.data.url;
+					$("#hd_img").val(data.data.url);
+					if (img.complete){
+						imgLoadedCall.call(img,img);
+					}else{
+						img.onload=function(){
+							imgLoadedCall.call(this,img);						
+							img.onload = null;
+						}
+					}
+					$("#sourseImg").removeClass("sourseImg").find("span").html(img);
+					$(".defaultImg").hide("slow");
+					$(".cutImg").show("slow").find(".border .imgsrc").html($(img).clone());
+					//$(".smallCut .imgsrc").html($(img).clone());
+					//selector?selector.setOptions({remove:true}):null;
+					selector=$("#sourseImg img").imgAreaSelect({ instance: true,aspectRatio: '1:1', handles: true,show:true,autoHide:false,hide:false,persistent:true,x1: 10, y1: 10, x2:110, y2: 110 ,minHeight:10,maxHeight:300,
+						fadeSpeed: 200, onSelectChange:function(img,sel){ 
+							preview(img,sel,$(".cutImg"),512,512);
+							//preview(img,sel,$(".smallCut"),180,180);
+						},onInit:function(img,sel){ 
+							preview(img,sel,$(".cutImg"),512,512);
+							//preview(img,sel,$(".smallCut"),180,180);
+						}
+					});
+				}else{
+					alert(data.msg);
+				}
+		});
+	}
+	$("#btn_uploadifyAgain").click(function(){
+		$('#uploadify').uploadify('cancel', '*');
+		selector.remove();
+		$("#sourseImg").addClass("sourseImg").find("span").html("");
+		selector?selector.setOptions({remove:true}):null;
+		$(".cutImg").hide("slow");
+		$(".defaultImg").show("slow");
+		$(".upload2").hide();
+		$(".upload div.uploadify").height(69);
+		$(".upload").height('auto');
+		$('#uploadify').uploadify('cancel', '*');
+		$("#hd_img").val('');
+	});
+	$("#btn_successUpload").click(function(){
+		if($("#hd_img").val()==""){
+			alert("请先上传图片");
+			return false;
+		}
+		return false;
+	});
+</script>
+  </body>
+</HTML>

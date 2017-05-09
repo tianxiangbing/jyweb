@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+	<title>游戏排行榜</title>	
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+	  body {
+		width: 400px;
+		overflow-x: hidden;
+		font-size:12px;
+		background:url(topbg.jpg) repeat-x;
+	  }
+
+	  img {
+		margin: 5px;
+		border: 2px solid black;
+		vertical-align: middle;
+		border:none;
+	  }
+	  .ph-bd {clear:both;overflow:hidden;line-height:18px; color:#4d4d4d;}
+	  a{color:#1fa6e8;}
+	  a.current{color:#333;}
+	.ttime{width:30px;display:block;float:left;}
+	.game-name{width:120px;display:block;float:left;}
+	.type,.jhm{width:50px;display:block;float:left;}
+	.jhm{width:100px;}
+	.relative{text-align:center;display:block;float:left;width:70px;}
+	ul,li{list-style:none;padding:0;margin:0;clear:both;}
+	.ph-hd{background-color:#27b1e0;color:#FFF;line-height:24px;height:24px;}
+	.title{padding:10px 20px;background-color:#000;}
+	.menu{clear:both;height:22px;line-height:22px;}
+	.list .listCon{display:none;}
+	.list .current{display:block;}
+	.listCon span,.listCon dt,.listCon dd{float:left;}
+	.listCon li{height:30px;line-height:30px;}
+	.listCon img{width:30px;height:30px;}
+	.listCon dl dd{width:200px;}
+	.listCon dl dd a{float:left;}
+	</style>
+
+	 <script src="jquery-1.7.1.min.js"></script>
+	<script src="popup.js" type="text/javascript"></script>
+  </head>
+  <body>
+	<div class="title">
+		<a href="http://www.lovewebgames.com" target="_blank"><img src="http://www.lovewebgames.com/chromeExtend/logo.png"/></a>
+	</div>
+	<div class="menu">
+		<a href="javascript:void(0);" class="current">PC网游榜</a>
+		<a href="javascript:void(0);">安卓游戏榜</a>
+		<a href="javascript:void(0);">苹果游戏榜</a>
+	</div>
+	<div class="list">
+		<div class="listCon"></div>
+		<div class="listCon"></div>
+		<div class="listCon"></div>
+	</div>
+  </body>
+</html>

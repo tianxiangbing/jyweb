@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>jQuery UI Sortable - Portlets -QQ群5678537群主田想兵敬上</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-cn" />    
+<meta name="robots" content="all" />    
+<meta name="author" content="田想兵" />
+<meta name="Copyright" content="Copyright lovewebgames.com All Rights Reserved." />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta http-equiv="imagetoolbar" content="false" />
+<link type="text/css" rel="stylesheet" href="../style/css.css" media="all" /> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"><!–mce:0–></script>
+
+    <script type="text/javascript" src="ui.core.js"></script>
+
+    <script type="text/javascript" src="ui.sortable.js"></script>
+
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+
+    <style type="text/css">
+        .column
+        {
+            float: left;
+            padding-bottom: 100px;
+            border: 1px solid #adaada;
+        }
+        .w1
+        {
+            width: 270px;
+        }
+        .w2
+        {
+            width: 150px;
+        }
+        .w3
+        {
+            width: 400px;
+        }
+        .portlet
+        {
+            margin: 0 1em 1em 0;
+            border: 1px solid #525252;
+        }
+        .portlet-header
+        {
+            margin: 0.3em;
+            padding-bottom: 4px;
+            padding-left: 0.2em;
+            cursor: move;
+            background: #585858;
+            width: 100%;
+            color: White;
+        }
+        .portlet-header .ui-icon
+        {
+            float: right;
+        }
+        .portlet-content
+        {
+            padding: 0.4em;
+        }
+        .ui-sortable-placeholder
+        {
+            border: 1px dotted black;
+            visibility: visible !important;
+            height: 50px !important;
+        }
+        .ui-sortable-placeholder *
+        {
+            visibility: hidden;
+        }
+        .ui-icon ui-icon-plusthick
+        {           
+            cursor:pointer;
+            }
+        .demo-description{clear:both;}
+		.close{float:right;cursor:pointer;}
+    </style>
+
+    <script type="text/javascript" id="showtxb">
+        $(function() {
+            //$.cookie("list","c1:1@2@3|c2:4|c3:5");
+            if (!$.cookie("list")) {
+                $.cookie("list", "c1:1@2@3|c2:4|c3:5"); //设置默认排序
+            }
+            var list = $.cookie("list"); //获取cookie里的list值
+            //alert(list)
+            var arrColumn = list.split('|');
+            $.each(arrColumn, function(m, n) {
+                var elemId = n.split(':')[0]; //容器ID
+                //debugger;
+                var arrRow = n.split(':')[1] ? n.split(':')[1].split('@') : ""; //单个序列ID
+                //debugger;
+                $.each(arrRow, function(m, n) {
+                    if (n) {//排除空值
+                        $("#" + elemId).append($("#sb" + n).attr('id', n))//把序列填加进容器
+                    }
+                });
+            })
+
+            ////////调用排序组件.  stop 为移动停止时事件。connectWith是跨列排序。
+            $(".column").sortable({
+                connectWith: '.column',
+                stop: saveLayout
+            });
+            $(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+			.find(".portlet-header")
+				.addClass("ui-widget-header ui-corner-all")
+				.prepend('<span class="ui-icon ui-icon-plusthick">　-　</span>')
+				.end()
+			.find(".portlet-content");
+
+            $(".portlet-header .ui-icon").click(function() {
+                //$(this).toggleClass("ui-icon-minusthick");
+            $('.ui-icon-plusthick').toggle(function() { $(this).html("　+　") }, function() { $(this).html("　-　"); });
+                $(this).parents(".portlet:first").find(".portlet-content").toggle();
+            });
+
+            $(".column").disableSelection();
+
+            ///把顺序拼接保存到cookie里.
+            function saveLayout() {
+                //alert()
+                var list = "";
+                $.each($(".column"), function(m) {
+                    //alert($(this).attr('id'))
+                    list += $(this).attr('id') + ":";
+                    $.each($(this).children(".portlet"), function(d) {
+                        //alert($(this).attr('id'))
+                        list += $(this).attr('id') + "@";
+                    })
+                    list += "|";
+                    //alert($(this).child(".portlet")[0].attributes['id'].value)
+                    //alert($(this)[0].attributes['id'].value)
+                })
+                $.cookie("list", list)
+                //alert($.cookie("list"))
+
+            }
+            //每一列模块的值,其实sortable这个函数里有一个serialize可以直接取到对应的序列值:格式如下:
+            // $('#left').sortable('serialize',{key:'leftmod[]'}) + '&' + $('#right').sortable('serialize',{key:'rightmod[]'})
+            //我这里就没有用这个东西
+			$(".close").click(function(){
+				$(this).closest(".portlet").remove();
+				saveLayout();
+			});
+        })
+    </script>
+
+    <script src="../js/com.js" type="text/javascript"></script>
+</head>
+<body>
+<div><a href="../">返回至列表页</a>请记住本站地址：<a href="http://www.lovewebgames.com/demo">http://www.lovewebgames.com/demo</a>[<a href="javascript:addfavorite()">收藏</a>][<a href="javascript:copy()">分享</a>]</div>
+    <div class="demo">
+        <div style="display: none;">
+            <div class="portlet" id="sb1">
+                <div class="portlet-header">
+                    Feeds<span class="close">删除</span></div>
+                <div class="portlet-content">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+            <div class="portlet" id="sb2">
+                <div class="portlet-header">
+                    News<span class="close">删除</span></div>
+                <div class="portlet-content">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+            <div class="portlet" id="sb3">
+                <div class="portlet-header">
+                    Shopping<span class="close">删除</span></div>
+                <div class="portlet-content">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+            <div class="portlet" id="sb4">
+                <div class="portlet-header">
+                    Links<span class="close">删除</span></div>
+                <div class="portlet-content">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+            <div class="portlet" id="sb5">
+                <div class="portlet-header">
+                    Images<span class="close">删除</span></div>
+                <div class="portlet-content">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+            </div>
+        </div>
+        <div class="column w1" id='c1'>
+        </div>
+        <div class="column w2" id='c2'>
+        </div>
+        <div class="column w3" id='c3'>
+        </div>
+    </div>
+    
+    <!-- End demo -->
+    <div class="demo-description">
+
+    <div id="content"></div>
+        <p>
+        本例来源于QQ群:5678537，群主所写，详情请加入QQ技术群：5678537.
+        <a href="http://www.lovewebgames.com">http://www.lovewebgames.com</a>
+        </p>
+    </div>    <div class="correlation">
+    	<div>相关文章</div>
+            <ul>
+            <li><a href="../sortable/" target="_blank" title="关于jquery中的sortable排序之后的保存状态的办法">关于jquery中的sortable排序之后的保存状态的办法</a></li>
+            <li><a href="../jstip/" target="_blank" title="封装自己的js提示信息jtip">封装自己的js提示信息jtip</a></li>
+            </ul>
+    </div>
+    <p>浙ICP备09082150号</p>
+    <!-- End demo-description -->
+</body>
+</html>

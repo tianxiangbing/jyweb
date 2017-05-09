@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> 固定列表格案例 </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/siku.css" />
+<style>
+.foldable-table{text-align:center;}
+.white-row{background-color:#fff;}
+.foldable-table-subhead .exted{background-position: -401px -272px;}
+.autoTable th{white-space:nowrap; }
+</style>
+  <script src="ui_lib/jquery/jquery-1.9.1.js"></script>
+  <script src="js/autotable.js"></script>
+<script type="text/javascript" src="js/Siku.js"></script>
+ </head>
+
+ <body>
+
+ 	<table class="data-table main-data-table dockTable" bordercolor="#cccccc" border="1" cellspacing="0" cellpadding="0" style="width:600px">
+        <tbody>
+          <tr class="data-table-head" style="height: 35px;">
+            <td rowspan="3" class="scroll-table-innertable-boxtd">
+		<div class="scroll-table-innertable-box" style="width:520px;overflow:auto;">
+			 <table border="1" cellpadding="0" style="border-top:none;" cellspacing="0" bordercolor="#cccccc" class="foldable-table autoTable">
+			<thead>
+			<tr class="foldable-table-head">
+			<th>授信银行 | 支行</th>
+			<th class="text-right">授信额度</th>
+			<th class="text-right">可用授信额度</th>
+			<th class="text-right">已提款金额</th>
+			<th class="text-right">已还款本金</th>
+			<th>币种</th>
+			<th>合同编号</th>
+			<th>状态</th>
+			</tr>
+			</thead>
+			<tbody></tbody>
+			</table>
+		</div>
+          </td>
+            <td width="60">操作</td>
+          </tr>
+         
+        </tbody>
+      </table>
+      <div class="pagerContainer"></div>
+  <script>
+ $(function(){
+  
+  $(".autoTable").delegate(".gnslect","click",function(){
+		$(".gnmenu").show().css({"left":$(this).position().left,"top":$(this).position().top+25});
+		return false;
+  });
+  $(".autoTable").delegate(".edit","click",function(){
+		var id = $(this).closest('tr').attr('ref');
+		alert(id)
+		return false;
+  });
+  $(".autoTable").delegate(".gnslect","click",function(){
+		var id = $(this).closest('tr').attr('ref');
+		var arr =[];
+		$(".autoTable").find("tr[pid='"+id+"']").each(function(){
+			if ($(this).find(":checked").size()){
+				arr.push($(this).attr('ref'));
+			}
+		});
+		alert("当前id="+id+",他的子级id ="+arr.join(","));
+  });
+  $(".gnmenu").click(function(){return false;});
+  $(document).click(function(){
+	$(".gnmenu").hide();
+  });
+
+  
+  /*开始调用*/
+  $(function(){
+	$(".dockTable").dockTable({
+		columns:[
+			{
+				type:"auto",
+				column:[{
+					name:"name",type:"link",url:"asdfasd.html",args:["id"]
+				},{
+					name:"money",type:"money",align:'right'
+				},{
+					name:"money",type:"money",align:'right'
+				},{
+					name:"money",type:"money",align:'right'
+				},{
+					name:"money",type:"money",align:'right'
+				},{
+					name:"type",type:"text"
+				},{
+					name:"NO",type:"text"
+				},{
+					name:"status",type:"text"
+				}
+			]},{
+				type:"dock",
+				column:{
+					action:true,
+					html:'<a class="operate-a getAttr" >属性</a>&nbsp;<a class="operate-a edit" > 编辑</a>'
+					}
+			}
+		],
+		className:'scroll-table-innertable',
+		ref:'id',
+		datasource:"data2.txt",
+		ispager:true,
+		pagerContainer:$('.pagerContainer'),
+		callback:function(args){
+			console.log(args)
+		}
+	  });
+	});
+  /*操作的代码在这里*/
+  $('.dockTable').delegate('.getAttr','click',function(){
+  	var trIndex = $(this).closest('tr').index();
+  	var autoTr = $('.autoTable tr').get(trIndex);
+  	alert("id:"+$(autoTr).attr('ref'));
+  });
+  $('.dockTable').delegate('.edit','click',function(){
+  	var trIndex = $(this).closest('tr').index();
+  	var autoTr = $('.autoTable tr').get(trIndex);
+  	alert("id:"+$(autoTr).attr('ref'));
+  });
+});
+
+  </script>
+<ul class="foldable-table-subhead-drop-menu gnmenu" id="siku-3" style="display:none;"><li class="drop-menu-item">授信转让</li><li class="drop-menu-item">新增授信银行</li></ul>
+ </body>
+</html>

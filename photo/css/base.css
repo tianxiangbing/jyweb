@@ -1,0 +1,60 @@
+/* CSS Document */
+/*初始化样式*/
+body, dl, dt, dd, ul, ol, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, a {margin: 0;padding: 0;}
+body {text-align: left;font:12px/1.5 "宋体",Arial, Helvetica, sans-serif ;color:#000;}
+ul, ol {list-style: none}
+input, select, textarea {font-size: 12px;resize: none;outline: 0;}
+img {border: 0;vertical-align: middle;}
+table {border-collapse: collapse;border-spacing: 0}
+a {text-decoration: none;color: #333;cursor: pointer; outline: none;}
+a:hover {text-decoration: none;}
+a:active {outline: none;}
+:focus {outline: 0;}
+/*FF*/
+/*清除浮动样式*/
+.clearfix {zoom: 1;}
+.clearfix:after {content: ".";clear: both;display: block;height: 0;visibility: hidden;}
+.clearall {clear: both;}
+.left {float: left;}
+.right {float: right;}
+/* CSS Document */
+body,html,h1,h2,h3,h4,img{ margin:0; padding:0; list-style:none; font-family:"宋体"; font-size:12px;}
+a{ text-decoration:none; cursor:pointer;color:#333;}
+.cl{ clear:both; display: block; padding:5px 0;}
+img{ border:none;}.fl{ float:left;}.fr{ float:right;}
+.clearfix{zoom:1;}
+.clearfix:after{content:".";clear:both;display:block;height:0;overflow:hidden;}
+.w1200{width: 1200px;margin: 0 auto;}
+.xqsort{margin-left: 40px;margin-top: 7px;}
+.xqsort a{position:relative;color:#666666;display: block;float:left;height:26px;line-height:26px;padding:0 15px;background:url(../imgs/icon.png) 0 0 no-repeat;margin-right: 11px;}
+.xqsort a s{position:absolute;right:0;top:0;background:url(../imgs/icon.png) no-repeat -103px 0 ;display: block;height:26px;width:10px;}
+.waterfall{margin-top:40px; }
+.waterfall .cols{width:285px;margin-right: 20px;float:left;min-height: 200px;}
+.waterfall .lastcols{margin-right: 0;}
+.jczt{border-top:4px solid #be0000;line-height: 36px;color: #be0000;font-size: 16px;}
+.adcontent a{float: left;}
+.prevmore{width:360px;height:40px;line-height: 40px;text-align: center;margin:0 auto; border-radius: 5px; border:1px solid #e6e6e6;}
+.color666666{color:#666666;}
+.relative{position: relative;}
+.tips{display:none;position: absolute;bottom: 0;height: 50px;width:285px;color:#fff;font-family:"微软雅黑";}
+.tips .mask{z-index: 0;position: absolute;bottom:2px;height: 50px;width:100%; height: 50px;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;background: #000;} 
+.tips .desc{z-index: 2;position: relative;line-height: 20px;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8;opacity: 0.8;}
+.tips .desc span{float:left;width:120px;padding-left: 20px;}
+.others{padding:15px 15px  15px 20px;border:1px solid #e5e5e5;margin-top:-5px;}
+.waterfall .content .item{margin-bottom:20px;}
+.waterfall .content h3{font-family:"微软雅黑";}
+.font16{font-size: 16px;}
+.font14{font-size: 14px;}
+.w205{width: 205px;}
+.mgl5{margin-left: 5px;}
+.mgt10{margin-top:10px;}
+.others .icon{line-height: 16px;float:left;margin-right: 15px;}
+.icon i{background: url(../imgs/icon.png);display: block;margin:3px 2px 0 0;}
+.icon1 i{float: left;width:10px;height: 10px;background-position: -272px -133px;}
+.icon2 i{float: left;width:12px;height: 11px;background-position: -311px -133px;}
+.icon3 i{float: left;width:12px;height: 11px;background-position: -361px -133px;}
+.waterfall .split{width: 245px;height:6px;overflow: hidden;background: url(../imgs/icon.png) 0 -104px no-repeat;}
+.waterfall .chat{line-height: 16px;color:#999;}
+.waterfall .chat h4{color:#333;}
+.clr{clear: both;}
+.hide{display: none;}

@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>相册</title>
+<link href="css/base.css" rel="stylesheet" />
+<link href="css/index.css" rel="stylesheet" />
+<link type="text/css" href="style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+<link type="text/css" href="style/jquery.jscrollpane.lozenge.css" rel="stylesheet" media="all" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<!-- the mousewheel plugin -->
+<script type="text/javascript" src="script/jquery.mousewheel.js"></script>
+<!-- the jScrollPane script -->
+<script type="text/javascript" src="script/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" id="sourcecode">
+	$(function()
+	{
+		var posx = 0 ;
+		var pane = $('.scroll-pane').jScrollPane(
+			{
+				autoReinitialise: true
+			}
+		);
+		var api = pane.data('jsp');
+		$(".small_ban img").click(function(){
+			$('#bigImg').attr('src',$(this).attr('src'));
+			$(".small_ban").find('img').removeClass('active');
+			$(this).addClass('active')
+		});
+		$('#bigImg').click(function(e){
+			// console.log(e);
+			var x = e.offsetX;
+			if(x<390){
+				var img = $('.small_ban .active').closest('td').prev().find('img');
+				if(img.size()){
+					img.click();
+					posx-=132;
+					console.log(posx)
+					api.scrollTo(posx,0);
+				}else{
+					alert('已经是第一张了');
+				}
+			}else{
+				var img = $('.small_ban .active').closest('td').next().find('img');
+				if(img.size()){
+					posx +=132;
+					img.click();
+					console.log(posx)
+					api.scrollTo(posx,0);
+				}else{
+					alert('已经是最后一张了');
+				}
+			}
+		});
+	});
+</script>
+</head>
+
+<body>
+<!--header start-->
+<div class="header">
+	<div class="header_box clearfix">
+		<img class="logo" src="images/album_logo.png" />
+		<ul class="menu_list clearfix">
+			<li><a href="index.html" class="active">首页</a></li>
+			<li><a href="index.html">结婚咨询</a></li>
+			<li><a href="index.html">新娘日记</a></li>
+			<li><a href="index.html">新娘评价</a></li>
+			<li><a href="index.html">活动体验会</a></li>
+		</ul>
+		<div class="herader_right">
+			<a href="" target="_blank" class="sina"><img src="images/sina.png"/></a>
+			<a href="" target="_blank" class="tunxun"><img src="images/tun.png" /></a>
+			<a href="" class="login">登陆</a>
+			<a href="" class="register">注册</a>
+			<a href="index.html" class="back_index"><span></span>锐摄影官方网站</a>
+		</div>
+	</div>
+</div>
+<!--header end-->
+<!--main start-->
+<div class="album_main">
+	<div class="album_left">
+		<div class="album_title clearfix">
+			<p class="album_title_left"></p>
+			<p class="album_title_text">超唯美婚纱摄影（楼先生/颜女士）</p>
+			<p class="album_title_right"></p>
+		</div>
+		<div class="photo_ban">
+			<div class="photo_action clearfix">
+				<a href="" class="photo_praise"></a>
+				<a href="" class="photo_heart"></a>
+				<a href="" class="photo_boost"></a>
+				<a href="" class="photo_share"></a>
+				<span class="share_text">分享</span>
+			</div>
+			<div class="switch_ban clearall relative">
+				<img src="images/test/small_ban.png" id="bigImg" width="780" height="1000"/>
+				<div class="ban_info clearfix">
+					<ul>
+						<li>摄    像：Vivien</li>
+						<li>化    妆：Sean</li>
+						<li>取    景：公园</li>
+						<li>风    格：浪漫</li>
+					</ul>
+				</div>
+               	<div class="small_ban clearall scroll-pane" style="overflow:auto;">
+                <table border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td><li><img class="active" src="images/test/small_ban.png" width="114" height="140" /></li></td>
+                    <td><li><img src="images/test/small_ban2.png" width="114" height="140" /></li></td>
+                    <td><li><img src="images/test/small_ban3.png" width="114" height="140" /></li></td>
+                    <td><li><img src="images/test/small_ban.png" width="114" height="140" /></li></td>
+                    <td><li><img src="images/test/small_ban2.png" width="114" height="140" /></li></td>
+                    <td><li><img src="images/test/small_ban3.png" width="114" height="140" /></li></td>
+                    <td><li><img src="images/test/small_ban.png" width="114" height="140" /></li></td>
+                    <td><li><img src="images/test/small_ban2.png" width="114" height="140" /></li></td>
+                  </tr>
+                </table>		
+				</div>
+			</div>
+		</div>
+		<div class="comment">
+			<div class="comment_info">
+				拍婚纱照是朋友介绍的，我有好几个朋友之前都是在锐摄影拍的，她们也都推荐我去锐摄影。看了他们的照片都挺好看的，所以
+就义无返顾的在锐摄影定下了。因为我在哈尔滨他在辽宁，我们可是攒了一年的假到杭州来拍婚纱照，然后顺便玩了一下....
+			</div>
+			<!--comment start-->
+			<div class="comment_list clearfix">
+				<img src="images/comment_img.png" class="comment_img" />
+				<div class="comment_text">
+					<p class="comment_name">游客</p>
+					<p class="comment_com">这个组婚纱照排的真是不错，很有回归自然的田园风格！服装场景也很搭配。</p>
+				</div>
+			</div>
+			<div class="comment_list clearfix clearall">
+				<img src="images/comment_img.png" class="comment_img" />
+				<div class="comment_text">
+					<p class="comment_name">游客</p>
+					<p class="comment_com">这个组婚纱照排的真是不错，很有回归自然的田园风格！服装场景也很搭配。</p>
+				</div>
+			</div>
+			<div class="comment_list clearfix clearall">
+				<img src="images/comment_img.png" class="comment_img" />
+				<div class="comment_text">
+					<p class="comment_name">游客</p>
+					<p class="comment_com">这个组婚纱照排的真是不错，很有回归自然的田园风格！服装场景也很搭配。</p>
+				</div>
+			</div>
+			<!--comment end-->
+			<div class="write_comment clearfix clearall">
+				<div>
+					<img src="images/comment_img.png" class="write_comment_img" />
+					<textarea>你想说点什么？</textarea>
+				</div>
+				<a href="" class="submit_com">发表评论</a>
+			</div>
+		</div>
+		<!--Theme start-->
+		<div class="theme_titie"><p>主题作品</p></div>
+		<div class="theme_list">
+			<dl class="clearfix">
+				<dt>
+					<img src="images/test/theme.png" />
+				</dt>
+				<dd><img src="images/test/theme_1.png" /></dd>
+				<dd><img src="images/test/theme_2.png" /></dd>
+				<dd><img src="images/test/theme_1.png" /></dd>
+				<dd class="last"><img src="images/test/theme_2.png" /></dd>
+			</dl>
+			<dl class="clearfix">
+				<dt>
+					<img src="images/test/theme1.png" />
+				</dt>
+				<dd><img src="images/test/theme_1.png" /></dd>
+				<dd><img src="images/test/theme_2.png" /></dd>
+				<dd><img src="images/test/theme_1.png" /></dd>
+				<dd class="last"><img src="images/test/theme_2.png" /></dd>
+			</dl>
+			<dl class="last clearfix">
+				<dt>
+					<img src="images/test/theme.png" />
+				</dt>
+				<dd><img src="images/test/theme_1.png" /></dd>
+				<dd><img src="images/test/theme_2.png" /></dd>
+				<dd><img src="images/test/theme_1.png" /></dd>
+				<dd class="last"><img src="images/test/theme_2.png" /></dd>
+			</dl>
+		</div>
+		<!--Theme end-->
+	</div>
+	<div class="album_right">
+		<div class="excellent">
+			<div class="album_right_title">优秀<span>客片</span><p class="next_page"></p></div>
+			<div class="excellent_list clearfix scroll-pane">
+				<div class="fl"><img src="images/test/photo.png" /><img src="images/test/photo3.png" /><img src="images/test/photo.png" /><img src="images/test/photo3.png" /><img src="images/test/photo3.png" /></div>
+				<div class="fl"><img src="images/test/photo1.png" /><img src="images/test/photo4.png" /><img src="images/test/photo1.png" /><img src="images/test/photo4.png" /><img src="images/test/photo4.png" /></div>
+				<div class="fl"><img src="images/test/photo2.png" /><img src="images/test/photo5.png" /><img src="images/test/photo2.png" /><img src="images/test/photo5.png" /></div>
+			</div>
+		</div>
+		<div class="attention">
+			<div class="attention_title">关注<span>锐摄影<p class="attention_next_page"></p></div>
+			<div class="attention_weixin">
+				<s></s>
+				<a href="">
+					<span class="weixin_icon"></span>
+					<div class="weixin_info">
+						<p>微信观注锐摄影</p>
+						<p>微信号：RSY123</p>
+					</div>
+				</a>
+			</div>
+			<div class="attention_tunxun">
+				<s></s>
+				<a href="">
+					<span class="tunxun_icon"></span>
+					<div class="tunxun_info">
+						<p>微信观注锐摄影</p>
+						<p>微信号：RSY123</p>
+					</div>
+				</a>
+			</div>
+			<div class="attention_sina">
+				<s></s>
+				<a href="">
+					<span class="sina_icon"></span>
+					<div class="sina_info">
+						<p>微信观注锐摄影</p>
+						<p>微信号：RSY123</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="newActivi">
+			<div class="newActivi_title">最新<span>活动</span><p class="newActivi_next_page"></p></div>
+			<div class="newActivi_img">
+				<img src="images/test/newActivi.png" />
+			</div>
+			<div class="newActivi_img2">
+				<img src="images/test/newActivi2.png" />
+			</div>
+		</div>
+	</div>
+</div>
+<!--main end-->
+<!--footer start-->
+<div class="footer clearall">
+	<div class="footer_box clearfix">
+		<img src="images/foot_logo.jpg" class="foot_logo" />
+		<dl class="foot_list">
+			<dt>SHOWCASE</dt>
+			<dd><span></span><a href="">Love Show</a></dd>
+			<dd><span></span><a href="">Locations</a></dd>
+			<dd><span></span><a href="">Themes</a></dd>
+		</dl>
+		<dl class="foot_list">
+			<dt>SHOWCASE</dt>
+			<dd><span></span><a href="">Love Show</a></dd>
+			<dd><span></span><a href="">Locations</a></dd>
+			<dd><span></span><a href="">Themes</a></dd>
+		</dl>
+		<dl class="foot_list">
+			<dt>SHOWCASE</dt>
+			<dd><span></span><a href="">Love Show</a></dd>
+			<dd><span></span><a href="">Locations</a></dd>
+			<dd><span></span><a href="">Themes</a></dd>
+		</dl>
+		<dl class="foot_list last">
+			<dt>SHOWCASE</dt>
+			<dd><span></span><a href="">Love Show</a></dd>
+			<dd><span></span><a href="">Locations</a></dd>
+			<dd><span></span><a href="">Themes</a></dd>
+		</dl>
+	</div>
+	<div class="foot_bottom clearfix clearall">
+		<p class="img"></p>
+		<div class="text">
+			<p>版权所有 © 2012-2014 杭州彬锐文化创意有限公司 鄂ICP备12008691号</p> 
+			<p>CREATIVE & IDEAS DESIGN BY BIKS POWERED BY C&I SYSTEM</p>
+		</div>
+	</div>
+</div>
+<!--footer end-->
+</body>
+</html>

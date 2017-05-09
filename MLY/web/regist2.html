@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <title> 美丽约-用户注册</title>
+  <meta name="Author" content="前端:田想兵2013/3/13">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,用户注册">
+  <meta name="Description" content="美丽约用户注册页面">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+ <div class="mainbody">
+	 <div class="minMain clearfix">
+		<div class="loginLogo"><h1><a href="index.php"><img src="../front/imgs/logo-top.jpg" title="美丽约"/></a><a href="login.html" class="toplogin">已经是美丽约会员？直接登录 >></a></h1></div>
+		<div class="login clearfix registForm2">
+			<form action="regist3.html" method="post" id="registForm2">
+				<h2></h2>
+				<div class="findPwdBox">
+					<div class="list clearfix">
+						<div class="row">
+							<div class="left icon Icon1"><i></i>年龄：</div>
+							<div class="right"><select id="sel_age"><option value="-1">请选择</option><option value="18">18岁</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择年龄</div></div>
+						</div>
+						<div class="row">
+							<div class="left icon Icon2"><i></i>星座：</div><div class="right"><select id="sel_constellation"><option value="-1">请选择</option><option value="7">狮子座</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择星座</div></div>
+						</div>
+						<div class="row">
+							<div class="left icon Icon3"><i></i>身高：</div><div class="right"><select id="sel_bodyHeight"><option value="-1">请选择</option><option value="170">170cm</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择身高</div></div>
+						</div>
+						<div class="row">
+							<div class="left icon Icon4"><i></i>体重：</div><div class="right"><select id="sel_bodyWeight"><option value="-1">请选择</option><option value="60">60KG</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择体重</div></div>
+						</div>
+						<div class="row">
+							<div class="left icon Icon5"><i></i>所在地：</div><div class="right area"><select id="sel_area" ajaxurl="getCity.txt">
+							<option value="-1">请选择</option><option value="1">杭州</option></select><select id="sel_city">
+							<option value="-1">请选择</option>
+							<option value="1">杭州</option>
+							</select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择所在地</div></div>
+						</div>
+						<div class="row">
+							<div class="left icon Icon6"><i></i>职业：</div><div class="right"><select id="sel_job"><option value="-1">请选择</option><option value="公务员">公务员</option></select><div class="tip wrong" style="display:none;"><i></i><s></s>请选择职业</div></div>
+						</div>
+						<!--女生显示身材和气质-->
+						<div class="row">
+							<div class="left icon Icon7"><i></i>身材：</div><div class="right"><select id="sel_stature"><option value="-1">请选择</option><option value="曲条">曲条</option></select><div class="tip wrong"  style="display:none;"><i></i><s></s>请选择身材</div></div>
+						</div>
+						<div class="row">
+							<div class="left icon Icon8"><i></i>气质：</div><div class="right"><select id="sel_qualities"><option value="-1">请选择</option><option value="很好">很好</option></select><div class="tip wrong"  style="display:none;"><i></i><s></s>请选择气质</div></div>
+						</div>
+						<!--男生显示年收入和购车情况-->
+						<div class="row">
+							<div class="left icon Icon9"><i></i>年收入：</div><div class="right"><select id="sel_income"><option value="-1">请选择</option><option value="3">3000-5000</option></select><div class="tip wrong"  style="display:none;"><i></i><s></s>请选择年收入</div></div>
+						</div>
+						<div class="row">
+							<div class="left icon Icon10"><i></i>购车情况：</div><div class="right"><select id="sel_buybus"><option value="-1">请选择</option><option value="有车">有车</option></select><div class="tip wrong"  style="display:none;"><i></i><s></s>请选择购车情况</div></div>
+						</div>
+						<div class="row findpwd">
+							<div class="left"></div><div class="right"><input type="submit" class="bigButton btn_findPwd" id="btn_success" value="完 成"/><div class="tip"></div></div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>		
+	 </div>
+ </div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/msgTip.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.select.js"></script>
+<script type="text/javascript" src="../front/js/regist.js"></script>
+ </body>
+</html>

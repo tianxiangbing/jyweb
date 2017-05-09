@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+	<title>JY游戏列表</title>
+	<style>
+	  body {
+		width: 400px;
+		overflow-x: hidden;
+		font-size:12px;
+		background:url(topbg.jpg) repeat-x;
+	  }
+
+	  img {
+		margin: 5px;
+		border: 2px solid black;
+		vertical-align: middle;
+		width: 75px;
+		height: 75px;
+		border:none;
+	  }
+	  #main_content{
+		
+	  }
+	  #main_content ul,
+	  #main_content li{
+	  list-style:None;		
+	  }
+	  #main_content li{float:left;width:120px;height:120px;text-align:center;}
+	  #main_content li a{text-decoration:none;}
+	.title{padding:10px 20px;background-color:#000;}
+	.title img{width:auto;height:auto;}
+	</style>
+
+	<!--
+	  - JavaScript and HTML must be in separate files: see our Content Security
+	  - Policy documentation[1] for details and explanation.
+	  -
+	  - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+	 -->
+	 <script src="jquery-1.7.1.min.js"></script>
+	<script src="popup.js"></script>
+  </head>
+  <body> 
+	<div class="title">
+		<a href="http://www.lovewebgames.com" target="_blank"><img src="http://www.lovewebgames.com/chromeExtend/logo.png"/></a>
+	</div>
+  </body>
+</html>

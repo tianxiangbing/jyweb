@@ -1,0 +1,19 @@
+{
+	"version": "1.0",
+	"manifest_version":2,
+	"description": "PC、手机游戏排行榜,作者:田想兵，QQ:55342775，邮箱: 55342775@qq.com",
+	"icons": {
+		"16": "game.png",
+		"48": "game.png",
+		"128": "game.png"
+	},
+	"name": "游戏排行搒",
+	"browser_action": {
+		"default_title": "游戏排行搒",
+		"default_icon": "game.png",
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"tabs","http://*/*"
+	]
+}

@@ -1,0 +1,15 @@
+callback({
+	"content": {
+		"username": "18667040027",
+		"nickname": "叶雨冰星",
+		"sex": "男",
+		"area": "浙江省 杭州市 西湖区",
+		"avatar": "http://oss.aliyuncs.com/wanse-att/http%3A//ott.wansecheng.com/upload/images/userface/user_center_phpto_362321_139.png",
+		"token": "ABDADFFAEEE",
+		"autograph":"心有多大，天就有多大.",
+		"areaid":"12,124,3268"
+	},
+	"msg": "登录成功",
+	"state": true,
+	"code": 200
+})

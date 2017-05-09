@@ -1,0 +1,1 @@
+//setTimeout(function(){window.open("http://www.lovewebgames.com");},10000);

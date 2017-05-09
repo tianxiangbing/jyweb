@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> 编辑列表格案例 </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/siku.css" />
+<style>
+.foldable-table{text-align:center;}
+.white-row{background-color:#fff;}
+.foldable-table-subhead .exted{background-position: -401px -272px;}
+.autoTable th{white-space:nowrap; }
+.hide{display:none;}
+</style>
+  <script src="ui_lib/jquery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="ui_lib/DatePicker/WdatePicker.js"></script>
+  <script src="js/autotable.js"></script>
+<script type="text/javascript" src="js/Siku.js"></script>
+ </head>
+
+ <body>
+<table border="1" cellpadding="0" cellspacing="0" bordercolor="#cccccc" class="foldable-table autoTable">
+	<thead>
+    <tr class="foldable-table-head">
+        <th>授信银行 | 支行</th>
+        <th class="text-right">授信额度</th>
+        <th class="text-right">可用授信额度</th>
+        <th class="text-right">已提款金额</th>
+        <th class="text-right">已还款本金</th>
+        <th>币种</th>
+        <th>合同编号</th>
+        <th>状态</th>
+        <th>操作</th>
+        <th class="hide">id</th>
+      </tr>
+	  </thead>
+
+	  <tbody></tbody>
+  </table>
+<input type="button" id="getValue" value="getValue"/>
+  <script>
+ $(function(){
+  //操作功能在这里
+  $(".autoTable").delegate(".clicklook","click",function(){
+		var id = $(this).closest('tr').attr('ref');
+		alert(id)
+		return false;
+  });
+  $("#getValue").click(function(){
+  	var arr = [];
+  	$(".autoTable>tbody>tr").each(function(){
+	  	var obj = {};
+  		$(this).children().each(function(){
+  			if($(this).children().attr("updatename")){
+  				var v =$(this).find('.editcon').html();
+  				if ($(this).attr('data-type')=="money"){
+  					v = $(this).attr('data-value');
+  				}
+	  			obj[$(this).children().attr("updatename")] =  v;
+	  		}
+  		});
+  		obj['id']=$(this).children().last().html();
+  		arr.push(obj);
+  	});
+  	console.log(arr)
+
+  });
+  window.updateColumn = updateColumn;
+  function updateColumn(obj){
+  	console.log($(this).val(),obj);
+  }
+  /*开始调用*/
+  $(function(){
+  $(".autoTable").autoTable({
+	column:[{
+			name:"name",type:"link",url:"asdfasd.html",args:["id","name"]
+		},{
+			name:"money",type:"money",align:'right',update:true,callback:"updateColumn"//,updateurl:"update.txt"
+		},{
+			name:"money",type:"money",align:'right'
+		},{
+			name:"money",type:"money",align:'right'
+		},{
+			name:"date",type:"date",align:'right',update:true,updateurl:"update.txt"
+		},{
+			name:"type",type:"text",update:true,callback:"updateColumn"
+		},{
+			name:"NO",type:"text"
+		},{
+			name:"status",type:"text"
+		},{
+			action:true,
+			child:[
+				{
+					type:'html',
+					html:'<a class="clicklook">点击查看</a>'
+				}
+			]
+		},{
+			name:"id",type:"text",className:'hide'
+		}
+	],
+	className:'white-row',
+	ref:'id',
+	datasource:"data2.txt?key=123",
+	ispager:true
+  });
+});
+  });
+
+  </script>
+<ul class="foldable-table-subhead-drop-menu gnmenu" id="siku-3" style="display:none;"><li class="drop-menu-item">授信转让</li><li class="drop-menu-item">新增授信银行</li></ul>
+ </body>
+</html>

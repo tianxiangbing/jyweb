@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+ <HEAD>
+  <TITLE>瀑布流(高度式) -Demo - JY官方网站 </TITLE>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <META name="Generator" content="EditPlus">
+  <META name="Author" content="田想兵">
+  <META name="Keywords" content="JY,javascript库">
+  <META name="Description" content="使用绝对或相对定位的方式来实现瀑布流！">
+   <link rel="stylesheet" type="text/css" href ="../css/css.css"/>
+   <link rel="stylesheet" type="text/css" href ="css/demo.css"/>
+ </HEAD>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <div class="inner">
+          <a id="forkme_banner" href="https://github.com/tianxiangbing/JY">View on GitHub</a>
+
+          <h1 id="project_title"><a href="http://www.lovewebgames.com" title="JY首页"><img src="/css/logo.png" width="178px" height="62px" alt="JY logo" title="JY logo"/></a></h1>
+			<ul class="menu"><li><a href="/">首页</a></li><li><a href="/default.aspx">SNS社区</a></li><li><a href="/api.html">API</a></li><li><a href="https://github.com/tianxiangbing/JY/zipball/master">下载</a></li><li><a href="/demo.html">Demo</a></li><li><a href="/about.html">关于我们</a></li></ul>
+          <h2 id="project_tagline">javascript JY</h2>
+            <div id="downloads">
+              <a class="zip_download_link" href="https://github.com/tianxiangbing/JY/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/tianxiangbing/JY/tarball/master">Download this project as a tar.gz file</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+		<div id="main_content" class="inner">
+			<div class="content waterfall_old clearfix">
+			<!--
+			<ul>
+				<li><img src="imgs/1.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/1.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/1.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+			</ul>
+			<ul>
+				<li><img src="imgs/2.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/1.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/1.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+			</ul>
+			<ul>
+				<li><img src="imgs/3.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/2.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/1.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/1.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/2.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/1.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+				<li><img src="imgs/1.jpg" alt="JY javascript"/><div>JY javascript</div></li>
+			</ul>
+			-->
+			</div>
+		</div>
+</div>
+
+    <div id="footer_wrap" class="outer">
+      <div class="inner"><ul class="menu"><li><a href="/">首页</a></li><li><a href="/default.aspx">SNS社区</a></li><li><a href="/api.html">API</a></li><li><a href="https://github.com/tianxiangbing/JY/zipball/master">下载</a></li><li><a href="/demo.html">Demo</a></li><li><a href="/about.html">关于我们</a></li></ul>
+        <p class="copyright">JY by <a href="https://github.com/tianxiangbing">田想兵</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+		<p>官方网址<a href="http://www.lovewebgames.com" target="_blank">JY</a></p>
+        
+      </div>
+    </div>
+	<script src="../scripts/JY.js"></script>
+	<script>
+	JY.ready(function(){
+		var column=3;
+		var waterfall_old = JY.byClass("waterfall_old")[0];
+		var curPage = 1;
+		for (var i =0; i<column; i++ ){
+			waterfall_old.appendChild( document.createElement("ul"));
+		}
+		function show(page){
+		JY.get("waterfall.txt",{page:page},function(r){
+			var rl = r.length;
+			for (var j=0;j<rl ;j++ ){
+				var minColumn = JY.query(".waterfall_old ul:eq(0)")[0];
+				var tmpH = JY.height(minColumn);
+				for (var i =0,l = column; i<l ; i++ ){
+					var curColumn = JY.query(".waterfall_old ul:eq("+i+")")[0];
+					var curHeight = JY.height(curColumn);
+					if (curHeight < tmpH){
+						minColumn = curColumn;
+						tmpH = curHeight;
+					}
+				}
+				var tmp = document.createElement("li");
+				tmp.innerHTML = '<img src="'+r[j].url+'" alt="'+r[j].text+'" height="'+r[j].height+'px"/><div>'+r[j].text+'</div>'
+				minColumn.appendChild(tmp);
+			}
+		},"json");
+		};
+		show(curPage);
+		function dongtaiMore() {
+        if (JY.byId("footer_wrap"))
+            if ( parseInt(document.documentElement.scrollTop) + JY.height(window) > JY.offset("footer_wrap").y) {
+				curPage++;
+               show(curPage);
+            }
+    }
+    JY.bind(window,"scroll",dongtaiMore);
+	});
+	</script>
+  </body>
+</HTML>

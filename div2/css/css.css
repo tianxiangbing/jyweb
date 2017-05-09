@@ -1,0 +1,23 @@
+@charset "gb2312";
+/* CSS Document */
+body{ margin:0 auto; width:1003px; font-size:12px; font-family:Arial, Helvetica, sans-serif;}
+ul,dl,dd,h1,h2,h3,h4,h5,h6,form,p { padding:0; margin:0;}
+ul{ list-style:none;}
+a{ text-decoration:none; color:#000; }
+a:hover{ text-decoration:none; color:#bb2424;}
+.all{clear:both;}
+
+/*Í·²¿*/
+#banner{ background:url(../images/banner.jpg) 0 0 no-repeat; width:1003px; height:262px;}
+#logo{ width:144px; height:73px; float:left; margin:45px 0 0 60px;}
+#dao{ width:680px; float:right; margin-top:60px; height:30px;text-align:center; line-height:30px;}
+#dao ul li{ float:left; width:108px; color:#000000; font-size:14px; font-weight:500; background:url(../images/logo_bg.gif) left 10px no-repeat;}
+
+#con{ width:1003px;}
+/*×ó±ß*/
+#left{ float:left; width:207px;}
+#left ul{ background:url(../images/left_bg.jpg) repeat-y;}
+#left ul il{ height:30px; color:#F00;}
+
+/*ÓÒ±ß*/
+#right{ margin-left:207px;widows:796px; background:#CCC; height:500px;}

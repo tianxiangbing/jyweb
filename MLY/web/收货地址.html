@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> 美丽约-收货地址</title>
+  <meta name="Author" content="前端:田想兵2013/4/24">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,赠送的礼物">
+  <meta name="Description" content="美丽约赠送的礼物">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">  
+  <link href="../front/css/boxy.css" rel="stylesheet" type="text/css">
+ </head>
+ <body class="boybody">
+<!--#include virtual="top.html"-->
+<div class="giftTitle header"><h2>礼物商城</h2><ul class="model mc0"><li class="lt current"><i></i><a>礼物商城</a></li><li class="rt"><i></i><a>赠送的礼物</a></li></ul></div>
+<div class="firendBox engagement mylikeboy gift clearfix">
+	<div class="upborder"></div>
+	<h2>收货地址<em>(2)</em></h2>
+	<div class="menu">
+		<ul>
+			<li><a href="收到的礼物.html">收到的礼物</a></li>
+			<li><a href="收货地址.html" class="current">收货地址</a></li>
+		</ul>
+	</div>
+	<div class="content">
+		<form action="/" method="post" id="addressform">
+			<input type="hidden" id="hd_addressid" value=""/>
+			<div class="tips"><i></i>您有一份礼物尚未领取，请尽快在有效期内领取您的礼物!</div>
+			<div class="address">
+				<h4><div><label><i>*</i>收货人姓名：</label><div class="receiveName"><input type="text" class="inputText tipMsg" id="txtname" msg="输入您的名字" /></div><i>（首次填写后不可修改） </i></div></h4>
+			</div>
+			<div class="form">
+				<h3>新增收货地址</h3>
+				<div class="row" style="*position:relative;*z-index:2;"><!--ie hack-->
+					<div class="left">所在地区：</div>
+					<div class="right">
+					<select class="linkage" ajaxurl="getCity2.txt" id="sel_province" action="sel_city,sel_area" param="pid">
+						<option value="1">浙江省</option>
+					</select>
+					<select action="sel_area" param="cid" id="sel_city" class="linkage" ajaxurl="getCity3.txt">
+						<option value="1">杭州</option>
+					</select>
+					<select id="sel_area">
+						<option value="1">西湖区</option>
+						<option value="2">滨江区</option>
+					</select></div>
+				</div>
+				<div class="row">
+					<div class="left">详细地址：</div>
+					<div class="right"><textarea class="txt_address tipMsg" id="txtaddress" name="txtaddress" msg="输入您的详细地址" maxLength="250"></textarea></div>
+				</div>
+				<div class="row">
+					<div class="left">手机号码：</div>
+					<div class="right"><input class="tipMsg inputText" type="text" id="txttel" name="tel" msg="输入您的手机号码" /></div>
+				</div>
+				<div class="row">
+					<div class="left"></div>
+					<div class="right"><a class="btnBlue" id="btnSubmit">保存地址<i></i></a><input type="submit" class="hide" msg="输入您的手机号码"/></div>
+				</div>
+			</div>
+		</form>
+		<div class="addesslist">
+			<h4>已保存的有效地址（3）</h4>
+			<table>
+				<tr class="trtitle"><th>收货人</th><th>所在地区</th><th>详细地址</th><th>手机</th><th></th><th>操作</th></tr>
+				<tr class="current" ref="1234567"><td>李世龙</td><td ref="1,1,1">浙江省杭州市西湖区</td><td width="150px" align="left">杭州市西湖区天目山路118号天际大厦18楼</td><td>18666706569</td><td><a class="default">默认地址</a></td><td><a href="javascript:void(0)" class="update">修改</a> | <a href="#">删除</a></td></tr>
+				<tr ref="1234568"><td>李世龙</td><td ref="1,1,2">浙江省杭州市滨江区</td><td width="150px" align="left">杭州市西湖区天目山路118号天际大厦18楼</td><td>18666706569</td><td><a href="#" class="default">设为默认</a></td><td><a href="javascript:void(0)" class="update">修改</a> | <a href="#">删除</a></td></tr>
+				<tr ref="1234569"><td>李世龙</td><td ref="1,2,1">浙江省杭州市西湖区</td><td width="150px" align="left">杭州市西湖区天目山路118号天际大厦18楼</td><td>18666706569</td><td><a href="#" class="default">设为默认</a></td><td><a href="javascript:void(0)" class="update">修改</a> | <a href="#">删除</a></td></tr>
+			</table>
+		</div>
+	</div>
+	<div class="bottomborder"></div>
+</div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/msgTip.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.select.js"></script>
+<script type="text/javascript" src="../front/js/gift.js"></script>
+</body>
+</html>

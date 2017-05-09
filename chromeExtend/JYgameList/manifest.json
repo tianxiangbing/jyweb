@@ -1,0 +1,19 @@
+{
+	"version": "1.0",
+	"manifest_version":2,
+	"description": "javascript JY开发js游戏作者:田想兵，QQ:55342775，邮箱: 55342775@qq.com",
+	"icons": {
+		"16": "snake.png",
+		"48": "snake.png",
+		"128": "snake.png"
+	},
+	"name": "js JY游戏",
+	"browser_action": {
+		"default_title": "JY游戏",
+		"default_icon": "snake.png",
+		"default_popup": "pupup.html"
+	},
+	"permissions": [
+		"tabs","http://www.lovewebgames.com/*"
+	]
+}

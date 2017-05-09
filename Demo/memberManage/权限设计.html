@@ -1,0 +1,130 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>权限设计</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <style>
+  body{font-size:12px;}
+  h1 { padding: .2em; margin: 0; }
+  .clearfix{zoom:1;}
+.clearfix:after{content:".";clear:both;display:block;height:0;overflow:hidden;}
+  #products { float:left; width: 990px; margin-left: 2em; }
+  #cart { width: 235px; float: left; margin-top: 1em; }
+  /* style the list to maximize the droppable hitarea */
+  #cart ol { margin: 0; padding: 1em 0 1em 3em; }
+  .ui-widget-content{}
+  .dept{border:1px solid #ccc;border-radius:5px;float:left;width:300px;margin:10px;height:200px;}
+  .dept h2{font-size:14px;font-weight:400;padding-left:20px;}
+  li{list-style:none;}
+  .dept li{background:url(p.png) no-repeat center top;padding-top:55px;float:left;width:60px;margin-right:10px;overflow:hidden;text-align:center;}
+  .accept{min-height:220px;}
+  .accept .cell,.cell3{border-bottom:1px solid #ccc;width:65px; float:left;border-right:1px solid #CCC;line-height:25px;text-align:center;height:25px;overflow:hidden;}
+  .ui-widget-content .ui-state-hover, .ui-widget-content .ui-state-default{border:none;}
+  .placeholder{min-height:200px;line-height:200px;text-align:center;}
+  .mgt10{margin-top:10px;}
+  .cell3{width:100px;float:left;border-right:none;}
+  .row{position:relative;height:26px;clear:both;width:250px;}
+  .remove{position:absolute;right:-5px;top:5px;display:block;width:12px;height:12px;display:none;background:url(StaticFile.png) -64px -364px no-repeat ;}
+  .row:hover .remove{display:block;cursor:pointer;}
+  </style>
+  <script>
+  $(function() {
+	  $(".accept").delegate(".remove","click",function(){
+		$(this).closest('.row').fadeOut(function(){
+			$(this).remove();
+		})
+	  });
+    //$( "#catalog" ).accordion();
+    $( "#catalog li" ).draggable({
+      appendTo: "#dept",
+      helper: "clone"
+    });
+    $( "#cart .accept" ).droppable({
+      activeClass: "ui-state-default",
+      hoverClass: "ui-state-hover",
+      accept: ":not(.ui-sortable-helper)",
+      drop: function( event, ui ) {
+        $( this ).find( ".placeholder" ).remove();
+        $( "<div class='row'><div class='cell'>"+ui.draggable.text()+"</div><div class='cell'>"+ui.draggable.attr('deptName')+"</div><div class='cell3'><select><option>项目经理</option><option>采购工程师</option><option>设计工程师</option><option>土建工程师</option><option>机电工程师</option><option>设计PM</option><option>采购PM</option></select></div><a class='remove'></a></div>" ).appendTo( this );
+		if ($(this).height()>220){
+			$(this).parent().css("borderBottom","none");
+		}
+      }
+    }).sortable({
+      items: "li:not(.placeholder)",
+      sort: function() {
+        // gets added unintentionally by droppable interacting with sortable
+        // using connectWithSortable fixes this, but doesn't allow you to customize active/hoverClass options
+        $( this ).removeClass( "ui-state-default" );
+      }
+    });
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="cart">
+  <div class="mgt10">类型：<select style="width:150px;"><option>项目</option></select></div>
+  <div class="mgt10">名称：<input type="text" value="支付宝二期项目" style="width:145px;"/></div>
+  <div class="ui-widget-content mgt10">
+    <div class="accept clearfix">
+		<div class="cell">姓名</div>
+		<div class="cell">部门</div>
+		<div class="cell3">岗位</div>
+      <div class="placeholder">拖入您想加入的成员</div>
+    </div>
+  </div>
+</div>
+ 
+<div id="products">
+  <div id="catalog">
+	<div class="dept">
+    <h2>设计部</h2>
+    <div>
+      <ul>
+        <li deptName="设计部">张三</li>
+        <li deptName="设计部">李四</li>
+        <li deptName="设计部">王五</li>
+      </ul>
+    </div>
+	</div>
+	<div class="dept">
+    <h2>成本部</h2>
+    <div>
+      <ul>
+        <li deptName="成本部">赵钱</li>
+        <li deptName="成本部">孙二娘</li>
+        <li deptName="成本部">欧阳震华</li>
+      </ul>
+    </div>
+	</div>
+	<div class="dept">
+    <h2>工程管理部</h2>
+    <div>
+      <ul>
+        <li deptName="工程管理部">曾轶可</li>
+        <li deptName="工程管理部">马景涛</li>
+        <li deptName="工程管理部">范范</li>
+      </ul>
+    </div>
+	</div>
+	<div class="dept">
+	<h2>成本合约部</h2>
+    <div>
+      <ul>
+        <li deptName="成本合约部">李响</li>
+        <li deptName="成本合约部">汪涵</li>
+        <li deptName="成本合约部">李湘</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
+ 
+ <div class="dept" style="height:1px;width:1px;" id="dept"></div>
+ 
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> 美丽约-收到的礼物</title>
+  <meta name="Author" content="前端:田想兵2013/4/24">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,收到的礼物">
+  <meta name="Description" content="美丽约收到的礼物">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">  
+  <link href="../front/css/boxy.css" rel="stylesheet" type="text/css">
+ </head>
+ <body class="boybody">
+<!--#include virtual="top.html"-->
+<div class="giftTitle header"><h2>礼物商城</h2><ul class="model mc0"><li class="lt current"><i></i><a>礼物商城</a></li><li class="rt"><i></i><a href="赠送的礼物.html">赠送的礼物</a></li></ul></div>
+
+<a href="javascript:void(0)" class="selectGirl">选择女生</a>
+
+ <div class="publishBox" id="selectGirlBox">
+ <h2>选择赠送的女生</h2>
+ <iframe src="about:blank" href="女生列表.html" height="400px" width="600px" frameborder="0"></iframe>
+ <form id="selectGirlForm">
+	<input type="hidden" value="" id="hd_girlid" name="girlid"/>
+	<div class="actionBtn"><a class="btnCreate">确定女生</a><input type="submit" class="hide"/></div>
+ </form>
+ </div>
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../front/js/plugin/msgTip.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.boxy.js"></script>
+<script type="text/javascript" src="../front/js/plugin/jquery.select.js"></script>
+<script type="text/javascript" src="../front/js/gift.js"></script>
+</body>
+</html>

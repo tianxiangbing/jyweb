@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>实现滚动广告的几种方案 - QQ技术群5678537.70210212</title>    
+<meta name="robots" content="all" />    
+<meta name="author" content="田想兵" />
+<meta name="Copyright" content="Copyright lovewebgames.com All Rights Reserved." />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta http-equiv="imagetoolbar" content="false" />
+<link type="text/css" rel="stylesheet" href="../style/css.css" media="all" />
+    <script src="../js/com.js" type="text/javascript" charset="gb2312"></script>
+</head>
+
+<body>
+<div><a href="../">返回至列表页</a>请记住本站地址：<a href="http://www.lovewebgames.com/demo">http://www.lovewebgames.com/demo</a>[<a href="javascript:addfavorite()">收藏</a>][<a href="javascript:copy()">分享</a>]</div>
+    <h1>&nbsp;
+</h1>
+    <h2>&nbsp;
+</h2>
+        <h3>日期:2010-01-20 16:04</h3>
+    <p>点击<a href="roll.html" target="_blank">本文实例演示</a></p>
+    <div id='content'>
+    	<p>今天无事逛网，突然发现了一个很有趣的事情，（也许只有我觉得有趣）.我看到一图片竟然在我拖动滚动条的时候没有动，也许你会说我少见多怪，不信你去找个这样的我看看，很少有的，一般的都是一拖动图片就在那跳得厉害，在触发js的scroll事件啊，可是我遇到的是真正不动的，我开始以为是FF上面才会这样，没想到IE6和IE7都有如此效果，不得不惊叹神奇了。如是我就找出了如下神奇的代码：仅用CSS实现滚动效果~~<br />
+   	    #fixed{position:fixed;}</p>
+    	<p>&lt;div id=&quot;fixed&quot;&gt;滚动&lt;/div&gt;</p>
+    	<p>完了，就这个属性就搞定滚动了，真想骂人了。不过还没完呢，这个只支持火狐和IE7，我刚才说过IE6也可以的，只是IE6要实现就有点复杂了，<br />
+        <div class="code">
+    	  &lt;!--[if IE]&gt;<br />
+    	  &lt;style type=&quot;text/css&quot;&gt;<br />
+    	  * html #fixed{position:absolute;right:1px;top:expression_r(eval_r(document.body.height + 500));}<br />
+    	  * html{overflow:hidden;}<br />
+    	  * html body{height:100%;overflow:auto;}<br />
+    	  * html #fixed{right:17px;top:5em;}<br />
+    	  * html #fixed{right :1px;top :expression_r(eval_r(document.body.height + 500));}<br />
+    	  &lt;/style&gt;<br />
+    	  &lt;![endif]--&gt; <br />
+          </div>
+    	  这个我也没太看是什么意思。也好像是CSS，不过应该也算有脚本了吧！？也许有人知道可以告诉大家，分享一下。<br />
+    	  既然我的标题是实现滚动的N种方法的话，肯定不只是这两种了。好像CSS的还有其他写法，我就不一一列举了，我主要是想告诉大家比较常用的JS实现方式,我的网站有用到一段代码，也是网上找的，不过有个不好的地方就是它是相对顶部的，也就是你的网页高度不够就会出现拉不到底的情况，其实百度留言也会出现这种状况的，我就不多说了，先贴出来大家看看:<br /><div class="code">
+    	  lastScrollY=0;<br />
+    	  function heartBeat(){<br />
+    	  var diffY;<br />
+    	  if (document.documentElement &amp;&amp; document.documentElement.scrollTop)<br />
+    	  diffY = document.documentElement.scrollTop;<br />
+    	  else if (document.body)<br />
+    	  diffY = document.body.scrollTop<br />
+    	  else<br />
+    	  {}<br />
+    	  percent=.1*(diffY-lastScrollY);<br />
+    	  if(percent&gt;0)percent=Math.ceil(percent);<br />
+    	  else percent=Math.floor(percent);<br />
+    	  document.getElementById(&quot;lovexin12&quot;).style.top=parseInt(document.getElementById(&quot;lovexin12&quot;).style.top)+percent+&quot;px&quot;;<br />
+    	  (document.getElementById(&quot;lovexin12&quot;).style.top)+percent+&quot;px&quot;;</p>
+    	<p>lastScrollY=lastScrollY+percent;<br />
+    	  }</p>
+    	<p>window.setInterval(&quot;heartBeat()&quot;,1);</p>
+        </div>
+    	<p>有兴趣的话大家可以把上面的改成相对于底部，这样会好很多。<br />
+    	  最近一直在看js库，比较感兴趣的jquery还是很不错的，所以呢~，现在再来贴一个用jquery来实现滚动的代码，比上面这个感觉要好很多。不过也只是个选择，没有必要可以不用，必竟jquery的代码也有几十KB的。<br /><div class="code">
+    	  $(document).ready(function(){<br />
+    	  <br />
+    	  if($.browser.msie &amp;&amp; $.browser.version == 6) {<br />
+    	  FollowDiv.follow();<br />
+    	  }<br />
+    	  });<br />
+    	  FollowDiv = {<br />
+    	  follow : function(){<br />
+    	  $('#cssrain').css('position','absolute');<br />
+    	  $(window).scroll(function(){<br />
+    	  var f_top = $(window).scrollTop() + $(window).height() - $(&quot;#cssrain&quot;).height() - parseFloat($(&quot;#cssrain&quot;).css(&quot;borderTopWidth&quot;)) - parseFloat($(&quot;#cssrain&quot;).css(&quot;borderBottomWidth&quot;));<br />
+    	  $('#cssrain').css( 'top' , f_top );<br />
+    	  });<br />
+    	  }<br />
+    	  }<br />
+          </div>
+    	  好了，就说到这吧！！有什么不明白的可以提出来!讨论才会有进步~！欢迎大家加入我的QQ群，大家共同学习进步.群号:5678537</p>
+</div>
+<p>点击<a href="roll.html" target="_blank">本文实例演示</a></p>
+   
+    <div class="correlation">
+    	<div>相关文章</div>
+            <ul>
+            <li><a href="../openDiv/" target="_blank" title="用javascript面向对象的方式制作弹出层">用javascript面向对象的方式制作弹出层</a></li>
+            <li><a href="../sortable/" target="_blank" title="关于jquery中的sortable排序之后的保存状态的办法">关于jquery中的sortable排序之后的保存状态的办法</a></li>
+            <li><a href="../jstip/" target="_blank" title="封装自己的js提示信息jtip">封装自己的js提示信息jtip</a></li>
+            <li><a href="../roll/" target="_blank" title="js或css实现滚动广告的几种方案">js或css实现滚动广告的几种方案</a></li>
+            </ul>
+    </div>
+    <p>浙ICP备09082150号</p>
+<script src="http://s79.cnzz.com/stat.php?id=1776009&web_id=1776009&show=pic" language="JavaScript"></script>
+</body>
+</html>

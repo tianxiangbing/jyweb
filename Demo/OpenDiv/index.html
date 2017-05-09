@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>用javascript面向对象的方式制作弹出层-QQ群5678537群主田想兵敬上</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="Content-Language" content="zh-cn" />    
+    <meta name="robots" content="all" />    
+    <meta name="author" content="田想兵" />
+    <meta name="Copyright" content="Copyright lovewebgames.com All Rights Reserved." />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta http-equiv="imagetoolbar" content="false" />
+
+	<link type="text/css" rel="stylesheet" href="../style/css.css" media="all" />
+    <script src="../js/com.js" type="text/javascript" charset="gb2312"></script>
+
+</head>
+<body>
+<div><a href="../">返回至列表页</a>请记住本站地址：<a href="http://www.lovewebgames.com/demo">http://www.lovewebgames.com/demo</a>[<a href="javascript:addfavorite()">收藏</a>][<a href="javascript:copy()">分享</a>]</div>
+    <h1>
+        用javascript面向对象的方式制作弹出层</h1>
+    <h2>
+        标签:js弹出层,js面向对象,js遮罩层,排序 作者:田想兵</h2>
+    <div id='content'>
+    <p>点击<a href="http://www.lovewebgames.com/demo/OpenDiv/OpenDiv.html" target="_blank">本文实例演示</a></p>
+        <p>        由于本人以前是.net程序员，所以即使现在在做前端，也习惯于用面向对象的方式编写js脚本，我想如果你以前也是或者现在还是名第三代程序员的话，应该对此并不陌生。
+		</p>
+        <p>说到js的面向对象，就不得不提到prototype这个js内置属性了(注意：这里的prototype可不是prototype.js),它的作用就是可以动态的向一个对象(object)添加某种属性。我现在要做的就是尽可能的让代码达到公用，像继承啦之类的。好了，这些就不多说了，对prototype不了解的可以搜索下相关内容。</p>
+        <p>今天要做的是点击一个html元素让其弹出一个友好的对话框来，首先要明确两点，一点是我可能会大量的用到这种方式，甚至不希望出现系统的alert或confirm，第二点就是弹出的内容尽量的可以多种化，甚至可以自定义。明确这两点后，我们就可以写js代码了，都是些很初级的东西，如果你要鄙视的话就尽情的鄙视我吧！^.^</p>
+      <div class="code">首先定义一个简单的对象:<br/>
+function objDIV() {<br>
+this.bgdiv ;<br>
+this.infodiv ;<br>
+}		
+	  </div><p>首先，我们希望弹出一个遮罩层，我给它命名openBackDiv();</p>
+        <div class="code">
+        function openBackDiv(txbdiv) {<br>
+txbdiv.bgdiv = document.createElement(&quot;div&quot;);<br>
+txbdiv.bgdiv.setAttribute(&quot;id&quot;, &quot;overDiv&quot;);<br>
+txbdiv.bgdiv.innerHTML = &quot;&lt;iframe frameborder=\&quot;no\&quot; class=\&quot;overPanel\&quot; id=\&quot;ifrover\&quot;&gt;&lt;/iframe&gt;&quot;;<br>
+<br>
+}
+		</div>
+        <p>再者，把它添加到刚刚定义的对象的prototype里去(openBG()):
+   	  <div class="code">
+            	objDIV.prototype.openBG = function() {<br>
+openBackDiv(this);<br>
+document.body.appendChild(this.bgdiv);<br>
+this.bgdiv.style.display = &quot;block&quot;;<br>
+this.bgdiv.style.width = document.documentElement.clientWidth + &quot;px&quot;;<br>
+this.bgdiv.style.height = document.documentElement.scrollHeight + &quot;px&quot;;<br>
+}
+			</div>
+        </p>
+      <p>
+        	再就是添加弹出信息层的方法,和上面一样做就行了。所以才说这个是很基础的东西，好像确实没啥好说的，直接上代码吧！
+      <div class="code">
+              <p>这是一个正在加载的弹出层，有点粗糙.
+                function openLoadDiv(txbdiv) {<br>
+                txbdiv.infodiv = document.createElement(&quot;div&quot;);<br>
+                txbdiv.infodiv.setAttribute(&quot;id&quot;, &quot;div_info&quot;);<br>
+                txbdiv.infodiv.innerHTML = &quot;&lt;div style=\&quot; line-height:1.5;background:url(../images/tips-top-bg.gif) repeat-x; height:54px; text-align:center;\&quot;&gt;&lt;img border=\&quot;0\&quot; src=\&quot;../images/xtts.gif\&quot; /&gt;&lt;/div&gt;&lt;div style='padding:20px; font-size:14px; color:#b44201;'&gt;&lt;div style='width:100px; float:left;margin:60px 0 0 60px; height:80px;'&gt;&lt;img src='/images/business/loading.gif' width='100px' height='100' border='0'/&gt;&lt;/div&gt;&lt;div style='float:left; width:250px;margin:90px 0 0 20px;'&gt;&lt;p&gt;请稍等，正在处理中...&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&quot;;<br>
+                document.body.appendChild(txbdiv.infodiv);<br>
+                txbdiv.infodiv.style.width = &quot;550px&quot;;<br>
+                txbdiv.infodiv.style.height = &quot;270px&quot;;<br>
+                txbdiv.infodiv.style.fontSize = &quot;14px&quot;;<br>
+                txbdiv.infodiv.style.position = &quot;absolute&quot;;<br>
+                txbdiv.infodiv.style.background = &quot;#fff&quot;;<br>
+                txbdiv.infodiv.style.zIndex = &quot;9999&quot;;<br>
+                 centerobject();//居中的方法<br>
+                }</p>
+                <p>                
+    objDIV.prototype.openLoading = function() {
+        this.openBG();
+        openLoadDiv(this);
+    }
+        	 </p>             
+        </div>
+        </p>
+        <p>做完这些后一个简单的弹出加载层就完成了.是不是有点成就感了，那么接着完成其他的工作吧！既然都弹出了，总得在某个时刻把它们移掉吧，下面就是移除这些层的方法。<div class="code">
+          objDIV.prototype.removeBG = function() {<br>
+if (this.bgdiv || document.getElementById(&quot;overDiv&quot;)) {<br>
+if (this.bgdiv) {<br>
+document.body.removeChild(this.bgdiv);<br>
+} else {<br>
+document.body.removeChild(document.getElementById(&quot;overDiv&quot;));<br>
+}<br>
+}<br>
+}<br>
+objDIV.prototype.removeInfo = function() {<br>
+this.removeBG();<br>
+if (this.infodiv) {<br>
+document.body.removeChild(this.infodiv);<br>
+} else {<br>
+document.body.removeChild(document.getElementById(&quot;div_info&quot;));<br>
+}<br>
+}</div></p>
+<p>如果想弹出不同层信息的话，就可以添加不同的prototype属性。具体实例请点击<a href="http://www.lovewebgames.com/demo/OpenDiv/OpenDiv.html" target="_blank">本文实例演示</a></p>
+    </div>
+    <div class="correlation">
+    	<div>相关文章</div>
+            <ul>
+            <li><a href="../openDiv/" target="_blank" title="用javascript面向对象的方式制作弹出层">用javascript面向对象的方式制作弹出层</a></li>
+            <li><a href="../sortable/" target="_blank" title="关于jquery中的sortable排序之后的保存状态的办法">关于jquery中的sortable排序之后的保存状态的办法</a></li>
+            <li><a href="../jstip/" target="_blank" title="封装自己的js提示信息jtip">封装自己的js提示信息jtip</a></li>
+            <li><a href="../roll/" target="_blank" title="js或css实现滚动广告的几种方案">js或css实现滚动广告的几种方案</a></li>
+            </ul>
+    </div>
+     <p>浙ICP备09082150号</p>
+<script src="http://s79.cnzz.com/stat.php?id=1776009&web_id=1776009&show=pic" language="JavaScript"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+callback({
+	"content": {
+	},
+	"msg": "发布成功",
+	"state": true,
+	"code": 200
+})

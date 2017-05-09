@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <style>
+  body,img,ul,li{margin:0;padding:0;border:none;}
+  h2{font-size:14px;}
+  h2 a{color:#2B2B2B;text-decoration:none;}
+  .focus_tab{overflow:hidden;height:255px;margin:4px auto 0;}
+  .focusPic{width:308px;height:290px;border:1px solid #DCDDDD;}
+ .sidePic{float:right;list-style:none;}
+ .sidePic li{
+	 width:21px;text-align:center;height:24px;line-height:26px;float:left;margin-right:7px;color:#2B2B2B; background: url("http://img3.cache.netease.com/cnews/newstest1204/focusbg2.gif") no-repeat scroll left bottom transparent;cursor:pointer;
+ }
+.focus_tab .normal{float:left;display:none;}
+.focus_tab .on{display:block}
+.sidePic .on {
+    background: url("http://img3.cache.netease.com/cnews/newstest1204/focusbg1.gif") no-repeat scroll left bottom transparent;
+    color: #FFFFFF;
+	display:block;
+}
+  </style>
+
+  <script src='jquery-1.4.1.min.js'></script>
+  <script>
+  $(function(){
+	$(".sidePic li").bind('click',click2).bind('mouseover',click2).bind('mouseout',resetTime).bind('mouseover',clearTime);
+	function click1(){
+		var index=$(this).html()-1;
+		$(".focus_tab > div.on").removeClass("on");
+		$(".focus_tab > div:eq("+index+")").addClass("on");
+		$(this).siblings(".on").removeClass("on");
+		$(this).addClass("on");
+	}	
+	function click2(){
+		var index=$(this).index();
+		$(".focus_tab > div").hide()
+		$(".focus_tab > div:eq("+index+")").show();
+		$(this).siblings(".on").removeClass("on");
+		$(this).addClass("on");
+	}
+	var curIndex=0;
+	var imgCount=$(".sidePic li").length;
+	function play(){
+		curIndex++;
+		if(curIndex>=imgCount){
+			curIndex=0;
+		}
+		//console.log($("sidePic > li:eq("+curIndex+")"))
+		$(".sidePic > li:eq("+curIndex+")").click();
+	}
+	var mytime;
+	function resetTime(){
+		 mytime=setInterval(play,2000);
+	}
+	function clearTime(){		
+		clearInterval(mytime);
+		curIndex=$(".sidePic li.on").index();
+	}
+
+	$("#addList").click(addList);
+	function addList(){
+		var temp=$(".focusPic:eq(0)").clone();
+		$("body").append(temp);
+		temp.find(".focus_tab .normal").show();
+		temp.css({"overflow":"hidden"});
+		temp.find(".focus_tab").css({"position":"relative"})
+		temp.find(".focus_tab .normal").css("margin-right","10px");
+		var itemWidth=temp.find(".focus_tab .normal").width();
+		temp.find(".focus_tab").width(itemWidth*imgCount);		
+		function play(){
+			curIndex++;
+			if(curIndex>=imgCount){
+				curIndex=0;
+			}
+			temp.find(".sidePic > li:eq("+curIndex+")").click();
+		}
+		var curIndex=0;
+		temp.find(".sidePic li").click(function(){
+			var index=$(this).index();
+			var step = curIndex-index;
+			temp.find(".focus_tab").animate({left:step*itemWidth+"px"},"slow");
+		});
+	}
+  });
+  </script>
+ </head>
+
+ <body>
+ <input type="button" value="添加一个滑动的幻灯片" id="addList"/>
+  <div class="focusPic">
+	<div class="focus_tab">
+			<div class="normal on"><a href="http://news.163.com/photoview/00AN0001/18737.html"><img width="300" height="225" alt="神舟八号飞船返回舱在内蒙古着陆" title="神舟八号飞船返回舱在内蒙古着陆" src="1.jpg"></a>
+					  <h2><a href="http://news.163.com/photoview/00AN0001/18737.html">神舟八号飞船返回舱在内蒙古着陆</a></h2>
+			</div>
+			<div class="normal"><a href="http://news.163.com/photoview/00AN0001/18724.html"><img width="300" height="225" alt="潜山600万建皖公像 官方称是＂安徽守护神＂" title="潜山600万建皖公像 官方称是＂安徽守护神＂" src="2.jpg"></a>
+					  <h2><a href="http://news.163.com/photoview/00AN0001/18724.html">潜山600万建皖公像 官方称是"安徽守护神"</a></h2>
+			</div>
+			<div class="normal"><a href="http://news.163.com/photoview/3R710001/18721.html"><img width="300" height="225" alt="《看客》第116期：人在“堵”途" title="《看客》第116期：人在“堵”途" src="3.jpg"></a>
+					  <h2><a href="http://news.163.com/photoview/3R710001/18721.html">《看客》第116期：人在“堵”途</a></h2>
+			</div>
+	</div>
+	<ul class="sidePic">
+		<li class="on">1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+ </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> 美丽约-(男生)主页</title>
+  <meta name="Author" content="前端:田想兵2013/3/27">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="美丽约,男生主页">
+  <meta name="Description" content="美丽约男生主页">
+  <link href="../front/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../front/css/messenger.css" rel="stylesheet" type="text/css">
+  <link href="../front/css/messenger-theme-future.css" rel="stylesheet" type="text/css">
+  
+ </head>
+ <body class="boybody">
+<!--#include virtual="top.html"-->
+ <div class="middleContainer clearfix">
+	<div class="rightInfo">
+		<div class="right-user border210">
+			<div class="topborder"></div>
+			<div class="right-user-img avatar">
+				<img src="../uploads/Koala.jpg"/>
+				<span><i></i><em>5</em></span>
+			</div>
+			<h3>苍井空</h3>
+			<p>钓鱼岛是中国的，苍井空是世界的。</p>
+			<div class="action">
+				<input type="button" class="button177" value="编辑自己"/>
+			</div>
+			<div class="bottomborder"></div>
+		</div>
+		<a class="right-ad" href="#">
+		</a>
+	</div>
+	<div class="leftInfo">
+		<div class="header"><h2>约会区域</h2> <div class="area">杭州</div>
+			<ul class="model mc1">
+				<li>列表模式</li>
+				<li class="current">地图模式</li>
+			</ul>
+		</div>
+		<div class="menu">
+				<a href="#" class="current m1" >推荐</a>
+				<a class="m2">日本料理</a>
+				<a class="m3">西餐厅</a>
+				<a class="m4">高档自助</a>
+				<a class="m5">中餐厅</a>
+				<a class="m6">东南亚餐厅</a>
+				<a class="m7">全部</a>
+		</div>
+		<div class="mapContainerBorder">
+			<div class="mapContainerBorderTop"></div>
+			<div class="mapContainer" id="mapContainer"></div>
+			<div class="mapContainerBorderBottom"></div>
+		</div>
+	</div>
+ </div>
+ <textarea id="mapDataList" style="display:none;">
+	[{"x":120.188482, "y": 30.249866,"title":"香格拉大饭店", "desc":"这是一家神奇的饭店，特色菜是酸辣土豆丝","money":200,"url":"boy.html","img":"../uploads/Koala.jpg","type":1},{"x":120.194385, "y":30.246152, "title":"重庆酸菜馆", "desc":"这家店相当有档次，它的特色菜是水煮鱼片","money":100,"url":"boy.html","img":"../uploads/Koala.jpg","type":4},{"x":120.17866, "y":30.183695, "title":"沙县小吃", "desc":"这里的拌面堪称一绝","money":15,"url":"boy.html","img":"../uploads/Koala.jpg","type":2}]
+ </textarea>
+ <input type="hidden" value="../front/imgs/webmap.png" id='icon_url' />
+<!--#include virtual="footer.html"-->
+<script type="text/javascript" src="../front/js/jquery-1.7.1.min.js"></script>
+<script  type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+<script type="text/javascript" src="../front/js/boy.js"></script>
+<script type="text/javascript" src="../front/js/plugin/InfoBox.js"></script>
+<script type="text/javascript" src="../front/js/map.js"></script>
+<script src="../front/js/plugin/messenger.min.js" type="text/javascript"></script>
+<script>
+$._messengerDefaults = {
+	extraClasses: 'messenger-fixed messenger-theme-future messenger-on-top messenger-on-right'
+}
+$.globalMessenger()["do"]({
+  errorMessage: "This did not go well."
+}, {
+  url: "/some-url",
+  success: function() {}
+});
+
+</script>
+<ul class="messenger messenger-fixed messenger-theme-future messenger-on-top messenger-on-right"><li class="messenger-message-slot shown last"><div class="messenger-message message alert info message-info alert-info messenger-will-hide-after"><div class="messenger-message-inner">Your request has succeded!</div><div class="messenger-spinner">
+    <span class="messenger-spinner-side messenger-spinner-side-left">
+        <span class="messenger-spinner-fill"></span>
+    </span>
+    <span class="messenger-spinner-side messenger-spinner-side-right">
+        <span class="messenger-spinner-fill"></span>
+    </span>
+</div></div></li>
+</ul>
+</body>
+</html>

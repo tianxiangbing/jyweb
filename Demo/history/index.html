@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>history 测试</title>
+</head>
+<body>
+	<form action="history.html" method="get" id="form">
+		<p>用户名：<input type="text" value="" name="name" id="name"/></p>
+		<p><input type="submit" value="submit" id="submit"></p>
+	</form>
+	<div id="info"></div>
+	<script>
+	var submit = document.getElementById('submit');
+	var input = document.getElementById('name');
+	var info = document.getElementById('info');
+	submit.addEventListener('click',function(){
+		info.innerHTML = input.value;
+		addState ();
+	});
+	function addState (){
+		history . pushState({name:input.value})
+	}
+	get();
+	// function add(){
+	// 	if("pushState" in history){
+	// 		otxt.value=n;
+	// 		history.pushState({num:n},null,location.href.split("?")[0]+"?num="+n);
+	// 	}
+	// }
+	function get(){
+		if("onpopstate" in window){
+			window.addEventListener("popstate",function(e){
+				if(e.state && e.state.name){
+					info.innerHTML=e.state.name;
+				}
+			},false);
+		}
+	}
+	
+	</script>
+</body>
+</html>

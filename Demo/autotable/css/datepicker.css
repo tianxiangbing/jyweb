@@ -1,0 +1,219 @@
+
+.WdateDiv {
+    background-color: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    padding: 0;
+    width: 180px;
+}
+.WdateDiv2 {
+    width: 360px;
+}
+.WdateDiv * {
+    font-size: 9pt;
+}
+.WdateDiv .NavImg a {
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    margin-top: 5px;
+    width: 16px;
+}
+.WdateDiv .NavImgll a {
+    background: url("img.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+}
+.WdateDiv .NavImgl a {
+    background: url("img.gif") no-repeat scroll -16px 0 rgba(0, 0, 0, 0);
+    float: left;
+}
+.WdateDiv .NavImgr a {
+    background: url("img.gif") no-repeat scroll -32px 0 rgba(0, 0, 0, 0);
+    float: right;
+}
+.WdateDiv .NavImgrr a {
+    background: url("img.gif") no-repeat scroll -48px 0 rgba(0, 0, 0, 0);
+    float: right;
+}
+.WdateDiv #dpTitle {
+    background-color: #F9F9F9;
+    height: 24px;
+    margin-bottom: 0;
+    padding: 1px;
+}
+.WdateDiv .yminput {
+    background-color: #F9F9F9;
+    border: 0 none;
+    cursor: pointer;
+    height: 20px;
+    margin-top: 2px;
+    text-align: center;
+    width: 50px;
+}
+.WdateDiv .yminputfocus {
+    border: 1px solid #CCCCCC;
+    color: #0000FF;
+    font-weight: bold;
+    height: 20px;
+    margin-top: 2px;
+    text-align: center;
+    width: 50px;
+}
+.WdateDiv .menuSel {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+.WdateDiv .menu {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+.WdateDiv .menuOn {
+    background-color: #BEEBEE;
+    cursor: pointer;
+}
+.WdateDiv .invalidMenu {
+    color: #AAAAAA;
+}
+.WdateDiv .YMenu {
+    margin-top: 20px;
+}
+.WdateDiv .MMenu {
+    margin-top: 20px;
+}
+.WdateDiv .hhMenu {
+    margin-left: 26px;
+    margin-top: -90px;
+}
+.WdateDiv .mmMenu {
+    margin-left: 26px;
+    margin-top: -46px;
+}
+.WdateDiv .ssMenu {
+    margin-left: 26px;
+    margin-top: -24px;
+}
+.WdateDiv .Wweek {
+    background: none repeat scroll 0 0 #DAF3F5;
+    border-right: 1px solid #DADADA;
+    text-align: center;
+}
+.WdateDiv .MTitle {
+    background-color: #F9F9F9;
+}
+.WdateDiv .MTitle td {
+    border-bottom: 1px solid #DADADA;
+}
+.WdateDiv .WdayTable2 {
+    border: 1px solid #DADADA;
+    border-collapse: collapse;
+}
+.WdateDiv .WdayTable2 table {
+    border: 0 none;
+}
+.WdateDiv .WdayTable {
+    background-color: #EEEEEE;
+    border-top: 1px solid #DADADA;
+    line-height: 20px;
+}
+.WdateDiv .WdayTable td {
+    text-align: center;
+}
+.WdateDiv .Wday {
+    cursor: pointer;
+}
+.WdateDiv .WdayOn {
+    background-color: #E77E23;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.WdateDiv .Wwday {
+    color: #FF2F2F;
+    cursor: pointer;
+}
+.WdateDiv .WwdayOn {
+    background-color: #E77E23;
+    color: #000000;
+    cursor: pointer;
+}
+.WdateDiv .Wtoday {
+    color: #0000FF;
+    cursor: pointer;
+}
+.WdateDiv .Wselday {
+    background-color: #BBBBBB;
+}
+.WdateDiv .WspecialDay {
+    background-color: #66F4DF;
+}
+.WdateDiv .WotherDay {
+    color: #6A6AFF;
+    cursor: pointer;
+}
+.WdateDiv .WotherDayOn {
+    background-color: #E77E23;
+    cursor: pointer;
+}
+.WdateDiv .WinvalidDay {
+    background-color: #FFFFFF;
+    color: #4D4D4D;
+}
+.WdateDiv #dpTime {
+    float: left;
+    margin-right: 30px;
+    margin-top: 3px;
+}
+.WdateDiv #dpTime #dpTimeStr {
+    margin-left: 1px;
+}
+.WdateDiv #dpTime input {
+    border: 1px solid #CCCCCC;
+    height: 20px;
+    text-align: center;
+    width: 18px;
+}
+.WdateDiv #dpTime .tB {
+    border-right: 0 none;
+}
+.WdateDiv #dpTime .tE {
+    border-left: 0 none;
+    border-right: 0 none;
+}
+.WdateDiv #dpTime .tm {
+    border-left: 0 none;
+    border-right: 0 none;
+    width: 7px;
+}
+.WdateDiv #dpTime #dpTimeUp {
+    background: url("img.gif") no-repeat scroll -32px -16px rgba(0, 0, 0, 0);
+    border: 0 none;
+    height: 10px;
+    width: 13px;
+}
+.WdateDiv #dpTime #dpTimeDown {
+    background: url("img.gif") no-repeat scroll -48px -16px rgba(0, 0, 0, 0);
+    border: 0 none;
+    height: 10px;
+    width: 13px;
+}
+.WdateDiv #dpQS {
+    background: url("img.gif") no-repeat scroll 0 -16px rgba(0, 0, 0, 0);
+    cursor: pointer;
+    float: left;
+    height: 20px;
+    margin-right: 3px;
+    margin-top: 3px;
+    width: 20px;
+}
+.WdateDiv #dpControl {
+    text-align: right;
+}
+.WdateDiv .dpButton {
+    background-color: #F9F9F9;
+    border: 1px solid #CCCCCC;
+    height: 20px;
+    margin-right: 1px;
+    margin-top: 2px;
+    width: 45px;
+}

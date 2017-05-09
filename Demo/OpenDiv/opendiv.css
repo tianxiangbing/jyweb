@@ -1,0 +1,44 @@
+
+#overPanel,#overDiv
+{
+    	Z-INDEX: 2;
+    	FILTER: Alpha(Opacity=40);
+    	LEFT: 0px;	
+    	BACKGROUND-IMAGE: url(dots.bmp);	
+    	WIDTH: 101%;	
+    	POSITION: absolute;	
+    	TOP: 0px;	
+    	HEIGHT: 100%;	
+    	BACKGROUND-COLOR: #000000;	
+    	opacity: 0.50;
+    	height:916px;
+    	width:960px;
+    	display:none;
+}
+.overPanel
+{    
+    	height:916px;
+    	width:960px;
+    	Z-INDEX: -1;	FILTER: Alpha(style=0,opacity=0);	LEFT: 0px;	POSITION: absolute;	TOP: 0px;
+}
+
+.singup-succ{
+	position:relative;
+	width:960px;
+	height:200px;
+	background:url(singup-succese.png) 200px 20px no-repeat;
+}
+.singup-succ-bt{
+	position:absolute;
+	display:block;
+	
+	bottom:40px;
+	right:120px;
+	width:180px;
+	height:46px;
+	border:none;
+	cursor:pointer;
+}
+#bt-index-ok{
+	background:url(btn-sure.png) no-repeat;
+}

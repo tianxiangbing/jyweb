@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+  <title> 格式化HTML</title>
+  <meta name="Author" content="前端:田想兵2013/4/24">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<style>
+textarea{width:500px;height:500px;padding:0;color:#4d4d4d;}
+</style>
+</HEAD>
+
+<BODY>
+<p>
+<textarea id="txt_old"></textarea>
+<textarea id="txt_new"></textarea>
+</p>
+<p>
+<input type="button" id="btn_convert" value="转换》"/>
+<input type="button" id="btn_convert2" value="原始转换》"/>
+<input type="button" id="btn_convert3" value="《还原"/>
+</p>
+
+<script>
+document.getElementById('btn_convert').onclick=function(){
+	var oldValue= document.getElementById("txt_old").value;
+	var newValue = oldValue.replace(/\n/g,"").replace(/\"/g,'\\"').replace(/\'/g,'\\"').replace(/\t/g,"");
+	document.getElementById("txt_new").value = newValue ;
+}
+document.getElementById('btn_convert2').onclick=function(){
+	var oldValue= document.getElementById("txt_old").value;
+	var newValue = oldValue.replace(/\n/g,"\\\n").replace(/\"/g,'\\"').replace(/\'/g,'\\"').replace(/\t/g,"");
+	document.getElementById("txt_new").value = newValue ;
+}
+document.getElementById('btn_convert3').onclick=function(){
+	var oldValue= document.getElementById("txt_new").value;
+	var newValue = oldValue.replace(/\\/g,"");
+	document.getElementById("txt_old").value = newValue ;
+}
+</script>
+</BODY>
+</HTML>

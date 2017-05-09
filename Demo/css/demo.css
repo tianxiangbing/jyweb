@@ -1,0 +1,6 @@
+.waterfall_old{}
+.waterfall_old ul{float:left;width:280px;padding:3px;overflow:hidden;margin-left:5px;}
+.waterfall_old li{list-style:none;margin:0;padding:3px;border:1px solid #CCC;margin-bottom:5px;}
+.waterfall_old li img{padding:0;margin:0;display:block;}
+.clearfix:after{clear:both;content:".";display:block;height:0;line-height:0;font-size:0;visibility:hidden;}
+.clearfix{zoom:1;}

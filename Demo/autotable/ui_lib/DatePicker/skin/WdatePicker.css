@@ -1,0 +1,14 @@
+.Wdate{
+	/*border:#999 1px solid;*/
+	/*height:22px;*/
+	background:url(datePicker.gif) no-repeat right white;
+}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}
+/* */
+.regFormBox table input.Wdate{
+	background:url(datePicker.gif) no-repeat right white;
+}

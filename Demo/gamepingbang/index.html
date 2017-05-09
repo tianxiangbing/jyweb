@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">  
+		<script type="text/javascript" src="jquery-1.4.min.js"></script>
+		<script type="text/javascript" src="jquery.gamequery-0.4.0.js"></script>
+		<script>
+		var game=function(){
+			var private={};
+			private.PLAYGROUND_WIDTH=300;
+			private.PLAYGROUND_HEIGHT=400;
+			private.status=-1;
+			private.speed=30;
+
+			var get=function(key){
+				return private[key];
+			}
+			var set=function(key,val){
+				private[key]=val;
+			}
+			var playground;
+			return{
+				init:function(){
+					$("#gradeinfo").remove();
+					playground=$("#playground").playground({height:get("PLAYGROUND_HEIGHT"),width:get("PLAYGROUND_WIDTH"),RefreshRate:get("speed") });
+					$('#playground').css('width', get('PLAYGROUND_WIDTH'));
+					$('#playground').css('height', get('PLAYGROUND_HEIGHT'));					
+					$('#playground').css('position', 'relative');
+					$('#playground').css('border', '1px solid #ccc');
+					this.initBall();
+					this.initPlayer();
+					$("#sceengraph").css("visibility","visible");
+					$('#player').get(0).gameQuery.score = 0;
+					var classObj = this;
+					$().playground().registerCallback(function(){
+						var status = get('status');
+							if (status > 0) {							
+								classObj.renderBall();
+							}
+					},get("speed"));
+				},
+				initBall:function(){
+					$("#ball").remove();
+					playground.addSprite('ball', { animation:$.gameQuery.Animation( { imageURL:"./blank.gif" } ), width:10, height:10 });
+					$('#ball').get(0).gameQuery.velX = 4;
+					$('#ball').get(0).gameQuery.velY = 4;
+					$("#ball").css("top", get('PLAYGROUND_HEIGHT')-20)
+					$("#ball").css("left", (get('PLAYGROUND_WIDTH')-10)/2)
+				},
+				initPlayer:function(){
+					$("#player").remove();
+					playground.addSprite("player",{ animation:$.gameQuery.Animation( { imageURL:"./blank.gif" } ),width:50, height:8,posx:(get('PLAYGROUND_WIDTH')-50)/2,posy:get('PLAYGROUND_HEIGHT')-10});
+					$("#player").addClass("player");
+				},
+				renderBall:function(){					
+					var ballPosition = $('#ball').position();				
+					var PLAYGROUND_WIDTH = get('PLAYGROUND_WIDTH');
+					var PLAYGROUND_HEIGHT = get('PLAYGROUND_HEIGHT');
+					ballPosition.top-=$('#ball').get(0).gameQuery.velY;
+					ballPosition.left+=$('#ball').get(0).gameQuery.velX;
+					$('#ball').css('top', ballPosition.top);
+					$('#ball').css('left', ballPosition.left);					
+					if (ballPosition.top <= 0) {
+						$('#ball').get(0).gameQuery.velY = -$('#ball').get(0).gameQuery.velY;
+					}
+					if(ballPosition.left<=0 || ballPosition.left+$('#ball').width()>=PLAYGROUND_WIDTH){
+						$('#ball').get(0).gameQuery.velX = -$('#ball').get(0).gameQuery.velX;
+					}
+					$("#ball").collision("#player").each(function(){				
+						$('#ball').get(0).gameQuery.velY = -$('#ball').get(0).gameQuery.velY;
+						$('#player').get(0).gameQuery.score++;
+					});
+					if(ballPosition.top+$('#ball').height() >= PLAYGROUND_HEIGHT){
+						playground.addSprite("gradeinfo",{width:100,height:80,posx:100,posy:100});
+						$("#gradeinfo").html("游戏结束!<br/>得分："+$('#player').get(0).gameQuery.score);
+							set('status', -1);
+					}
+				},
+				pause:function(){
+					if(get('status')==0){
+						set('status',1);
+					}else{
+						set('status',0);
+					}
+				},
+				keyDownHandler: function(evt) {
+						// console.log(evt);
+						var thisObj = this;
+						switch(evt.keyCode) {
+							case 13:
+								if (get('status') == -1) {
+									this.start();
+								} else {
+									this.pause();
+								}
+								break;
+							case 37:
+								if (! this.moveStaus) {
+									this.moveStaus = window.setInterval( function() { thisObj.movePlayer('#player', -4); }, 20);
+								}
+								break;
+							case 39:
+								if (! this.moveStaus) {
+									this.moveStaus = window.setInterval( function() { thisObj.movePlayer('#player', 4); }, 20);
+								}
+								break;
+						}
+					},
+				keyUpHandler:function(evt){
+					window.clearInterval(this.moveStaus);
+					this.moveStaus=null;
+				},
+				movePlayer:function(player, dir){
+						if (get('status') == 1) {
+							var pos = $(player).position();
+							var newPos = pos.left+dir;
+							if (newPos > 0 && newPos+$(player).width() < get('PLAYGROUND_WIDTH')) {
+								$(player).css('left', newPos);
+							}
+						}
+				},
+				start:function(){
+						if (get('status') == -1) {
+							set('status', 1);
+							$().playground().startGame(function(){
+								$("#welcome").remove();
+							});
+						}	
+				}
+			}
+		}()
+		$(function(){
+			game.init();
+			$(document).keydown(function(evt){
+				game.keyDownHandler(evt);
+			});
+			$(document).keyup(function(evt){
+				game.keyUpHandler(evt);
+			});
+		});
+		</script>
+		<style type="text/css">
+			
+			body { font-size:11px; font-family:Tahoma,Arial,Helvetica,Sans-serif; }
+			#playground { margin:auto; background:#eee; }
+			#welcome { text-align:center; }
+			#pause { text-align:center; }
+			
+			#console { width:600px; height:100px; background:#eee; border:1px solid #ccc; margin:10px auto 0 auto; overflow:auto; }
+			#ball { width:10px; height:10px; background:black; }
+			.sceengraph{visibility:visible;}
+			.player { background:#ccc; border:1px solid #999;}
+			#gradeinfo{background:#ccc;color:#565656;padding:5px; text-algin:center;}
+		</style>
+ </HEAD>
+
+ <BODY>
+	<div id="info"></div>
+	<div id="playground">
+		<div id="welcome">
+			按 [<span>回车键</span>] 开始游戏!<br/>
+		</div>
+		<div id="pause">
+			<br /> [回车键] 暂停！
+		</div>
+	</div>
+ </BODY>
+</HTML>

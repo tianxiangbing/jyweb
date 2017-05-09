@@ -1,0 +1,17 @@
+<MKM version="2.0" imageFileUrl="file:///D:/svn/web/html/front/imgs/icon-button.png">
+  <Marks>
+    <LengthMark direction="3" color="16711680" length="234" x="464" y="0"/>
+    <LengthMark direction="12" color="16711680" length="453" x="1" y="223"/>
+    <LengthMark direction="12" color="16711680" length="571" x="0" y="241"/>
+    <LengthMark direction="12" color="16711680" length="679" x="1" y="257"/>
+    <LengthMark direction="3" color="16711680" length="35" x="264" y="545"/>
+    <LengthMark direction="12" color="16711680" length="108" x="229" y="600"/>
+    <LengthMark direction="12" color="16711680" length="32" x="229" y="609"/>
+    <LengthMark direction="3" color="16711680" length="546" x="392" y="0"/>
+    <LengthMark direction="12" color="16711680" length="231" x="-1" y="556"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="10" color="16711680" targetColor="0" offsetX="25" offsetY="10" x="1" y="4"/>
+    <LengthMark direction="3" color="16711680" length="561" x="510" y="0"/>
+    <LengthMark direction="12" color="16711680" length="456" x="1" y="587"/>
+    <LengthMark direction="12" color="16711680" length="690" x="0" y="572"/>
+  </Marks>
+</MKM>

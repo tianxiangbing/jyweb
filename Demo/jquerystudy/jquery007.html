@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>我是如何去了解jquery的(七),案例之不间断滚动  QQ群：70210212,77813547</title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="田想兵 http://tianxiangbing.cnblogs.com" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <style>
+  body,img,ul,li, h2{margin:0;padding:0;border:none;font-size:14px;}
+  h2 a{color:#2B2B2B;text-decoration:none;}
+  .focus_tab{height:255px;margin:4px auto 0;position:relative;}
+  .focusPic{width:708px;height:260px;border:1px solid #DCDDDD;overflow:hidden;margin-left:100px;margin-top:300px;}
+ .sidePic{float:right;list-style:none;}
+ .sidePic li{
+	 width:21px;text-align:center;height:24px;line-height:26px;float:left;margin-right:7px;color:#2B2B2B; background: url("http://img3.cache.netease.com/cnews/newstest1204/focusbg2.gif") no-repeat scroll left bottom transparent;cursor:pointer;
+ }
+.focus_tab .normal{float:left;margin-right:10px;}
+.sidePic .on {
+    background: url("http://img3.cache.netease.com/cnews/newstest1204/focusbg1.gif") no-repeat scroll left bottom transparent;
+    color: #FFFFFF;
+	display:block;
+}
+  </style>
+
+   <script src="/scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+ <script>
+ $(function(){
+	var itemWidth=$(".focus_tab > .normal").width()+10;
+	var sumWidth=itemWidth*$(".focus_tab > .normal").length;
+	var temp=$(".focus_tab > div").clone();
+	temp.appendTo(".focus_tab");
+	$(".focus_tab").width(sumWidth*2);
+	var i=0;
+	setInterval(play,18);
+	function play(){
+		//$(".focus_tab").offset({left:i,top:$(".focus_tab").offset().top});
+		$(".focus_tab").css("left",i)
+		i-=1;
+		//if(Math.abs($(".focus_tab").offset().left)>=sumWidth)
+		if(Math.abs(parseInt($(".focus_tab").css("left")))>=sumWidth){
+			i=0;
+		}
+	}
+ });
+ </script>
+ </head>
+
+ <body>
+  <div class="focusPic">
+	<div class="focus_tab">
+			<div class="normal"><a href="http://news.163.com/photoview/00AN0001/18737.html"><img width="300" height="225" alt="神舟八号飞船返回舱在内蒙古着陆" title="神舟八号飞船返回舱在内蒙古着陆" src="1.jpg"></a>
+					  <h2><a href="http://news.163.com/photoview/00AN0001/18737.html">神舟八号飞船返回舱在内蒙古着陆</a></h2>
+			</div>
+			<div class="normal"><a href="http://news.163.com/photoview/00AN0001/18724.html"><img width="300" height="225" alt="潜山600万建皖公像 官方称是＂安徽守护神＂" title="潜山600万建皖公像 官方称是＂安徽守护神＂" src="2.jpg"></a>
+					  <h2><a href="http://news.163.com/photoview/00AN0001/18724.html">潜山600万建皖公像 官方称是"安徽守护神"</a></h2>
+			</div>
+			<div class="normal"><a href="http://news.163.com/photoview/3R710001/18721.html"><img width="300" height="225" alt="《看客》第116期：人在“堵”途" title="《看客》第116期：人在“堵”途" src="3.jpg"></a>
+					  <h2><a href="http://news.163.com/photoview/3R710001/18721.html">《看客》第116期：人在“堵”途</a></h2>
+			</div>
+	</div>
+ </div>
+ 
+  <p>本案例对应的博客地址是：<a href="http://www.cnblogs.com/tianxiangbing/archive/2011/11/22/jquery_study007.html" target="_blank">我是如何去了解jquery的(七),案例之不间断滚动</a>欢迎大家加入QQ群一起讨论：70210212</p>
+</body>
+</html>

@@ -1,0 +1,1337 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>周报</title>
+<link type="text/css" rel="stylesheet" href="table.css"/>
+
+<script src="jquery-1.7.1.min.js" type="text/javascript"></script> 
+<script src="JY.min.js" type="text/javascript"></script> 
+<script src="DatePicker/WdatePicker.js" type="text/javascript"></script> 
+<script src="table.min.js" type="text/javascript"></script>
+</head>
+
+<body class="nopadding">
+<div class="table w1000 center borderblack2 nobborder" leaf ="0">
+  <div class="row title clearfix">
+    <div class="cell">
+      <div><b>周报</b></div>
+    </div>
+  </div>
+  <div class="row title clearfix">
+    <div class="cell w160">
+      <div>开始时间</div>
+    </div>
+    <div class="cell w120 whitebg">
+      <div>
+        <input type="text" class="Wdate w120" readonly="readonly" onclick="WdatePicker({doubleCalendar:false,maxDate:'%y-%M-%d'})" value="2013-12-2">
+      </div>
+    </div>
+    <div class="cell w160">
+      <div>结束时间</div>
+    </div>
+    <div class="cell w120 whitebg">
+      <div>
+        <input type="text" class="Wdate w120" readonly="readonly" onclick="WdatePicker({doubleCalendar:false,maxDate:'%y-%M-%d'})" value="2013-12-7">
+      </div>
+    </div>
+    <div class="cell w160">
+      <div>填写人</div>
+    </div>
+    <div class="cell  whitebg">
+      <div>李四</div>
+    </div>
+  </div>
+  <div class="row title clearfix">
+    <div class="cell w60">
+      <div>序号</div>
+    </div>
+    <div class="cell w100">
+      <div>项目</div>
+    </div>
+    <div class="cell w100">
+      <div>部门</div>
+    </div>
+    <div class="cell w100">
+      <div>分类</div>
+    </div>
+    <div class="cell w140">
+      <div>本周进展情况</div>
+    </div>
+    <div class="cell w100">
+      <div>状态</div>
+    </div>
+    <div class="cell w100">
+      <div>原因描述</div>
+    </div>
+    <div class="cell w130">
+      <div>下周工作计划</div>
+    </div>
+    <div class="cell w120">
+      <div>需要协调的工作</div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">1</em></div>
+    </div>
+    <div class="cell w100">
+      <div><span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+        <select name="select3" class="w70">
+          <option selected="selected">项目1</option>
+          <option>项目2</option>
+          <option>项目3</option>
+          <option>项目4</option>
+        </select>
+      </div>
+    </div>
+    <div class="cell w100 nopadding">
+      <div> 
+        <!--部门表-->
+        <div class="table w100p center" leaf ="1">
+          <div class="row clearfix">
+            <div class="cell w100">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select13" class="w60">
+                  <option selected="selected">投资部</option>
+                  <option>前期部 </option>
+                  <option> 设计部 </option>
+                  <option> 采购合约部 </option>
+                  <option> 运营部 </option>
+                </select>
+              </div>
+            </div>
+            <div class="cell w100 nopadding">
+              <div>
+                <div class="table w100p center" leaf = "2">
+                  <div class="row clearfix">
+                    <div class="cell w100">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w95">
+                        <select name="select4" class="w60">
+                          <option>分类1</option>
+                          <option>分类2 </option>
+                          <option> 分类3 </option>
+                          <option> 分类4 </option>
+                        </select>
+                        </span></div>
+                    </div>
+                    <div class="cell w340 nopadding pdr2">
+                      <div> 
+                        <!--进展情况-->
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140 noborder">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell w130 nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w100" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="cell w100">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select13" class="w60">
+                  <option>投资部</option>
+                  <option selected="selected">前期部 </option>
+                  <option> 设计部 </option>
+                  <option> 采购合约部 </option>
+                  <option> 运营部 </option>
+                </select>
+              </div>
+            </div>
+            <div class="cell w100 nopadding">
+              <div>
+                <div class="table w100p center" leaf = "2">
+                  <div class="row clearfix">
+                    <div class="cell w100">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w95">
+                        <select name="select4" class="w60">
+                          <option>分类1</option>
+                          <option>分类2 </option>
+                          <option> 分类3 </option>
+                          <option> 分类4 </option>
+                        </select>
+                        </span></div>
+                    </div>
+                    <div class="cell w340 nopadding pdr2">
+                      <div> 
+                        <!--进展情况-->
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140 noborder">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell w130 nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w100" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="cell w100">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select13" class="w60">
+                  <option>投资部</option>
+                  <option>前期部 </option>
+                  <option selected="selected"> 设计部 </option>
+                  <option> 采购合约部 </option>
+                  <option> 运营部 </option>
+                </select>
+              </div>
+            </div>
+            <div class="cell w100 nopadding">
+              <div>
+                <div class="table w100p center" leaf = "2">
+                  <div class="row clearfix">
+                    <div class="cell w100">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w95">
+                        <select name="select4" class="w60">
+                          <option>分类1</option>
+                          <option>分类2 </option>
+                          <option> 分类3 </option>
+                          <option> 分类4 </option>
+                        </select>
+                        </span></div>
+                    </div>
+                    <div class="cell w340 nopadding pdr2">
+                      <div> 
+                        <!--进展情况-->
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140 noborder">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell w130 nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w100" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="cell w100">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select13" class="w60">
+                  <option>投资部</option>
+                  <option>前期部 </option>
+                  <option> 设计部 </option>
+                  <option selected="selected"> 采购合约部 </option>
+                  <option> 运营部 </option>
+                </select>
+              </div>
+            </div>
+            <div class="cell w100 nopadding">
+              <div>
+                <div class="table w100p center" leaf = "2">
+                  <div class="row clearfix">
+                    <div class="cell w100">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w95">
+                        <select name="select4" class="w60">
+                          <option>分类1</option>
+                          <option>分类2 </option>
+                          <option> 分类3 </option>
+                          <option> 分类4 </option>
+                        </select>
+                        </span></div>
+                    </div>
+                    <div class="cell w340 nopadding pdr2">
+                      <div> 
+                        <!--进展情况-->
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140 noborder">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell w130 nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w100" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="cell w100">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select13" class="w60">
+                  <option selected="selected">投资部</option>
+                  <option>前期部 </option>
+                  <option> 设计部 </option>
+                  <option> 采购合约部 </option>
+                  <option selected="selected"> 运营部 </option>
+                </select>
+              </div>
+            </div>
+            <div class="cell w100 nopadding">
+              <div>
+                <div class="table w100p center" leaf = "2">
+                  <div class="row clearfix">
+                    <div class="cell w100">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w95">
+                        <select name="select4" class="w60">
+                          <option>分类1</option>
+                          <option>分类2 </option>
+                          <option> 分类3 </option>
+                          <option> 分类4 </option>
+                        </select>
+                        </span></div>
+                    </div>
+                    <div class="cell w340 nopadding pdr2">
+                      <div> 
+                        <!--进展情况-->
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140 noborder">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell w130 nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w100" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">2</em></div>
+    </div>
+    <div class="cell w100">
+      <div><span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+        <select name="select3" class="w70">
+          <option selected="selected">项目1</option>
+          <option>项目2</option>
+          <option>项目3</option>
+          <option>项目4</option>
+        </select>
+      </div>
+    </div>
+    <div class="cell w100 nopadding">
+      <div> 
+        <!--部门表-->
+        <div class="table w100p center" leaf ="1">
+          <div class="row clearfix">
+            <div class="cell w100">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select13" class="w60">
+                  <option>投资部</option>
+                  <option selected="selected">前期部 </option>
+                  <option> 设计部 </option>
+                  <option> 采购合约部 </option>
+                  <option> 运营部 </option>
+                </select>
+              </div>
+            </div>
+            <div class="cell w100 nopadding">
+              <div>
+                <div class="table w100p center" leaf = "2">
+                  <div class="row clearfix">
+                    <div class="cell w100">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w95">
+                        <select name="select4" class="w60">
+                          <option>分类1</option>
+                          <option>分类2 </option>
+                          <option> 分类3 </option>
+                          <option> 分类4 </option>
+                        </select>
+                        </span></div>
+                    </div>
+                    <div class="cell w340 nopadding pdr2">
+                      <div> 
+                        <!--进展情况-->
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140 noborder">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell w130 nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w100" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">3</em></div>
+    </div>
+    <div class="cell w100">
+      <div><span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+        <select name="select3" class="w70">
+          <option selected="selected">项目1</option>
+          <option>项目2</option>
+          <option>项目3</option>
+          <option>项目4</option>
+        </select>
+      </div>
+    </div>
+    <div class="cell w100 nopadding">
+      <div> 
+        <!--部门表-->
+        <div class="table w100p center" leaf ="1">
+          <div class="row clearfix">
+            <div class="cell w100">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select13" class="w60">
+                  <option>投资部</option>
+                  <option>前期部 </option>
+                  <option selected="selected"> 设计部 </option>
+                  <option> 采购合约部 </option>
+                  <option> 运营部 </option>
+                </select>
+              </div>
+            </div>
+            <div class="cell w100 nopadding">
+              <div>
+                <div class="table w100p center" leaf = "2">
+                  <div class="row clearfix">
+                    <div class="cell w100">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w95">
+                        <select name="select4" class="w60">
+                          <option>分类1</option>
+                          <option>分类2 </option>
+                          <option> 分类3 </option>
+                          <option> 分类4 </option>
+                        </select>
+                        </span></div>
+                    </div>
+                    <div class="cell w340 nopadding pdr2">
+                      <div> 
+                        <!--进展情况-->
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140 noborder">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell w130 nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w100" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">4</em></div>
+    </div>
+    <div class="cell w100">
+      <div><span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+        <select name="select3" class="w70">
+          <option selected="selected">项目1</option>
+          <option>项目2</option>
+          <option>项目3</option>
+          <option>项目4</option>
+        </select>
+      </div>
+    </div>
+    <div class="cell w100 nopadding">
+      <div> 
+        <!--部门表-->
+        <div class="table w100p center" leaf ="1">
+          <div class="row clearfix">
+            <div class="cell w100">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select13" class="w60">
+                  <option>投资部</option>
+                  <option>前期部 </option>
+                  <option> 设计部 </option>
+                  <option selected="selected"> 采购合约部 </option>
+                  <option> 运营部 </option>
+                </select>
+              </div>
+            </div>
+            <div class="cell w100 nopadding">
+              <div>
+                <div class="table w100p center" leaf = "2">
+                  <div class="row clearfix">
+                    <div class="cell w100">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w95">
+                        <select name="select4" class="w60">
+                          <option>分类1</option>
+                          <option>分类2 </option>
+                          <option> 分类3 </option>
+                          <option> 分类4 </option>
+                        </select>
+                        </span></div>
+                    </div>
+                    <div class="cell w340 nopadding pdr2">
+                      <div> 
+                        <!--进展情况-->
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140 noborder">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell w130 nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w100" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">5</em></div>
+    </div>
+    <div class="cell w100">
+      <div><span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+        <select name="select3" class="w70">
+          <option selected="selected">项目1</option>
+          <option>项目2</option>
+          <option>项目3</option>
+          <option>项目4</option>
+        </select>
+      </div>
+    </div>
+    <div class="cell w100 nopadding">
+      <div> 
+        <!--部门表-->
+        <div class="table w100p center" leaf ="1">
+          <div class="row clearfix">
+            <div class="cell w100">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select13" class="w60">
+                  <option>投资部</option>
+                  <option>前期部 </option>
+                  <option> 设计部 </option>
+                  <option> 采购合约部 </option>
+                  <option selected="selected"> 运营部 </option>
+                </select>
+              </div>
+            </div>
+            <div class="cell w100 nopadding">
+              <div>
+                <div class="table w100p center" leaf = "2">
+                  <div class="row clearfix">
+                    <div class="cell w100">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w95">
+                        <select name="select4" class="w60">
+                          <option>分类1</option>
+                          <option>分类2 </option>
+                          <option> 分类3 </option>
+                          <option> 分类4 </option>
+                        </select>
+                        </span></div>
+                    </div>
+                    <div class="cell w340 nopadding pdr2">
+                      <div> 
+                        <!--进展情况-->
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140 noborder">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                            <div class="cell w100 noborder">
+                              <div>
+                                <input type="text" class="w80">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell w130 nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w80" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell nopadding">
+                      <div>
+                        <div class="table w100p center" leaf="3">
+                          <div class="row clearfix">
+                            <div class="cell w140">
+                              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                                <input type="text" class="w100" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="table w1000 center borderblack2 notborder nobborder" leaf ="0">
+  <div class="row title clearfix">
+    <div class="cell">
+      <div>制度体系</div>
+    </div>
+  </div>
+  <div class="row title clearfix">
+    <div class="cell w60">
+      <div>序号</div>
+    </div>
+    <div class="cell w300">
+      <div>分类</div>
+    </div>
+    <div class="cell w140">
+      <div>本周进展情况</div>
+    </div>
+    <div class="cell w100">
+      <div>状态</div>
+    </div>
+    <div class="cell w100">
+      <div>原因描述</div>
+    </div>
+    <div class="cell w130">
+      <div>下周工作计划</div>
+    </div>
+    <div class="cell w120">
+      <div>需要协调的工作</div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">1</em></div>
+    </div>
+    <div class="cell w300">
+      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w324" style="border-left-style: none; border-top-width: 0px; border-bottom-width: 0px;">
+        <select name="select" class="w200">
+          <option selected="selected">制度执行</option>
+          <option> 制度问题反馈 </option>
+          <option> 制度优化 </option>
+          <option> 其它 </option>
+        </select>
+        </span></div>
+    </div>
+    <div class="cell w340 nopadding pdr2">
+      <div> 
+        <!--进展情况-->
+        <div class="table w100p center" leaf="3">
+          <div class="row clearfix">
+            <div class="cell w140 noborder">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                <input type="text" class="w80">
+              </div>
+            </div>
+            <div class="cell w100 noborder">
+              <div>
+                <input type="text" class="w80">
+              </div>
+            </div>
+            <div class="cell w100 noborder">
+              <div>
+                <input type="text" class="w80">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cell w130 nopadding">
+      <div>
+        <div class="table w100p center" leaf="3">
+          <div class="row clearfix">
+            <div class="cell w140">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                <input type="text" class="w80" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cell nopadding">
+      <div>
+        <div class="table w100p center" leaf="3">
+          <div class="row clearfix">
+            <div class="cell w140">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                <input type="text" class="w100" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="table w1000 center borderblack2 notborder nobborder" leaf ="0">
+  <div class="row title clearfix">
+    <div class="cell">
+      <div>档案管理</div>
+    </div>
+  </div>
+  <div class="row title clearfix">
+    <div class="cell w60">
+      <div>序号</div>
+    </div>
+    <div class="cell w300">
+      <div>项目</div>
+    </div>
+    <div class="cell w140">
+      <div>本周进展情况</div>
+    </div>
+    <div class="cell w100">
+      <div>状态</div>
+    </div>
+    <div class="cell w100">
+      <div>原因描述</div>
+    </div>
+    <div class="cell w130">
+      <div>下周工作计划</div>
+    </div>
+    <div class="cell w120">
+      <div>需要协调的工作</div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">1</em></div>
+    </div>
+    <div class="cell w300">
+      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w324" style="border-left-style: none; border-top-width: 0px; border-bottom-width: 0px;">
+        <select name="select2" class="w200">
+          <option>项目1</option>
+          <option>项目2</option>
+          <option>项目3</option>
+          <option>其它</option>
+        </select>
+        </span></div>
+    </div>
+    <div class="cell w340 nopadding pdr2">
+      <div> 
+        <!--进展情况-->
+        <div class="table w100p center" leaf="3">
+          <div class="row clearfix">
+            <div class="cell w140 noborder">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                <input type="text" class="w80">
+              </div>
+            </div>
+            <div class="cell w100 noborder">
+              <div>
+                <input type="text" class="w80">
+              </div>
+            </div>
+            <div class="cell w100 noborder">
+              <div>
+                <input type="text" class="w80">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cell w130 nopadding">
+      <div>
+        <div class="table w100p center" leaf="3">
+          <div class="row clearfix">
+            <div class="cell w140">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                <input type="text" class="w80" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cell nopadding">
+      <div>
+        <div class="table w100p center" leaf="3">
+          <div class="row clearfix">
+            <div class="cell w140">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                <input type="text" class="w100" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="table w1000 center borderblack2 notborder nobborder" leaf ="0">
+  <div class="row title clearfix">
+    <div class="cell">
+      <div>信息平台建设</div>
+    </div>
+  </div>
+  <div class="row title clearfix">
+    <div class="cell w60">
+      <div>序号</div>
+    </div>
+    <div class="cell w300">
+      <div>分类</div>
+    </div>
+    <div class="cell w140">
+      <div>本周进展情况</div>
+    </div>
+    <div class="cell w100">
+      <div>状态</div>
+    </div>
+    <div class="cell w100">
+      <div>原因描述</div>
+    </div>
+    <div class="cell w130">
+      <div>下周工作计划</div>
+    </div>
+    <div class="cell w120">
+      <div>需要协调的工作</div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">1</em></div>
+    </div>
+    <div class="cell w300">
+      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span><span class="w324" style="border-left-style: none; border-top-width: 0px; border-bottom-width: 0px;">
+        <select name="select4" class="w200">
+          <option>PPM</option>
+          <option>置业部信息平台</option>
+          <option>基础设施建设</option>
+          <option>其它</option>
+        </select>
+        </span></div>
+    </div>
+    <div class="cell w340 nopadding pdr2">
+      <div> 
+        <!--进展情况-->
+        <div class="table w100p center" leaf="3">
+          <div class="row clearfix">
+            <div class="cell w140 noborder">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                <input type="text" class="w80">
+              </div>
+            </div>
+            <div class="cell w100 noborder">
+              <div>
+                <input type="text" class="w80">
+              </div>
+            </div>
+            <div class="cell w100 noborder">
+              <div>
+                <input type="text" class="w80">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cell w130 nopadding">
+      <div>
+        <div class="table w100p center" leaf="3">
+          <div class="row clearfix">
+            <div class="cell w140">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                <input type="text" class="w80" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cell nopadding">
+      <div>
+        <div class="table w100p center" leaf="3">
+          <div class="row clearfix">
+            <div class="cell w140">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                <input type="text" class="w100" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="table w1000 center borderblack2 notborder nobborder" leaf ="0">
+  <div class="row title clearfix">
+    <div class="cell">
+      <div>职能部门</div>
+    </div>
+  </div>
+  <div class="row title clearfix">
+    <div class="cell w60">
+      <div>序号</div>
+    </div>
+    <div class="cell w150">
+      <div>部门</div>
+    </div>
+    <div class="cell w150">
+      <div>分类</div>
+    </div>
+    <div class="cell w140">
+      <div>本周进展情况</div>
+    </div>
+    <div class="cell w100">
+      <div>状态</div>
+    </div>
+    <div class="cell w100">
+      <div>原因描述</div>
+    </div>
+    <div class="cell w130">
+      <div>下周工作计划</div>
+    </div>
+    <div class="cell w120">
+      <div>需要协调的工作</div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">1</em></div>
+    </div>
+    <div class="cell w150 nopadding">
+      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+        <select name="select25" class="w120">
+          <option selected="selected">投资部</option>
+          <option>前期部 </option>
+          <option> 设计部 </option>
+          <option> 采购合约部 </option>
+          <option> 运营部 </option>
+        </select>
+      </div>
+    </div>
+    <div class="cell w200 nopadding">
+      <div>
+        <div class="table w100p center" leaf="1">
+          <div class="row clearfix">
+            <div class="cell w150">
+              <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+                <select name="select24" class="w120">
+                  <option>分类1</option>
+                  <option>分类2 </option>
+                  <option> 分类3 </option>
+                  <option> 分类4 </option>
+                </select>
+              </div>
+            </div>            
+            <div class="cell w340 nopadding pdr2">
+              <div> 
+                <!--进展情况-->
+                <div class="table w100p center" leaf="3">
+                  <div class="row clearfix">
+                    <div class="cell w140 noborder">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                        <input type="text" class="w80">
+                      </div>
+                    </div>
+                    <div class="cell w100 noborder">
+                      <div>
+                        <input type="text" class="w80">
+                      </div>
+                    </div>
+                    <div class="cell w100 noborder">
+                      <div>
+                        <input type="text" class="w80">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell w130 nopadding">
+              <div>
+                <div class="table w100p center" leaf="3">
+                  <div class="row clearfix">
+                    <div class="cell w140">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                        <input type="text" class="w80" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell nopadding">
+              <div>
+                <div class="table w100p center" leaf="3">
+                  <div class="row clearfix">
+                    <div class="cell w140">
+                      <div> <span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span> <em leafIndex="3">1</em>.
+                        <input type="text" class="w100" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="table w1000 center borderblack2 notborder" leaf ="0">
+  <div class="row title clearfix">
+    <div class="cell">
+      <div>其它</div>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="cell w60">
+      <div><em leafIndex="0">1</em></div>
+    </div>
+    <div class="cell w60">
+      <div><span class="fr cursor pdt5 del"><img src="imgs/del.gif"></span><span class="fr cursor pdt5 add"><img src="imgs/bg_007.gif"/></span>
+        <input type="text" class="w800"/>
+      </div>
+    </div>
+  </div>
+</div><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffec05701c503620eb8d8875272000db9' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
