@@ -8,7 +8,7 @@
 		<META name="Keywords" content="JY,javascript库,nodejs">
 		<META name="Description" content="JY是一个新的JavaScript库。 JY是一个快速和简洁的JavaScript库，它简化了HTML文档遍历，事件处理，动画，和快速Web开发的Ajax的设计，用来改变你编写JavaScript的方式。帮助你提升编写面向对象的javascript能力。">
 		<!--<base href="http://www.lovewebgames.com"/>-->
-		<link rel="stylesheet" type="text/css" href ="/css/css.css"/>
+		<link rel="stylesheet" type="text/css" href ="css/css.css"/>
 	</HEAD>
 	<body>
 		<!-- HEADER -->
@@ -41,7 +41,7 @@
 			<div id="main_content" class="inner">
 				<h3>JYG游戏案例<a class="more" href="games.html">查看更多JY游戏案例...</a></h3>
 				<ul class="gameDemo">
-					<li><a href="game/headofoperations/index.html">头头大作战（JY2.0系列游戏）[手游]</a></li>
+					<li><a href="game/headofoperations/index.html"><img src="game/images/headtohead.jpg" width="200px" height="160px" title="头头大作战（JY2.0系列游戏）[手游]" alt="头头大作战（JY2.0系列游戏）[手游]"/><div>头头大作战（JY2.0系列游戏）[手游]</div></a></li>
 					<li><a href="http://www.lovewebgames.com/game/skyFight.html" title="兔基斯天空大作战"  target="_blank"><img src="game/images/skyFightMin.jpg" width="200px" height="160px" title="兔基斯天空大作战" alt="兔基斯天空大作战"/><div>兔基斯天空大作战</div></a></li>
 					<li><a href="http://www.lovewebgames.com/game/td.html" title="html5塔防游戏魔兽" target="_blank"><img src="/game/images/td.jpg" width="200px" height="160px" title="html5塔防游戏魔兽" alt="html5塔防游戏魔兽"/><div>html5塔防游戏魔兽</div></a></li>
 					<li><a href="http://www.lovewebgames.com/game/pingpang.html" title="神奇的乒乓球" target="_blank"><img src="/game/images/pingpang.jpg" width="200px" height="160px" title="神奇的乒乓球" alt="神奇的乒乓球"/><div>神奇的乒乓球</div></a></li>
@@ -55,14 +55,13 @@
 					<li><a href="http://www.lovewebgames.com/game/crazyGold.html" title="疯狂的接金币"  target="_blank"><img src="game/images/crazyGold.jpg" width="200px" height="160px" title="疯狂的接金币" alt="疯狂的接金币"/><div>疯狂的接金币</div></a></li>
 					<li><a href="http://www.lovewebgames.com/game/crazyword.html" title="疯狂的字母"  target="_blank"><img src="game/images/crazyWord.jpg" width="200px" height="160px" title="疯狂的字母" alt="疯狂的字母"/><div>疯狂的字母</div></a></li>
 				</ul>
+				<h3>JY2</h3>
+				<p>
+					JY2将使用typescript进行全部代码的重写，将更关注于游戏的处理，减少dom类的操作。更适合于移动端的开发。头头大作战就是使用JY2框架开发的。目前它还很小，未压缩版本也只有18.9KB，目前代码放在github上,<a href="https://github.com/tianxiangbing/JY/tree/later2.0.0">JY2</a>
+				</p>
 				<h3>欢迎来到JY的世界</h3>
 				<p>JY是一个新的JavaScript库。
 				JY是一个快速和简洁的JavaScript库，它简化了HTML文档遍历，事件处理，动画，和快速Web开发的Ajax的设计，用来改变你编写JavaScript的方式。帮助你提升编写面向对象的javascript能力。</p>
-				<pre><code>
-					JY.ready(function(){
-					  alert("欢迎来到JY的世界!");
-					});
-				</code></pre>
 				<p>它的开源代码将公布在github上，请点击<a href="https://github.com/tianxiangbing/JY/" target="_blank">https://github.com/tianxiangbing/JY/</a></p>
 				<h3>JY起源</h3>
 				<p>JY的想法起源于，现在大多数JS库已经相当成熟，但总有这样那样的不习惯问题，根据我多年的JS经验，整理出一份常用的使用方法，用来平衡这项缺失。或许你会觉得JQuery会更快些，其实不然，因为JY对DOM的查询依然是引用的Sizzle引擎，查询DOM并不是JY的重点，JY的重点是要让你写出更漂亮的代码，而这不仅仅是DOM查询。</p>
@@ -262,7 +261,7 @@
 		</div>
 		<script>
 			var dialog = new Dialog();
-			dialog.init({show:true,target:'#headtohead',mask:true,width:667,height:375,title:'JY2.0游戏《头头大作战》[手机模式]'});
+			dialog.init({show:true,target:'#headtohead',mask:true,width:667,height:375,title:'JY2.0游戏《头头大作战》[手机模式]',zIndex:100000});
 		</script>
 	</body>
 
