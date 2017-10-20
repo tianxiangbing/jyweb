@@ -1,3 +1,0 @@
-<%
-response.Redirect("index.html")
-%>

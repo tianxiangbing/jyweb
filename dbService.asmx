@@ -1,1 +1,0 @@
-﻿<%@ WebService Language="C#" CodeBehind="dbService.asmx.cs" Class="LWGWebService.dbService" %>
