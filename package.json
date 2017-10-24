@@ -10,9 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/tianxiangbing/jyweb.git"
   },
-  "dependencies":{ 
-    "express": "~4.12.4"
-  },
   "author": "tianxiangbing",
   "license": "ISC",
   "bugs": {
