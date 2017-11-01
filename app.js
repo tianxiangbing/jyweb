@@ -1,4 +1,4 @@
 const express = require('express');
 let app = express();
-app.listen(8080);
+app.listen(80);
 app.use(express.static('./'));
